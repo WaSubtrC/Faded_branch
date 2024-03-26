@@ -8,7 +8,7 @@ public class GameManager : Singleton<GameManager>
 
     public void RigisterPlayer(CharacterStats player)
     {
-        playerStats = player;
+      playerStats =player   ;
     }
 
 

@@ -54,14 +54,7 @@ public class InventoryManager : Singleton<InventoryManager>
 
     }
 
-    public void SaveData()
-    {
-        //可用savemanager保存/加载方法
-    }
-    public void LoadData()
-    {
 
-    }
 
     //检查拖拽物品是否在每个Slot范围内
     public bool CheckInInventoryUI(Vector3 position)

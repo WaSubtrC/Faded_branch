@@ -1789,51 +1789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314a68fd04394bb4f8f6841bc7aed446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &679755180
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 679755181}
-  - component: {fileID: 679755182}
-  m_Layer: 0
-  m_Name: UI_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &679755181
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679755180}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &679755182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679755180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9082de7dd0659974fbf6d94cd675618d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickUpTIPS: {fileID: 0}
 --- !u!224 &694298482 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2594530548624259958, guid: d490fc4ca54ad0b469361fe89a5ea522, type: 3}
@@ -2102,7 +2057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSlot: {fileID: 1774880170}
-  money: 100
+  characterData: {fileID: 11400000, guid: 08f0282eea51cc94094bacabd30d43b0, type: 2}
 --- !u!114 &738462154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2880,6 +2835,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2594530548624259958, guid: d490fc4ca54ad0b469361fe89a5ea522, type: 3}
   m_PrefabInstance: {fileID: 1683573269870594326}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1067702764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1067702765}
+  m_Layer: 0
+  m_Name: ---Managers---------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1067702765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067702764}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1101287534
 GameObject:
   m_ObjectHideFlags: 0
@@ -4574,7 +4560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992293442}
   m_Layer: 0
-  m_Name: ---NPC---------------
+  m_Name: ---Characters---------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4610,6 +4596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2014032679}
   - component: {fileID: 2014032680}
+  - component: {fileID: 2014032681}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4645,6 +4632,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 738462153}
+--- !u!114 &2014032681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014032678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee72bfa4bc7cb0c4888b2ed776d6a3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2026817921 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4691149252477161509, guid: 90bcb9799ed177e409454cae5096192f, type: 3}
@@ -10755,22 +10754,22 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 2014032679}
   - {fileID: 1279839686}
   - {fileID: 225620800}
   - {fileID: 536583767}
-  - {fileID: 738462148}
   - {fileID: 639857280}
   - {fileID: 1717896699}
   - {fileID: 1315847854}
   - {fileID: 3268590881761135590}
   - {fileID: 1146313282}
-  - {fileID: 679755181}
   - {fileID: 793077290}
   - {fileID: 1992293442}
+  - {fileID: 738462148}
   - {fileID: 1014641838}
   - {fileID: 1754747691}
   - {fileID: 930456507}
-  - {fileID: 328273746}
   - {fileID: 1335684615}
   - {fileID: 195645991}
+  - {fileID: 1067702765}
+  - {fileID: 328273746}
+  - {fileID: 2014032679}

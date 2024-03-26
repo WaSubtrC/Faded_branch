@@ -19,12 +19,12 @@ public class StoreHolder : MonoBehaviour
 
     public void BuyItem()
     { 
-        bool isBackpackFull = false;
+        //bool isBackpackFull = false;
         
-        Debug.Log(isBackpackFull);
-        if (CharacterStats.money>=price && !isBackpackFull)
+        //Debug.Log(isBackpackFull);
+        if (CharacterStats.characterData.money >= price  )
         {
-            CharacterStats.money -=price;
+            CharacterStats.characterData.money -=price;
         InventoryManager.Instance.inventoryData.AddItem(itemData, itemData.itemAmount);
         InventoryManager.Instance.inventoryUI.RefreshUI();
         }else 
