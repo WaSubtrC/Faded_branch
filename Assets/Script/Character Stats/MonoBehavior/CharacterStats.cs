@@ -10,21 +10,21 @@ public class CharacterStats : MonoBehaviour
     #region Read form Data_SO
 
 
-    public int MaxHealth
-    {
-        get { if(characterData != null)   return characterData.maxHealth;     else return 0;}
-        set { characterData.maxHealth = value;}
-    }
+    //public float MaxHealth
+    //{
+    //    get { if(characterData != null)   return characterData.maxHealth;     else return 0;}
+    //    set { characterData.maxHealth = value;}
+    //}
 
-    public uint Money{
-      get { if (characterData != null) return characterData.money; else return 0; } 
-      set {  characterData.money = value; } 
-    }
+    //public uint coins{
+    //  get { if (characterData != null) return characterData.coins; else return 0; } 
+    //  set {  characterData.coins = value; } 
+    //}
 
-    public int CurrentHealth { 
-        get { if (characterData != null) { return characterData.currentHealth; } else return 0; }
-        set { characterData.currentHealth = value; }
-    }
+    //public float CurrentHealth { 
+    //    get { if (characterData != null) { return characterData.currHealth; } else return 0; }
+    //    set { characterData.currHealth = value; }
+    //}
 
     #endregion
 

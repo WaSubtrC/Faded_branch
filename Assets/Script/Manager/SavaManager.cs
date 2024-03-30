@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SavaManager : Singleton<SavaManager>
 {
     const string PLAYER_DATA_KEY = "PlayerData";
     const string PLAYER_DATA_FILE_NAME = "PlayerData.sav";
+    string sceneName = "level";
+    public string SceneName {  get { return SaveSystem.LoadFromJson<string> (sceneName); } }
     protected override void Awake()
     {
         base.Awake();
@@ -20,42 +23,45 @@ public class SavaManager : Singleton<SavaManager>
 
     //切换场景前记得使用save 以便数据不丢失保存下来
     //切换场景后记得使用Load 
-    public void SavePlayerData() {  //仅仅保存玩家的数据   
-        Save(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.characterData);
+    public void SavePlayerData() {  //保存玩家的数据   
+        SaveSystem.SaveByJson(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.characterData);
     }
     
 
-    public void LoadPlayerData() {   
-        Load(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.characterData);       
+    public void LoadPlayerData() {
+        SaveSystem.LoadFromJsonOverwrite(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.characterData);       
     }
 
-    public void SaveInventoryData(){ 
-        Save(InventoryManager.Instance.inventoryData.name, InventoryManager.Instance.inventoryData);
+    public void SaveInventoryData(){
+        SaveSystem.SaveByJson(InventoryManager.Instance.inventoryData.name, InventoryManager.Instance.inventoryData);
     }
-    public void LoadInventoryData() { 
-        Load(InventoryManager.Instance.inventoryData.name, InventoryManager.Instance.inventoryData);
+    public void LoadInventoryData() {
+        SaveSystem.LoadFromJsonOverwrite(InventoryManager.Instance.inventoryData.name, InventoryManager.Instance.inventoryData);
+    }
+    public void Save() 
+    {
+        SavePlayerData();
+        SaveInventoryData();
+        SaveSystem.SaveByJson(sceneName, SceneManager.GetActiveScene().name);   //保存当前场景
+    }
+    public void Load() 
+    {
+        LoadPlayerData();
+        LoadInventoryData();
     }
     #endregion
 
     #region Help Functions
 
-    public void Save(string fileName,Object _data) 
-    {
-        SaveSystem.SaveByJson(fileName, _data);
-    }
-    public void Load( string fileName,Object _data) 
-    {
-        SaveSystem.LoadFromJsonOverwrite(fileName,_data);
-    }
 
 #if UNITY_EDITOR
-    [UnityEditor.MenuItem("Developer/Delete Player Data Prefs")]
+    [UnityEditor.MenuItem("Developer/Delete Player Data Prefs")]//删除PlayerPrefs
     public static void DeletePlayerDataPrefs()
     {
         PlayerPrefs.DeleteKey(PLAYER_DATA_KEY);
     }
 
-    [UnityEditor.MenuItem("Developer/Delete Player Data Save File")]
+    [UnityEditor.MenuItem("Developer/Delete Player Data Save File")]//删除 存档文件
     public static void DeletePlayerDataSaveFile()
     {
         SaveSystem.DeleteSaveFile(PLAYER_DATA_FILE_NAME);

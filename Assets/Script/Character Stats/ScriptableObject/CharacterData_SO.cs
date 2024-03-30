@@ -1,20 +1,30 @@
 using System;
 using UnityEngine;
 
+public enum Buff  { Nothing ,Starvation }
 [CreateAssetMenu(fileName ="New Data",menuName = "Character Stats/Data")]
     public class CharacterData_SO :ScriptableObject
 {
-    //Stats Info
-
-    //添加角色 各种 属性 ；然后在ChatacterStats添加get set
-    public int maxHealth;
-    public int currentHealth;
-    public uint money = 0;
+    //饥饿值 体力值 力量值 
+    [Header("Stats Info")]
+    [Header("战斗 相关状态")]
+    public float maxMana;
+    public float currMana;
+    public float maxHealth;
+    public float currHealth;
+    public int strength;
+    public float speed;
+    [Header("其他信息")]
+    public int hunger;
+    public int stamina;
+    public uint coins ;
+    public uint level;
+    public Buff buff;
     public CharacterData_SO()
     {
         // 在这里进行初始化操作，或者留空
     }
-
+    
 
 
 

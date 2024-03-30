@@ -5,7 +5,7 @@ public class ChatBubble : MonoBehaviour
 {
     public static void Create(Transform parent,Vector3 localPosition, IconType iconType,string text)
     {
-        Transform chatBubbleTransform = Instantiate(GameAssets.Instance.pfChatBubble, parent);
+        Transform chatBubbleTransform = Instantiate(GameManager.Instance.pfChatBubble, parent);
         chatBubbleTransform.localPosition = localPosition;
 
         chatBubbleTransform.GetComponent<ChatBubble>().Setup(iconType, text);
