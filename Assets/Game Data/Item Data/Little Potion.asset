@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24ca60c9ed61e4e478d9dcee8be92581, type: 3}
-  m_Name: Sword
+  m_Name: Little Potion
   m_EditorClassIdentifier: 
-  itemName: Sword
-  itemType: 1
-  itemIcon: {fileID: 21300000, guid: b259bce8f8c0e374f80aada828bcba93, type: 3}
+  itemName: Little Potion
+  itemType: 0
+  itemIcon: {fileID: 21300000, guid: c09dd93d1c8c27148b4cad97d25a9a44, type: 3}
   itemAmount: 1
   stackable: 0
-  description: 666
-  weaponPrefab: {fileID: 7385239500768500340, guid: fa8804ffc1f0ab84aa62e92bc6fc041e, type: 3}
+  description: 
+  weaponPrefab: {fileID: 0}

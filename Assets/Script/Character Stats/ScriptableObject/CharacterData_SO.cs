@@ -17,8 +17,8 @@ public enum Buff  { Nothing ,Starvation }
     [Header("其他信息")]
     public int hunger;
     public int stamina;
-    public uint coins ;
-    public uint level;
+    public int coins ;
+    public int level;
     public Buff buff;
     public CharacterData_SO()
     {

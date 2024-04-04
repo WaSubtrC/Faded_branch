@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class InventoryManager : Singleton<InventoryManager>
 {
@@ -9,11 +10,19 @@ public class InventoryManager : Singleton<InventoryManager>
     }
 
     [Header("Inventory Data")]
-    public InventoryData_SO inventoryTemplete;//保存 特定容器数据 的模板 
-    [HideInInspector]public InventoryData_SO inventoryData;
+    [Header("Inventory DataTemplate")]
+    public InventoryData_SO inventoryTemplate;//保存 特定容器数据 的模板 
+    public InventoryData_SO equipmentTemplate;
+    public InventoryData_SO actionTemplate;
+    [Header("Inventory Data")]
+    public InventoryData_SO inventoryData;
+     public InventoryData_SO equipmentData;
+     public InventoryData_SO actionData;
 
     [Header("Containers")]
     public ContainerUI inventoryUI;
+    public ContainerUI equipmentUI;
+    public ContainerUI actionUI;
 
     [Header("Drag Canvas")]
     public Canvas dragCanvas;
@@ -31,44 +40,56 @@ public class InventoryManager : Singleton<InventoryManager>
     {
         base.Awake();
 
-        AssignFromTemplete(ref inventoryTemplete, ref inventoryData);
+        AssignFromTemplete(inventoryTemplate, ref inventoryData);
+        AssignFromTemplete(equipmentTemplate, ref equipmentData);
+        AssignFromTemplete(actionTemplate, ref actionData);
 
 
-
-        void AssignFromTemplete(ref InventoryData_SO templete, ref InventoryData_SO _data)
-        {
-            if (templete != null)
-            { _data = Instantiate(templete); }
-        }
     }
 
 
     void Start()
     {
-
         inventoryUI.RefreshUI();
+        equipmentUI.RefreshUI();
+        actionUI.RefreshUI();
     }
 
-    void Update()
-    {
-
-    }
-
-
-
+    #region check functions
     //检查拖拽物品是否在每个Slot范围内
-    public bool CheckInInventoryUI(Vector3 position)
+    //新增ui加在||后
+    public bool CheckInAll(Vector3 position) 
     {
-        for (int i = 0; i < inventoryUI.slotHolders.Length; i++)
+        return CheckInUI(position, inventoryUI) ||
+               CheckInUI(position, equipmentUI) || 
+                CheckInUI(position, actionUI)    ;
+    }
+
+    #endregion
+
+    #region help functions
+    void AssignFromTemplete(InventoryData_SO template, ref InventoryData_SO data)
+    {
+        if (template != null)
         {
-            RectTransform t = inventoryUI.slotHolders[i].transform as RectTransform;
+            data = Instantiate(template);
+        }
+        else
+        {
+            Debug.LogError(template+"模板对象为空，无法创建副本。");
+        }
+    }
 
+    public bool  CheckInUI(Vector3 position,ContainerUI containerUI)
+    {
+        foreach (var slotHolder in containerUI.slotHolders) 
+        {
+            RectTransform t = slotHolder.transform as RectTransform;
             if (RectTransformUtility.RectangleContainsScreenPoint(t, position))
-            {
                 return true;
-            }
-
         }
         return false;
     }
+
+    #endregion
 }

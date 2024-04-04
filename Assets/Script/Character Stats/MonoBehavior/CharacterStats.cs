@@ -28,12 +28,33 @@ public class CharacterStats : MonoBehaviour
 
     #endregion
 
+    #region EquipWeapon
 
+    public void ChangeWeapon(ItemData_SO weapon)
+    {
+        UnEquipWeapon();
+        EquipWeapon(weapon);
+    }
     public void EquipWeapon(ItemData_SO weapon)
-   {
+    {
       if(weapon.weaponPrefab != null)
       {
          Instantiate(weapon.weaponPrefab,weaponSlot);
       }
-   }
+        //attackData.ApplayWeaponData(weapon, weaponData);
+    }
+
+    public void UnEquipWeapon()
+    {
+        if(weaponSlot.transform.childCount == 0)
+        {
+            foreach(var gameobject in weaponSlot.transform.GetComponentsInChildren<GameObject>())
+            {
+                Destroy(gameobject);
+                
+            }
+        }
+    }
+
+    #endregion
 }

@@ -10,19 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06c26fc3f29115e43b43a3c351bfdc6d, type: 3}
-  m_Name: Store_A
+  m_Name: Action
   m_EditorClassIdentifier: 
   items:
-  - itemData: {fileID: 11400000, guid: 5479e9b8f377bf342bddbce33fc3dddc, type: 2}
-    amount: 1
-  - itemData: {fileID: 11400000, guid: 5479e9b8f377bf342bddbce33fc3dddc, type: 2}
-    amount: 1
-  - itemData: {fileID: 0}
-    amount: 0
-  - itemData: {fileID: 0}
-    amount: 0
-  - itemData: {fileID: 11400000, guid: 5479e9b8f377bf342bddbce33fc3dddc, type: 2}
-    amount: 1
   - itemData: {fileID: 0}
     amount: 0
   - itemData: {fileID: 0}
@@ -47,9 +37,3 @@ MonoBehaviour:
     amount: 0
   - itemData: {fileID: 0}
     amount: 0
-  - itemData: {fileID: 0}
-    amount: 0
-  - itemData: {fileID: 0}
-    amount: 0
-  - itemData: {fileID: 11400000, guid: 5479e9b8f377bf342bddbce33fc3dddc, type: 2}
-    amount: 1

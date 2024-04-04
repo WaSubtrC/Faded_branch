@@ -15,8 +15,8 @@ public class SavaManager : Singleton<SavaManager>
 
     void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.S)) { SavePlayerData(); }
-        //if(Input.GetKeyUp(KeyCode.L)) { LoadPlayerData(); }
+        if (Input.GetKeyDown(KeyCode.F3)) { Save(); }
+        if (Input.GetKeyUp(KeyCode.F4)) { Load(); }
     }
 
     #region Saving Function

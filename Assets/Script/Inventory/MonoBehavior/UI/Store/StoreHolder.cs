@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoreHolder : MonoBehaviour
 {
     public ItemData_SO itemData;
-    public uint price;
+    public int cost;
     private CharacterStats CharacterStats;
-   // private GoodsDisplay goodsDisplay;
+    // private GoodsDisplay goodsDisplay;
     private void Start()
     {
         CharacterStats = 
@@ -22,14 +22,14 @@ public class StoreHolder : MonoBehaviour
         //bool isBackpackFull = false;
         
         //Debug.Log(isBackpackFull);
-        if (CharacterStats.characterData.coins >= price  )
+        if (CharacterStats.characterData.coins >= cost  )
         {
-            CharacterStats.characterData.coins -=price;
-        InventoryManager.Instance.inventoryData.AddItem(itemData, itemData.itemAmount);
+            CharacterStats.characterData.coins -=cost;
+        InventoryManager.Instance.inventoryData.AddItem(itemData,1); //itemData.itemAmount
         InventoryManager.Instance.inventoryUI.RefreshUI();
         }else 
         {
-            Debug.Log(" Failed");
+            Debug.Log("Buy Item Failed");
         }
     }
 }

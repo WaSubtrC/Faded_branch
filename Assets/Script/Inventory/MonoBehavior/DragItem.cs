@@ -1,20 +1,22 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
+
 
 [RequireComponent(typeof(ItemUI))]
 public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    ItemUI currentItemUI;
-    SlotHolder currentHolder;
-    SlotHolder targettHolder;
+      private ItemUI currentItemUI;
+      private SlotHolder currentHolder;
+      private  SlotHolder targettHolder;
 
     void Awake()
     {
         currentItemUI = GetComponent<ItemUI>();
         currentHolder = GetComponentInParent<SlotHolder>();
-        //Debug.Log("currentHolder1:" + currentHolder);
+        
     }
+
+    #region 接口
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -40,34 +42,58 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         //是否指向UI物品
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            if (InventoryManager.Instance.CheckInInventoryUI(eventData.position))
+            if (InventoryManager.Instance.CheckInAll(eventData.position))
             {
                 if (eventData.pointerEnter.gameObject.GetComponent<SlotHolder>())
-                { targettHolder = eventData.pointerEnter.gameObject.GetComponent<SlotHolder>(); }
+                {
+                    targettHolder = eventData.pointerEnter.gameObject.GetComponent<SlotHolder>();                  
+                }
 
-                //Debug.Log(eventData.pointerEnter.gameObject);
-                 else
-                     targettHolder = eventData.pointerEnter.gameObject.GetComponentInParent<SlotHolder>();
-
+                else
+                {
+                    targettHolder = eventData.pointerEnter.gameObject.GetComponentInParent<SlotHolder>();
+                    
+                }
                 //判断目标holder 是否 是 原来的holder
                 if (targettHolder != InventoryManager.Instance.currentDrag.originalHolder)
-                
-                    switch (targettHolder.slotType)
+                switch (targettHolder.slotType)
                     {
                         case SlotType.BAG:
                             SwapItem();
                             break;
                         case SlotType.WEAPON:
+                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Weapon)
+                            SwapItem();
                             break;
                         case SlotType.ACTION:
+                            SwapItem();
                             break;
-                        case SlotType.ARMOR:
+                        //
+                        case SlotType.ARMOR_Head:
+                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Head)
+                                SwapItem();
+                            break;
+                        case SlotType.ARMOR_Eye:
+                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Eye)
+                                SwapItem();
+                            break;
+                        case SlotType.AROMR_Tabard:
+                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Tabard)
+                                SwapItem();
+                            break;
+                        case SlotType.ARMOR_Leg:
+                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Leg)
+                                SwapItem();
+                            break;
+                        case SlotType.AROMR_Feet:
+                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Feet)
+                                SwapItem();
                             break;
                     }
                 
                 //Debug.Log("currentHolder2:" + currentHolder);
                 currentHolder.UpdateItem();
-                 targettHolder.UpdateItem();
+                targettHolder.UpdateItem();
              }
          }
 
@@ -75,18 +101,18 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
          RectTransform t =transform as RectTransform;
          //解决 拖拽后偏移 问题
-         t.offsetMax = -Vector2.one *7; //数字计算 = （相邻的格子【slotHolder】的X/y数值的差）/10
-         t.offsetMin = -Vector2.one *7;
+         t.offsetMax = -Vector2.one *10f; //数字计算 = （相邻的格子【slotHolder】的X || y数值的差）/10
+         t.offsetMin = -Vector2.one *10f;
      }
 
-
+    #endregion
 
 
     public void SwapItem()
     {
-        var targetItem = targettHolder.itemUI.Bag.items[targettHolder.itemUI.Index];
-        //Debug.Log("currentHolder3:" + currentHolder);
-        var tempItem  =  currentHolder.itemUI.Bag.items[currentHolder.itemUI.Index];
+        var targetItem = targettHolder.itemUI.bag.items[targettHolder.itemUI.Index];
+        
+        var tempItem  =  currentHolder.itemUI.bag.items[currentHolder.itemUI.Index];
 
         bool isSameItem = tempItem.itemData ==targetItem.itemData; //物品相同？
 
@@ -98,8 +124,8 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         }
         else
         {
-            currentHolder.itemUI.Bag.items[currentHolder.itemUI.Index] = targetItem;
-            targettHolder.itemUI.Bag.items[targettHolder.itemUI.Index] = tempItem;
+            currentHolder.itemUI.bag.items[currentHolder.itemUI.Index] = targetItem;
+            targettHolder.itemUI.bag.items[targettHolder.itemUI.Index] = tempItem;
                 
         }
 
