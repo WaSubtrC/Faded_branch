@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Assets/Script/Inventory/MonoBehavior/UI/ItemUI.cs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Manager/InventoryManager.cs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Manager/UIManager.cs" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/NPC/NPCInteractable.cs" charset="GBK" />
+  </component>
+</project>

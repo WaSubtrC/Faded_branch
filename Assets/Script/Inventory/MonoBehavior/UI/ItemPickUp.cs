@@ -22,6 +22,7 @@ public class ItemPickUp : MonoBehaviour,IInteractable
         InventoryManager.Instance.inventoryData.AddItem(itemData, itemData.itemAmount);
         InventoryManager.Instance.inventoryUI.RefreshUI();
 
+        TaskManager.Instance.PickUpItem(this);
         Destroy(gameObject);
     }
 

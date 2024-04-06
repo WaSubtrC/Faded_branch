@@ -23,13 +23,15 @@ public class PlayerInteract : MonoBehaviour
             float interactRange = 4f;
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
-            {   //±éÀúcollider ÊÔÍ¼»ñÈ¡ ¹ÒÔØnpc½Å±¾µÄcolliderÆäÖĞµÄ½Å±¾
+            {   //éå†collider è¯•å›¾è·å– æŒ‚è½½npcè„šæœ¬çš„colliderå…¶ä¸­çš„è„šæœ¬
+
                 if (collider.TryGetComponent(out IInteractable interactable))
                 {
                     InteractableList.Add(interactable);
                 }
             }
-            //ÓÃListËÑÑ°×î½üµÄNPC½Å±¾transform
+            //ç”¨Listæœå¯»æœ€è¿‘çš„NPCè„šæœ¬transform
+
             IInteractable closestNPCInteractable = null;
         foreach(IInteractable interactable in InteractableList)
         {

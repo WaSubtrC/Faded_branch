@@ -1,8 +1,8 @@
 using UnityEngine;
 public interface IInteractable{
 
-    void Interact();//»¥¶¯µÄÊµÏÖ·½Ê½·½·¨º¯Êı
-    string GetInteractText();//²ûÊöÎÄ±¾
+    void Interact();//äº’åŠ¨çš„å®ç°æ–¹å¼æ–¹æ³•å‡½æ•°
+    string GetInteractText();//é˜è¿°æ–‡æœ¬
 
     Transform GetTransform();
 

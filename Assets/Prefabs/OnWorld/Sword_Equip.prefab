@@ -242,4 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39c022693a22364a8ce46737dd3b48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  itemData: {fileID: 0}
+  interactText: Pick up the Item
+=======
   itemData_SO: {fileID: 11400000, guid: 5479e9b8f377bf342bddbce33fc3dddc, type: 2}
+>>>>>>> 0731b69bd2089eaa8f4e090bba2d2910ce46d34e

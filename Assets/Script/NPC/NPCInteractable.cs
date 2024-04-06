@@ -11,7 +11,7 @@ public class NPCInteractable : MonoBehaviour, IInteractable
     public void Interact() 
     {
         ChatBubble.Create(transform.transform, new Vector3(0f,0f,0f), ChatBubble.IconType.Happy,talkText);
-        
+        TaskManager.Instance.TalkWith(this);
         //额外可加代码
         //animator设置交谈状态
         //npc面朝玩家 目前不用
