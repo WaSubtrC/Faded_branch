@@ -16,7 +16,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         
     }
 
-    #region 接口
+    #region Drag Interface
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -54,7 +54,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                     targettHolder = eventData.pointerEnter.gameObject.GetComponentInParent<SlotHolder>();
                     
                 }
-                //判断目标holder 是否 是 原来的holder
+                //目标holder != 原来的holder
                 if (targettHolder != InventoryManager.Instance.currentDrag.originalHolder)
                 switch (targettHolder.slotType)
                     {
@@ -100,9 +100,9 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
          transform.SetParent(InventoryManager.Instance.currentDrag.originalParent);
 
          RectTransform t =transform as RectTransform;
-         //解决 拖拽后偏移 问题
-         t.offsetMax = -Vector2.one *10f; //数字计算 = （相邻的格子【slotHolder】的X || y数值的差）/10
-         t.offsetMin = -Vector2.one *10f;
+         //解决 拖拽后物品错位 问题
+         t.offsetMax = -Vector2.one *1f; 
+         t.offsetMin = -Vector2.one *1f;
      }
 
     #endregion

@@ -47,7 +47,7 @@ Shader "Sprites/Custom/SpriteShadow"
 #if defined(PIXELSNAP_ON)
         v.vertex = UnityPixelSnap(v.vertex);
 #endif
-
+        
         UNITY_INITIALIZE_OUTPUT(Input, o);
         o.color = v.color * _Color * _RendererColor;
     }

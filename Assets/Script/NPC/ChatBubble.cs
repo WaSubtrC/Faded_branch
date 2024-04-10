@@ -10,7 +10,8 @@ public class ChatBubble : MonoBehaviour
 
         chatBubbleTransform.GetComponent<ChatBubble>().Setup(iconType, text);
 
-        Destroy(chatBubbleTransform.gameObject,6f); //销毁 以便进入下一句话
+        if(chatBubbleTransform != null && Input.GetKeyDown(KeyCode.E))
+        Destroy(chatBubbleTransform.gameObject,3f); //销毁 以便进入下一句话
 
     }
     
