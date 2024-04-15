@@ -7,13 +7,14 @@ public class UIManager : MonoBehaviour
 {
     [Header("UIÏÔÊ¾Òþ²Ø")]
     [SerializeField] private GameObject statsBar;
+    //[SerializeField] private KeyCode keyCode;
     [SerializeField] private GameObject backpack;
     [SerializeField] private GameObject equipment;
-    [SerializeField] private GameObject actionBar;
+    [SerializeField] private GameObject actionContainer;
 
     private void Start()
     {
-        actionBar.SetActive(true);
+        actionContainer.SetActive(true);
         //StartCoroutine(ActivateActionBarAfterDelay());
     }
 

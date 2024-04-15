@@ -22,7 +22,7 @@ public class SlotHolder : MonoBehaviour,IPointerEnterHandler, IPointerExitHandle
         switch(slotType)
         {
             case SlotType.BAG:
-                itemUI.bag = InventoryManager.Instance.inventoryData; //栏位是Bag类型 添加进入
+                itemUI.bag = InventoryManager.Instance.inventoryData; 
                 break;
             case SlotType.ACTION:
                 itemUI.bag = InventoryManager.Instance.actionData;

@@ -7,7 +7,8 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 {
       private ItemUI currentItemUI;
       private SlotHolder currentHolder;
-      private  SlotHolder targettHolder;
+      private  SlotHolder targetHolder;
+      private ItemUI targetItemUI;
 
     void Awake()
     {
@@ -46,54 +47,48 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
             {
                 if (eventData.pointerEnter.gameObject.GetComponent<SlotHolder>())
                 {
-                    targettHolder = eventData.pointerEnter.gameObject.GetComponent<SlotHolder>();                  
+                    targetHolder = eventData.pointerEnter.gameObject.GetComponent<SlotHolder>();
+                    targetItemUI = targetHolder.itemUI;
+                    
                 }
 
                 else
                 {
-                    targettHolder = eventData.pointerEnter.gameObject.GetComponentInParent<SlotHolder>();
-                    
+                    targetHolder = eventData.pointerEnter.gameObject.GetComponentInParent<SlotHolder>();
+                    targetItemUI = targetHolder.itemUI;
                 }
                 //目标holder != 原来的holder
-                if (targettHolder != InventoryManager.Instance.currentDrag.originalHolder)
-                switch (targettHolder.slotType)
+                if (targetHolder != InventoryManager.Instance.currentDrag.originalHolder)
+                switch (targetHolder.slotType)
                     {
                         case SlotType.BAG:
-                            SwapItem();
+                            SwapController();
                             break;
                         case SlotType.WEAPON:
-                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Weapon)
-                            SwapItem();
+                            SwapController(ItemType.Weapon);
                             break;
                         case SlotType.ACTION:
-                            SwapItem();
+                            SwapController();
                             break;
                         //
                         case SlotType.ARMOR_Head:
-                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Head)
-                                SwapItem();
+                            SwapController(ItemType.Armor_Head);
                             break;
                         case SlotType.ARMOR_Eye:
-                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Eye)
-                                SwapItem();
+                            SwapController(ItemType.Armor_Eye);
                             break;
                         case SlotType.AROMR_Tabard:
-                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Tabard)
-                                SwapItem();
+                            SwapController(ItemType.Armor_Tabard);
                             break;
                         case SlotType.ARMOR_Leg:
-                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Leg)
-                                SwapItem();
+                            SwapController(ItemType.Armor_Leg);
                             break;
                         case SlotType.AROMR_Feet:
-                            if (currentItemUI.bag.items[currentItemUI.Index].itemData.itemType == ItemType.Armor_Feet)
-                                SwapItem();
+                            SwapController(ItemType.Armor_Feet);
                             break;
                     }
-                
-                //Debug.Log("currentHolder2:" + currentHolder);
                 currentHolder.UpdateItem();
-                targettHolder.UpdateItem();
+                targetHolder.UpdateItem();
              }
          }
 
@@ -105,16 +100,33 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
          t.offsetMin = -Vector2.one *1f;
      }
 
+private void SwapController(ItemType targetItemType)
+{
+    if (currentHolder.slotType == targetHolder.slotType || currentItemUI.GetItem().itemType == targetItemType)
+    {
+        SwapItem();
+    }
+}
+
+private void SwapController()
+{
+    if (currentHolder.slotType == targetHolder.slotType || targetItemUI.GetItem() == null || currentItemUI.GetItem().itemType == targetItemUI.GetItem().itemType)
+    {
+        SwapItem();
+    }
+}
+
+
     #endregion
 
 
     public void SwapItem()
     {
-        var targetItem = targettHolder.itemUI.bag.items[targettHolder.itemUI.Index];
+        var targetItem = targetHolder.itemUI.bag.items[targetHolder.itemUI.Index];
         
         var tempItem  =  currentHolder.itemUI.bag.items[currentHolder.itemUI.Index];
 
-        bool isSameItem = tempItem.itemData ==targetItem.itemData; //物品相同？
+        bool isSameItem = tempItem.itemData == targetItem.itemData; //物品相同？
 
         if(isSameItem && targetItem.itemData.stackable) //同物品 and 可堆叠
         {
@@ -125,7 +137,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         else
         {
             currentHolder.itemUI.bag.items[currentHolder.itemUI.Index] = targetItem;
-            targettHolder.itemUI.bag.items[targettHolder.itemUI.Index] = tempItem;
+            targetHolder.itemUI.bag.items[targetHolder.itemUI.Index] = tempItem;
                 
         }
 

@@ -21,6 +21,15 @@ public class TaskManager : Singleton<TaskManager>
     {
         for(int i=0;i<initialDatas.Count;i++)AddTask(initialDatas[i]);
     }
+    private void Update()
+    {
+        for(int i=0;i<taskItems.Count;i++)
+            if (taskItems[i].isDone)
+            {
+                taskItems[i].Done();
+                break;
+            }
+    }
 
     public void CloseTaskMenu()
     {
@@ -58,22 +67,14 @@ public class TaskManager : Singleton<TaskManager>
 
     public void TalkWith(NPCInteractable npcInteractable)
     {
-        for (int i = 0; i < taskItems.Count; i++)
+        foreach (var taskItem in taskItems)
         {
-            if (taskItems[i].data.taskType == TaskType.TALKWITH && taskItems[i].data.talkName.CompareTo(npcInteractable.gameObject.name)==0)
+
+            if (taskItem.data.taskType == TaskType.TALKWITH && taskItem.data.talkName == npcInteractable.gameObject.name)
             {
-                taskItems[i].isDone = true;
+                    taskItem.isDone = true;
             }
         }
     }
 
-    private void Update()
-    {
-        for(int i=0;i<taskItems.Count;i++)
-            if (taskItems[i].isDone)
-            {
-                taskItems[i].Done();
-                break;
-            }
-    }
 }

@@ -13,17 +13,15 @@ public class the_purple : MonoBehaviour
     {
 
         Forward,
-        Backward,
+        back,
         Left,
         Right
     }
 
     private void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        Debug.Log(navMeshAgent);
+        navMeshAgent = GetComponent<NavMeshAgent>();       
         anim = GetComponent<Animator>();
-        Debug.Log(anim);
         navMeshAgent.updateUpAxis = false;
         navMeshAgent.updateRotation = false;
     }
@@ -42,8 +40,9 @@ public class the_purple : MonoBehaviour
 
         currDir = GetDirection();
         string animationName = GetAnimationName(currDir);
-        anim.Play(animationName);
-
+        if (CheckAnimationExists(animationName))
+            anim.Play(animationName);
+        else Debug.LogError(animationName);
         Direction GetDirection()
         {
             isMoving = true;
@@ -59,8 +58,8 @@ public class the_purple : MonoBehaviour
             }
             else if (right == 0 && forward < 0)
             {
-                currDir = Direction.Backward;
-                return Direction.Backward;
+                currDir = Direction.back;
+                return Direction.back;
             }
             else if (right < 0 && forward == 0)
             {
@@ -96,8 +95,8 @@ public class the_purple : MonoBehaviour
                     }
                     else
                     {
-                        currDir = Direction.Backward;
-                        return Direction.Backward;
+                        currDir = Direction.back;
+                        return Direction.back;
                     }
                 }
             }
@@ -110,7 +109,7 @@ public class the_purple : MonoBehaviour
             {
                 case Direction.Forward:
                     return "forward_run";
-                case Direction.Backward:
+                case Direction.back:
                     return "back_run";
                 case Direction.Left:
                     return "left_run";
@@ -121,5 +120,16 @@ public class the_purple : MonoBehaviour
             }
             else return $"{currDir.ToString().ToLower()}_idle";
         }
+    }
+
+    bool CheckAnimationExists(string animationName)
+    {
+        // 获取动画层的索引，通常是0
+        int layerIndex = 0;
+        // 获取动画状态名称的哈希值
+        int stateHash = Animator.StringToHash(animationName);
+        // 检测动画状态是否存在
+        bool hasState = anim.HasState(layerIndex, stateHash);
+        return hasState;
     }
 }

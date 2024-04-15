@@ -21,7 +21,7 @@ public class Task1 : MonoBehaviour
         ThePurpleTransform = GameObject.Find("The Purple").GetComponent<Transform>();
         for(int i=0;i<waypoints.Length;i++)waypoints[i].gameObject.SetActive(false);
 
-         navMeshAgent = GameObject.Find("The Purple").GetComponent<NavMeshAgent>();
+            navMeshAgent = GameObject.Find("The Purple").GetComponent<NavMeshAgent>();
         navMeshAgent.updateUpAxis = false;
         navMeshAgent.updateRotation = false;
 
@@ -30,10 +30,9 @@ public class Task1 : MonoBehaviour
     private void Update()
     {
         navMeshAgent.speed = speed;
-
-        //MoveTo();
         MoveToPos();
     }
+
     #region Move Function
     private void MoveToPos()
     {
@@ -66,20 +65,5 @@ public class Task1 : MonoBehaviour
     
 }
 
-
-    //private void MoveTo()
-    //{
-    //    if (index == waypoints.Length) return;
-    //    var target = waypoints[index];
-    //    var dir = (target.position - ThePurpleTransform.position).normalized;
-
-    //    ThePurpleTransform.Translate(speed * Time.deltaTime * dir);
-    //    var dis = Dis(target.position, ThePurpleTransform.position);
-    //    //Debug.Log(dis);
-    //    if (dis <= threshold)
-    //    {
-    //        index++;
-    //    }
-    //}
 
 
