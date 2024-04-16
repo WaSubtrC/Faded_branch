@@ -8,11 +8,20 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: waterMat
-  m_Shader: {fileID: 4800000, guid: b4cec0af48a59914c9c5f21a07c04bf0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 986f7c6732e8a6e4881407d7f15f25c3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_ValidKeywords:
+  - _APPLYNORMALMAPPING_ON
+  - _CAUSTICS_ON
+  - _FLOW_ON
+  - _FOAM3DLIGHTING_ON
+  - _FOAM_ON
+  - _PROCEDURALSKY_ON
+  - _SUBSURFACESCATTERING_ON
+  - _TRANSPARENCY_ON
+  m_InvalidKeywords:
+  - _PROJECTION_BOTH
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -33,6 +42,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _CausticsTex:
         m_Texture: {fileID: 2800000, guid: 0d719e989c901654aa385908d6ee1046, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CausticsTexture:
+        m_Texture: {fileID: 2800000, guid: 24552fd937a31a842aa7ee1c2e14d89d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DerivHeightMap:
@@ -63,6 +76,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 802fb245d70c0ab418e245840dab2846, type: 3}
         m_Scale: {x: 0.05, y: 0.05}
         m_Offset: {x: 0, y: 0}
+    - _FoamTexture:
+        m_Texture: {fileID: 2800000, guid: 02e417d5711139342884479f53dbecea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 802fb245d70c0ab418e245840dab2846, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -77,6 +94,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
         m_Texture: {fileID: 2800000, guid: 37b421feccc9d2449ab49c6639f97e12, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normals:
+        m_Texture: {fileID: 2800000, guid: 800e061692ff7a84e887f439d3364410, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -109,14 +130,27 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Albedo: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _ApplyNormalMapping: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _Caustics: 1
+    - _CausticsDepthOfField: 0.33
+    - _CausticsDistortionScale: 25
+    - _CausticsDistortionStrength: 0.16
+    - _CausticsFocalDepth: 2
+    - _CausticsStrength: 3.2
+    - _CausticsTextureAverage: 0.07
+    - _CausticsTextureScale: 5
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ClipSurface: 0
+    - _ClipUnderTerrain: 0
     - _Cull: 2
+    - _CullMode: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
@@ -124,46 +158,100 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _Flow: 1
     - _FlowOffset: 0
     - _FlowStrength: 1
+    - _Foam: 1
+    - _Foam3DLighting: 1
+    - _FoamBubbleParallax: 0.14
     - _FoamNoise: 1
     - _FoamRange: 1
+    - _FoamScale: 10
+    - _FresnelPower: 5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _HeightScale: 1
+    - _LightIntensityMultiplier: 1
     - _Metallic: 0
+    - _NormalsScale: 40
+    - _NormalsStrength: 0.637
+    - _NormalsStrengthOverall: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _PlanarReflectionDistanceFactor: 0
+    - _PlanarReflectionIntensity: 1
+    - _PlanarReflectionNormalsStrength: 1
+    - _PlanarReflections: 0
+    - _ProceduralSky: 1
+    - _Projection: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _ReflectionBlur: 0
     - _RefractionStrength: 0.25
+    - _RefractiveIndexOfAir: 1
+    - _RefractiveIndexOfWater: 1.333
+    - _Shadows: 0
+    - _ShorelineFoamMinDepth: 0.27
+    - _SkyDirectionality: 1
     - _Smoothness: 0.5
+    - _SmoothnessFar: 0.35
+    - _SmoothnessFarDistance: 2000
+    - _SmoothnessPower: 0.5
     - _SmoothnessTextureChannel: 0
+    - _Specular: 0.7
     - _SpecularHighlights: 1
     - _Speed: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
+    - _SubSurfaceBase: 0.35
+    - _SubSurfaceDepthMax: 10
+    - _SubSurfaceDepthPower: 2.5
+    - _SubSurfaceScattering: 1
+    - _SubSurfaceShallowColour: 0
+    - _SubSurfaceSun: 1.7
+    - _SubSurfaceSunFallOff: 5
     - _Surface: 0
     - _Tiling: 1
+    - _Transparency: 1
     - _UJump: 0.25
+    - _Underwater: 0
     - _VJump: 0.25
+    - _VarySmoothnessOverDistance: 0
     - _WaterFogDensity: 0.1
     - _WaterSpeed: 0.01
+    - _WaveFoamBubblesCoverage: 1.68
+    - _WaveFoamFeather: 0.4
+    - _WaveFoamLightScale: 1.35
+    - _WaveFoamNormalStrength: 3.5
+    - _WaveFoamSpecularBoost: 0.15
+    - _WaveFoamSpecularFallOff: 293
     - _WorkflowMode: 1
     - _ZWrite: 1
     - __HeightScaleModulated: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DepthFogDensity: {r: 0.9, g: 0.3, b: 0.35, a: 1}
+    - _Diffuse: {r: 0.16553926, g: 0.48845184, b: 0.5660378, a: 1}
+    - _DiffuseGrazing: {r: 0.104683265, g: 0.26086423, b: 0.42138356, a: 1}
+    - _DiffuseShadow: {r: 0, g: 0.0013477041, b: 0.08490568, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamBubbleColor: {r: 0.6399999, g: 0.83, b: 0.82, a: 1}
     - _FoamColor: {r: 0.16470589, g: 0.16470589, b: 0.16470589, a: 1}
+    - _FoamWhiteColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SkyAwayFromSun: {r: 1, g: 1, b: 1, a: 1}
+    - _SkyBase: {r: 1, g: 1, b: 1, a: 1}
+    - _SkyTowardsSun: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SpecularBase: {r: 0.6, g: 10, b: 0.5, a: 1}
     - _SpecularColor: {r: 0.058878113, g: 0.06823925, b: 0.08176088, a: 1}
+    - _SubSurfaceColour: {r: 0.088506825, g: 0.49699998, b: 0.45615065, a: 1}
+    - _SubSurfaceShallowCol: {r: 0, g: 0.003921569, b: 0.24705881, a: 1}
+    - _SubSurfaceShallowColShadow: {r: 0, g: 0.0053968453, b: 0.16999996, a: 1}
     - _WaterBase: {r: 1, g: 2, b: 0, a: 1}
-    - _WaterColor1: {r: 0.05286577, g: 0.09562777, b: 0.20754719, a: 0.5882353}
-    - _WaterColor2: {r: 0.11075508, g: 0.12720294, b: 0.20125782, a: 0.5882353}
+    - _WaterColor1: {r: 0.05286575, g: 0.09562773, b: 0.20754716, a: 0.5529412}
+    - _WaterColor2: {r: 0.110755034, g: 0.1272029, b: 0.2012578, a: 0.41568628}
     - _WaterFogColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5256458010364995397
