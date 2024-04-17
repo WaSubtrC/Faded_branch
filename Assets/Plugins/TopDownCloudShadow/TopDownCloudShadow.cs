@@ -17,7 +17,7 @@ public class TopDownCloudShadow : MonoBehaviour
     {
         xPosition = objectToFollow.transform.position.x;
         zPosition = objectToFollow.transform.position.z;
-        this.transform.position = new Vector3(xPosition, skyLevel, zPosition);
+        //this.transform.position = new Vector3(xPosition, skyLevel, zPosition);
     }
 
 
