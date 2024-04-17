@@ -115,6 +115,15 @@ illum 0
 Ns 0.000000
 map_Kd texture_22.png
 map_d texture_22.png
+newmtl 23
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Tr 0.000000
+illum 0
+Ns 0.000000
+map_Kd texture_23.png
+map_d texture_23.png
 newmtl 25
 Ka 1.000000 1.000000 1.000000
 Kd 1.000000 1.000000 1.000000

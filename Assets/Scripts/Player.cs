@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private bool isMoving = false;
     private bool isOnWater = false;
     [SerializeField] private LayerMask waterMask;
-    [SerializeField] private ParticleSystem splash;
+    //[SerializeField] private ParticleSystem splash;
 
 
 
@@ -141,6 +141,7 @@ public class Player : MonoBehaviour
             VFX.eulerAngles = new Vector3(transform.eulerAngles.x, newAngle, transform.eulerAngles.z);
         }
 
+        /*
         if (isOnWater && isMoving)
         {
             if(!splash.isPlaying)
@@ -149,7 +150,7 @@ public class Player : MonoBehaviour
 
         else
             splash.Stop();
-
+        */
     }
 
     private void OnFlashlight()
