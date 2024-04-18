@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SavaManager : Singleton<SavaManager>
+public class SaveManager : Singleton<SaveManager>
 {
     const string PLAYER_DATA_KEY = "PlayerData";
     const string PLAYER_DATA_FILE_NAME = "PlayerData.sav";
     string sceneName = "level";
     public string SceneName {  get { return SaveSystem.LoadFromJson<string> (sceneName); } }
+
     protected override void Awake()
     {
         base.Awake();

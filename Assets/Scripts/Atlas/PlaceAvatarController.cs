@@ -11,8 +11,8 @@ public class PlaceAvatarController : MonoBehaviour
 {
     [Header("Scale for dungeon")] 
     [SerializeField] private PlaceAvatarType type = PlaceAvatarType.DUNGEON;
-    [SerializeField] private int layer = 1;
-    [SerializeField] private int level = 1;
+    public int layer = 1;
+    public int level = 1;
 
     [Header("Hints for dungeon")]
     [SerializeField] private TextMeshProUGUI hints;
@@ -24,7 +24,8 @@ public class PlaceAvatarController : MonoBehaviour
 
     public void init(int lv)
     {
-        level = lv;
+        level = Mathf.Max(1, lv + Random.Range((int)-2, (int)3));
+        layer = 1 + Random.Range((int)0, (int)2);
     }
 
     void Update()
@@ -46,7 +47,8 @@ public class PlaceAvatarController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Return))
         {
-            Debug.Log("enter");
+            Debug.Log("Enter the dungeon");
+            AtlasManager.Instance.OnTransDungeon(this);
         }
     }
 

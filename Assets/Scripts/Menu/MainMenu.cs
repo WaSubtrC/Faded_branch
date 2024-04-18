@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public  void StartGame()
+    public void StartGame()
     {
         SceneManager.LoadScene(1);
         Debug.Log("Start");
@@ -11,16 +11,16 @@ public class MainMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        //转换场景，读取进度
         try { 
-        SavaManager.Instance.Load();
-        SceneManager.LoadScene(1);
+            //SaveManager.Instance.Load();
+            SceneManager.LoadScene(1);
         }
         catch
         {
-            Debug.LogError("进度读取失败");
+            Debug.LogError("Fail to load game");
         }
     }
+
     public  void QuitGame()
     {
         Application.Quit();

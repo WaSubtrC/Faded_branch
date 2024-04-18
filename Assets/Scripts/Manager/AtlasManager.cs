@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.Linq;
 
 public class AtlasManager : Singleton<AtlasManager>
 {
@@ -24,9 +24,12 @@ public class AtlasManager : Singleton<AtlasManager>
     [SerializeField] private PlayerAvatarController playerAvatarController;
 
     [Header("Dungeon")]
-    [SerializeField] private List<RectTransform> dungeon_spawners;
-    [SerializeField] private List<RectTransform> dungeons;
-    [SerializeField] private float num_of_active_dungeons;
+    [SerializeField] private List<GameObject> dungeon_spawners;
+    private int num_of_dungeons_spawners;
+
+    [SerializeField] private List<GameObject> dungeons;
+    [SerializeField] private int num_of_dungeons;
+
     private Material material;
 
     [Header("Global Time")]
@@ -39,7 +42,12 @@ public class AtlasManager : Singleton<AtlasManager>
         material = background.material;
         material.SetFloat("_Life", 0);
 
+        num_of_dungeons_spawners = dungeon_spawners.Count;
+        num_of_dungeons = Mathf.Min(num_of_dungeons, num_of_dungeons_spawners);
+
         time = new DateTime(3059, 3, 1, 9, 10, 0);
+
+        OnSetupDungeons();
     }
 
 
@@ -49,9 +57,28 @@ public class AtlasManager : Singleton<AtlasManager>
         OnUpdateWalkTime();
     }
 
-    public void OnUpdateDungeons()
+    public void OnSetupDungeons()
     {
+        //Clean up old dungeons
+        foreach(var dungeon in dungeon_spawners)
+        {
+            dungeon.SetActive(false);
+        }
 
+        //Generate new dungeons
+        System.Random rng = new System.Random();
+        List<int> list1 = new List<int>();
+        for(int i = 0; i < num_of_dungeons_spawners; i++)
+        {
+            list1.Add(i);
+        }
+
+        List<int> list2 = list1.OrderBy(x => rng.Next()).Take(num_of_dungeons).ToList();
+        foreach(var num in list2)
+        {
+            dungeons.Add(dungeon_spawners[num]);
+            dungeon_spawners[num].SetActive(true);
+        }
     }
 
     public void OnTransTown()
@@ -61,7 +88,12 @@ public class AtlasManager : Singleton<AtlasManager>
         playerAvatarController.enabled = false;
     }
 
-    public void OnTransDungeon()
+    /* TODO:
+     *  1. Save data(player's position in town, playerAvatar's position on atlas)
+     *  2. Load dungeon scene (init by layer¡¢level£¬level decides the basic stats of monster, this can be implemented later)
+     *  3. Inherit data from CharacterStats to Player
+    */
+    public void OnTransDungeon(PlaceAvatarController dungeonAvatar)
     {
 
     }

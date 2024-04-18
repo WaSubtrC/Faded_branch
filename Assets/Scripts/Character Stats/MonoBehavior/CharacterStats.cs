@@ -4,8 +4,9 @@ public class CharacterStats : MonoBehaviour
 {
    [Header("Weapon")]
    public Transform weaponSlot;
-    [Header("Stats SO")]
-   [SerializeField]public CharacterData_SO characterData;
+   
+   [Header("Stats SO")]
+   [SerializeField] public CharacterData_SO characterData;
 
     #region Read form Data_SO
 
@@ -41,7 +42,7 @@ public class CharacterStats : MonoBehaviour
       {
          Instantiate(weapon.weaponPrefab,weaponSlot);
       }
-        //attackData.ApplayWeaponData(weapon, weaponData);
+      //attackData.ApplyWeaponData(weapon, weaponData);
     }
 
     public void UnEquipWeapon()

@@ -7,32 +7,26 @@ public class SceneController : Singleton<SceneController>
 
     public void TransitionToFirstLevel()
     {
-        StartCoroutine(LoadLevel("Town"));
+        StartCoroutine(LoadScene("Town"));
     }
     public void TransitionToLoadGame()
     {
-        StartCoroutine(LoadLevel(SavaManager.Instance.SceneName));
+        StartCoroutine(LoadScene(SaveManager.Instance.SceneName));
     }
 
-    public void TranstionToMain()
+    public void TransitionToMainMenu()
     {
-        StartCoroutine(LoadMainMenu());
+        StartCoroutine(LoadScene("Menu"));
     }
 
-    IEnumerator LoadLevel(string sceneName)
+    private IEnumerator LoadScene(string sceneName)
     {
         
         yield return SceneManager.LoadSceneAsync(sceneName);
         
-        //保存玩家数据
-        SavaManager.Instance.SavePlayerData();
+        SaveManager.Instance.SavePlayerData();
         yield break;
     }
 
 
-    IEnumerator LoadMainMenu()//返回主菜单
-    {
-        yield return SceneManager.LoadSceneAsync("Menu");
-        yield break;
-    }
 }

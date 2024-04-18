@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public enum Buff  { Nothing ,Starvation }
+
+public enum Buff {Nothing ,Starvation }
 [CreateAssetMenu(fileName ="New Data",menuName = "Character Stats/Data")]
-    public class CharacterData_SO :ScriptableObject
+public class CharacterData_SO : ScriptableObject
 {
-    //饥饿值 体力值 力量值 
     [Header("Stats Info")]
     [Header("战斗 相关状态")]
     public float maxMana;
@@ -14,12 +14,14 @@ public enum Buff  { Nothing ,Starvation }
     public float currHealth;
     public int strength;
     public float speed;
+
     [Header("其他信息")]
     public int hunger;
     public int stamina;
     public int coins ;
     public int level;
     public Buff buff;
+
     public CharacterData_SO()
     {
         // 在这里进行初始化操作，或者留空

@@ -14,10 +14,16 @@ public class GameManager : Singleton<GameManager>
         DontDestroyOnLoad(this);
     }
 
-    //public void RigisterPlayer(CharacterStats player)
-    //{
-    //    playerStats = player;
-    //}
+    private void Start()
+    {
+        Screen.SetResolution(1920, 1080, true);
+
+    }
+    
+    public void RegisterPlayer(CharacterStats player)
+    {
+        playerStats = player;
+    }
 
 
 

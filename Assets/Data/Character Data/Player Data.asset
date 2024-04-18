@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMana: 100
   currMana: 100
-  maxHealth: 100
-  currHealth: 100
+  maxHealth: 200
+  currHealth: 200
   strength: 3
   speed: 2
   hunger: 0
   stamina: 0
   coins: 400
-  level: 0
+  level: 1
   buff: 0
