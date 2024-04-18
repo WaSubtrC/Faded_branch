@@ -37,6 +37,12 @@ public class AtlasManager : Singleton<AtlasManager>
     private DateTime time;
 
 
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this);
+    }
+
     void Start()
     {
         material = background.material;
@@ -91,7 +97,7 @@ public class AtlasManager : Singleton<AtlasManager>
     /* TODO:
      *  1. Save data(player's position in town, playerAvatar's position on atlas)
      *  2. Load dungeon scene (init by layer¡¢level£¬level decides the basic stats of monster, this can be implemented later)
-     *  3. Inherit data from CharacterStats to Player
+     *  3. Inherit data from PlayerStatus to Player
     */
     public void OnTransDungeon(PlaceAvatarController dungeonAvatar)
     {

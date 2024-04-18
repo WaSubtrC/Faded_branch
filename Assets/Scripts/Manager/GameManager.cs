@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public CharacterStats playerStats;
+    public PlayerStatus playerStats;
     [Header("Prefab")]
     public Transform pfChatBubble;
 
@@ -20,7 +20,7 @@ public class GameManager : Singleton<GameManager>
 
     }
     
-    public void RegisterPlayer(CharacterStats player)
+    public void RegisterPlayer(PlayerStatus player)
     {
         playerStats = player;
     }

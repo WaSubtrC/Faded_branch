@@ -26,12 +26,11 @@ public class MainMenuWindow : MonoBehaviour
     {
         Debug.Log("save game");
         SaveManager.Instance.Save();
-
     }
 
     public void OnOptions()
     {
-        Debug.Log("options here");
+        Debug.Log("Options here");
     }
 
 

@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SaveManager : Singleton<SaveManager>
 {
-    const string PLAYER_DATA_KEY = "PlayerData";
-    const string PLAYER_DATA_FILE_NAME = "PlayerData.sav";
+    const string PLAYER_DATA_KEY = "PlayerStatus";
+    const string PLAYER_DATA_FILE_NAME = "PlayerStatus.sav";
     string sceneName = "level";
     public string SceneName {  get { return SaveSystem.LoadFromJson<string> (sceneName); } }
 
@@ -24,11 +24,10 @@ public class SaveManager : Singleton<SaveManager>
 
     //切换场景前记得使用save 以便数据不丢失保存下来
     //切换场景后记得使用Load 
-    public void SavePlayerData() {  //保存玩家的数据   
+    public void SavePlayerData() { 
         SaveSystem.SaveByJson(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.characterData);
     }
     
-
     public void LoadPlayerData() {
         SaveSystem.LoadFromJsonOverwrite(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.characterData);       
     }

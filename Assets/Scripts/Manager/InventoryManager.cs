@@ -14,10 +14,11 @@ public class InventoryManager : Singleton<InventoryManager>
     public InventoryData_SO inventoryTemplate;//保存 特定容器数据 的模板 
     public InventoryData_SO equipmentTemplate;
     public InventoryData_SO actionTemplate;
+
     [Header("Inventory Data")]
     public InventoryData_SO inventoryData;
-     public InventoryData_SO equipmentData;
-     public InventoryData_SO actionData;
+    public InventoryData_SO equipmentData;
+    public InventoryData_SO actionData;
 
     [Header("Containers")]
     public ContainerUI inventoryUI;
@@ -31,20 +32,19 @@ public class InventoryManager : Singleton<InventoryManager>
     [Header("Stats Text")]
 
     public TextAlignment healthText;
-
     public TextAlignment attackText;
+
     [Header("Tooltip")]
     public ItemTooltip tooltip;
 
     protected override void Awake()
     {
         base.Awake();
+        DontDestroyOnLoad(this);
 
         AssignFromTemplete(inventoryTemplate, ref inventoryData);
         AssignFromTemplete(equipmentTemplate, ref equipmentData);
         AssignFromTemplete(actionTemplate, ref actionData);
-
-
     }
 
 
@@ -80,7 +80,7 @@ public class InventoryManager : Singleton<InventoryManager>
         }
     }
 
-    public bool  CheckInUI(Vector3 position,ContainerUI containerUI)
+    public bool CheckInUI(Vector3 position,ContainerUI containerUI)
     {
         foreach (var slotHolder in containerUI.slotHolders) 
         {

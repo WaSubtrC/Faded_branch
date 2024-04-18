@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class UIManager : Singleton<UIManager>
 {
-    [Header("UIÏÔÊ¾Òþ²Ø")]
     [SerializeField] private GameObject statsBar;
     //[SerializeField] private KeyCode keyCode;
     [SerializeField] private GameObject backpack;
     [SerializeField] private GameObject equipment;
     [SerializeField] private GameObject actionContainer;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this);
+    }
 
     private void Start()
     {
@@ -20,11 +25,9 @@ public class UIManager : Singleton<UIManager>
 
     private void Update()
     {
-
         SetUIswitch(statsBar, KeyCode.I);
         SetUIswitch(equipment, KeyCode.I);
         SetUIswitch(backpack, KeyCode.I);
-
     }
 
     //UI_Show&Hide
@@ -36,9 +39,10 @@ public class UIManager : Singleton<UIManager>
 
     private bool InteractWithUI()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-        {
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()){
             return true;
-        }else return false;
+        }
+        else 
+            return false;
     }
 }

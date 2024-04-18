@@ -1,18 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+    public void OnNewGame()
     {
         SceneManager.LoadScene(1);
-        Debug.Log("Start");
+        Debug.Log("Start new game");
     }
 
-    public void ContinueGame()
+    public void OnContinue()
     {
         try { 
-            //SaveManager.Instance.Load();
+            SaveManager.Instance.Load();
             SceneManager.LoadScene(1);
         }
         catch
@@ -21,10 +22,21 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public  void QuitGame()
+    public void OnOptions()
+    {
+        Debug.Log("Options here");
+    }
+
+    public void OnCredit()
+    {
+        Debug.Log("Options here");
+    }
+
+    public void OnExit()
     {
         Application.Quit();
-        Debug.Log("Quit Game");
+        Debug.Log("Exit game");
     }
+
 
 }

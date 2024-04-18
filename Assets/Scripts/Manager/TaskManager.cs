@@ -12,6 +12,13 @@ public class TaskManager : Singleton<TaskManager>
     public List<TaskItem> taskItems;
     public TaskItem taskItemPrefab;
     public List<TaskItemData_SO> initialDatas;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this);
+    }
+
     public void OpenTaskMenu()
     {
         TaskMenu.SetActive(true);
@@ -19,16 +26,20 @@ public class TaskManager : Singleton<TaskManager>
 
     private void Start()
     {
-        for(int i=0;i<initialDatas.Count;i++)AddTask(initialDatas[i]);
+        for(int i = 0; i < initialDatas.Count; i++)
+            AddTask(initialDatas[i]);
     }
+
     private void Update()
     {
         for(int i=0;i<taskItems.Count;i++)
+        {
             if (taskItems[i].isDone)
             {
                 taskItems[i].Done();
                 break;
             }
+        }
     }
 
     public void CloseTaskMenu()
@@ -47,6 +58,7 @@ public class TaskManager : Singleton<TaskManager>
             }
         }
     }
+
     public void AddTask(TaskItemData_SO item)
     {
         var obj = Instantiate<TaskItem>(taskItemPrefab,TaskMenuContent.transform);
