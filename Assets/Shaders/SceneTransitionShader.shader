@@ -52,7 +52,7 @@ Shader "Custom/SceneTransitionShader"
                 _TransTex_ST.z = -_TransTex_ST.x / 2 + 0.5;
                 _TransTex_ST.w = -_TransTex_ST.y / 2 + 0.5;
                 o.uv = v.uv * _TransTex_ST.xy + _TransTex_ST.zw;
-                o.uv2 = v.uv2;
+                o.uv2 = v.uv;
                 return o;
             }
 

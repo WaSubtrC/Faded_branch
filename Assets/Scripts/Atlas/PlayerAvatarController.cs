@@ -49,6 +49,10 @@ public class PlayerAvatarController : MonoBehaviour
         {
             animator.Play("idle");
         }
+        else
+        {
+            AtlasManager.Instance.OnUpdateTravelTime();
+        }
 
     }
 
