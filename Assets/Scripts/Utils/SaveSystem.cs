@@ -87,4 +87,16 @@ public static class SaveSystem
 #endif
         }
     }
+
+    public static T DeepCopy<T>(T so) where T : ScriptableObject
+    {
+        if (so == null)
+            return null;
+
+        string json = JsonUtility.ToJson(so);
+        T clone = ScriptableObject.CreateInstance<T>();
+        JsonUtility.FromJsonOverwrite(json, clone);
+
+        return clone;
+    }
 }

@@ -22,12 +22,13 @@ public class StoreHolder : MonoBehaviour
         //bool isBackpackFull = false;
         
         //Debug.Log(isBackpackFull);
-        if (CharacterStats.characterData.coins >= cost  )
+        if (CharacterStats.playerData.coins >= cost  )
         {
-            CharacterStats.characterData.coins -=cost;
-        InventoryManager.Instance.inventoryData.AddItem(itemData,1); //itemData.itemAmount
+            CharacterStats.playerData.coins -=cost;
+        InventoryManager.Instance.inventoryData.AddItem(itemData, 1); //itemData.itemAmount
         InventoryManager.Instance.inventoryUI.RefreshUI();
-        }else 
+        }
+        else 
         {
             Debug.Log("Buy Item Failed");
         }

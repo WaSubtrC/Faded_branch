@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,14 +14,17 @@ public class MainMenu : MonoBehaviour
 
     public void OnContinue()
     {
+
         try { 
             SaveManager.Instance.Load();
-            SceneManager.LoadScene(1);
+            Debug.Log("load");
         }
         catch
         {
             Debug.LogError("Fail to load game");
+            return;
         }
+        SceneManager.LoadScene(1);
     }
 
     public void OnOptions()
@@ -29,7 +34,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnCredit()
     {
-        Debug.Log("Options here");
+        Debug.Log("Credit here");
     }
 
     public void OnExit()

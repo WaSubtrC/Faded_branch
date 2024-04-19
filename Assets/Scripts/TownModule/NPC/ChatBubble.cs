@@ -73,11 +73,6 @@ public class ChatBubble : MonoBehaviour
                 case IconType.Happy:    return happyIconSprite;
                 case IconType.Neutral:  return neutralIconSprite;
                 case IconType.Angry:    return angryIconSprite;
-               
-
-
-
-
         }
     }
 }

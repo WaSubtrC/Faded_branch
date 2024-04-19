@@ -7,9 +7,6 @@ public class NPCnavMesh : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
 
-
-
-
     private void Start()
     {
         navMeshAgent.updateUpAxis = false;

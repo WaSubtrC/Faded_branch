@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MerchantInteractable : MonoBehaviour, IInteractable
 {
@@ -8,6 +9,12 @@ public class MerchantInteractable : MonoBehaviour, IInteractable
     [SerializeField] private GameObject _storeUI;
 
     [SerializeField] private PlayerInteract playerInteract;
+
+    private void Start()
+    {
+        _storeUI = GameObject.Find("UI/InventoryCanvas/ShopWindow");
+        if (_storeUI == null) Debug.Log("Shopwindow not found");
+    }
 
     #region IInteractable
     public string GetInteractText()
@@ -22,7 +29,6 @@ public class MerchantInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-    //if null active /!=null false
         if(!_storeUI.activeInHierarchy) {       
             _storeUI.SetActive(true);
         }else { Hide(); }
@@ -41,6 +47,7 @@ public class MerchantInteractable : MonoBehaviour, IInteractable
     #region UI_FarAutoHide
     private void Hide()
     {
+        if (_storeUI == null) return;
         _storeUI.SetActive(false);
     }
     //private void Show(IInteractable interactable)

@@ -33,21 +33,21 @@ public class PlayerInteract : MonoBehaviour
         //用List搜寻最近的NPC脚本transform
 
         IInteractable closestNPCInteractable = null;
-    foreach(IInteractable interactable in InteractableList)
-    {
-        if(closestNPCInteractable == null)
+        foreach(IInteractable interactable in InteractableList)
         {
-            closestNPCInteractable = interactable;
-        }
-        else
-        {
-            if(Vector3.Distance(transform.position,interactable.GetTransform().position) <
-                Vector3.Distance(transform.position,closestNPCInteractable.GetTransform().position) )
-            {   //closer
+            if(closestNPCInteractable == null)
+            {
                 closestNPCInteractable = interactable;
             }
+            else
+            {
+                if(Vector3.Distance(transform.position,interactable.GetTransform().position) <
+                    Vector3.Distance(transform.position,closestNPCInteractable.GetTransform().position) )
+                {   //closer
+                    closestNPCInteractable = interactable;
+                }
+            }
         }
-    }
         return closestNPCInteractable;
             
     }

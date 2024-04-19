@@ -6,30 +6,59 @@ public class PlayerStatus : MonoBehaviour
    public Transform weaponSlot;
    
    [Header("Stats SO")]
-   [SerializeField] public PlayerStatus_SO characterData;
+   [SerializeField] public PlayerStatus_SO playerData;
+   [SerializeField] public PlayerStatus_SO playerDataTemplate;
 
     #region Read form Data_SO
 
 
     //public float MaxHealth
     //{
-    //    get { if(characterData != null)   return characterData.maxHealth;     else return 0;}
-    //    set { characterData.maxHealth = value;}
+    //    get { if(playerData != null)   return playerData.maxHealth;     else return 0;}
+    //    set { playerData.maxHealth = value;}
     //}
 
     //public uint coins{
-    //  get { if (characterData != null) return characterData.coins; else return 0; } 
-    //  set {  characterData.coins = value; } 
+    //  get { if (playerData != null) return playerData.coins; else return 0; } 
+    //  set {  playerData.coins = value; } 
     //}
 
     //public float CurrentHealth { 
-    //    get { if (characterData != null) { return characterData.currHealth; } else return 0; }
-    //    set { characterData.currHealth = value; }
+    //    get { if (playerData != null) { return playerData.currHealth; } else return 0; }
+    //    set { playerData.currHealth = value; }
     //}
 
     #endregion
 
     #region EquipWeapon
+
+    private void Awake()
+    {
+
+        
+    }
+
+    private void Start()
+    {
+        if (playerData == null)
+        {
+            if (GameManager.Instance.playerStats.playerData != null)
+            {
+                AssignFromTemplete(GameManager.Instance.playerStats.playerData, ref playerData);
+                Debug.Log("Init by hard disk");
+            }
+            else
+            {
+                AssignFromTemplete(playerDataTemplate, ref playerData);
+                Debug.Log("Init by dafault data");
+            }
+
+        }
+        else
+        {
+            Debug.Log("Nothing to init");
+        }
+    }
 
     public void ChangeWeapon(ItemData_SO weapon)
     {
@@ -58,4 +87,16 @@ public class PlayerStatus : MonoBehaviour
     }
 
     #endregion
+
+    void AssignFromTemplete(PlayerStatus_SO template, ref PlayerStatus_SO data)
+    {
+        if (template != null)
+        {
+            data = Instantiate(template);
+        }
+        else
+        {
+            Debug.LogError(template + "模板对象为空，无法创建副本。");
+        }
+    }
 }

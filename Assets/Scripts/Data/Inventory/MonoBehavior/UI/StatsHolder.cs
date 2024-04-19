@@ -37,25 +37,25 @@ public class StatsHolder : MonoBehaviour
         switch (valueType)
         {
             case ValueType.maxMana:
-                AssignText(valueType.ToString(), GameManager.Instance.playerStats.characterData.maxMana.ToString());
+                AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.maxMana.ToString());
                 break;
             case ValueType.currMana:
-                AssignText(valueType.ToString(), GameManager.Instance.playerStats.characterData.currMana.ToString());
+                AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.currMana.ToString());
                 break ;
             case ValueType.maxHealth: 
-                AssignText(valueType.ToString(), GameManager.Instance.playerStats.characterData.maxHealth.ToString());
+                AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.maxHealth.ToString());
                 break;
             case ValueType.currHealth:
-                AssignText(valueType.ToString(), GameManager.Instance.playerStats.characterData.currHealth.ToString());
+                AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.currHealth.ToString());
                 break;
             case ValueType.speed:
-                AssignText(valueType.ToString(), GameManager.Instance.playerStats.characterData.speed.ToString());
+                AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.speed.ToString());
                 break;
             case ValueType.coins:
-                AssignText(valueType.ToString(), GameManager.Instance.playerStats.characterData.coins.ToString());
+                AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.coins.ToString());
                 break;
             case ValueType.level:
-                AssignText(valueType.ToString(), GameManager.Instance.playerStats.characterData.level.ToString());
+                AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.level.ToString());
                 break;
             default:
                 AssignText("Error statName","Error value");

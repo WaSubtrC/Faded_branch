@@ -30,7 +30,7 @@ public class ItemTooltip : MonoBehaviour
         UpdataPos();
     }
 
-    public void UpdataPos()//position
+    public void UpdataPos()
     {
         Vector3 mousePos = Input.mousePosition;
 

@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24ca60c9ed61e4e478d9dcee8be92581, type: 3}
-  m_Name: Bag_Item
+  m_Script: {fileID: 11500000, guid: b55b58315dbd5404095f8277769184d3, type: 3}
+  m_Name: Player Default Data
   m_EditorClassIdentifier: 
-  itemName: Bag
-  itemType: 2
-  itemIcon: {fileID: 21300000, guid: 48cf791942123f54f9e08fa3f2838d5c, type: 3}
-  itemAmount: 1
-  stackable: 0
-  description: 
-  weaponPrefab: {fileID: 0}
+  coins: 500
+  position: {x: 0, y: 0, z: 0}
+  level: 1
+  maxMana: 100
+  currMana: 100
+  maxHealth: 200
+  currHealth: 200
+  speed: 2
+  baseDamage: 20
+  baseDefend: 0

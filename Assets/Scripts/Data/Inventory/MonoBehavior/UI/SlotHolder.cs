@@ -10,7 +10,7 @@ public enum SlotType
     AROMR_Tabard,
     ARMOR_Leg,
     AROMR_Feet,
-    } //单元格类型: 背包的， 武器，护甲，下方快捷栏
+} //单元格类型: 背包的， 武器，护甲，下方快捷栏
 
 public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {

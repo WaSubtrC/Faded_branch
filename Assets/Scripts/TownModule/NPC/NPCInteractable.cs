@@ -39,8 +39,8 @@ public class NPCInteractable : MonoBehaviour, IInteractable
         if (flowchart.HasBlock(chatName_01))
         {
             flowchart.ExecuteBlock(chatName_01);
-        }else { Debug.LogWarning(chatName_01 + "can not found;"); }
-        //---·Ö¸îÏß---
+        }
+        else { Debug.LogWarning(chatName_01 + "can not found;"); }
    
     }
     private IEnumerator StartTask()

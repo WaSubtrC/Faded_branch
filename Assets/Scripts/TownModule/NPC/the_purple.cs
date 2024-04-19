@@ -11,7 +11,6 @@ public class the_purple : MonoBehaviour
 
     enum Direction
     {
-
         Forward,
         back,
         Left,
@@ -28,7 +27,6 @@ public class the_purple : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(navMeshAgent.velocity);
         AnimController();
     }
     void AnimController()

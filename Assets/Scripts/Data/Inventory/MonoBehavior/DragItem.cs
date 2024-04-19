@@ -7,14 +7,13 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 {
       private ItemUI currentItemUI;
       private SlotHolder currentHolder;
-      private  SlotHolder targetHolder;
+      private SlotHolder targetHolder;
       private ItemUI targetItemUI;
 
     void Awake()
     {
         currentItemUI = GetComponent<ItemUI>();
         currentHolder = GetComponentInParent<SlotHolder>();
-        
     }
 
     #region Drag Interface
@@ -30,7 +29,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         transform.SetParent(InventoryManager.Instance.dragCanvas.transform, true);
 
     }
-
+    
     public void OnDrag(PointerEventData eventData)
     {
         //跟随鼠标移动拖拽
@@ -59,7 +58,7 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                 }
                 //目标holder != 原来的holder
                 if (targetHolder != InventoryManager.Instance.currentDrag.originalHolder)
-                switch (targetHolder.slotType)
+                    switch (targetHolder.slotType)
                     {
                         case SlotType.BAG:
                             SwapController();
@@ -70,7 +69,6 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
                         case SlotType.ACTION:
                             SwapController();
                             break;
-                        //
                         case SlotType.ARMOR_Head:
                             SwapController(ItemType.Armor_Head);
                             break;
@@ -94,27 +92,27 @@ public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
          transform.SetParent(InventoryManager.Instance.currentDrag.originalParent);
 
-         RectTransform t =transform as RectTransform;
+         RectTransform t = transform as RectTransform;
          //解决 拖拽后物品错位 问题
          t.offsetMax = -Vector2.one *1f; 
          t.offsetMin = -Vector2.one *1f;
      }
 
-private void SwapController(ItemType targetItemType)
-{
-    if (currentHolder.slotType == targetHolder.slotType || currentItemUI.GetItem().itemType == targetItemType)
+    private void SwapController(ItemType targetItemType)
     {
-        SwapItem();
+        if (currentHolder.slotType == targetHolder.slotType || currentItemUI.GetItem().itemType == targetItemType)
+        {
+            SwapItem();
+        }
     }
-}
 
-private void SwapController()
-{
-    if (currentHolder.slotType == targetHolder.slotType || targetItemUI.GetItem() == null || currentItemUI.GetItem().itemType == targetItemUI.GetItem().itemType)
+    private void SwapController()
     {
-        SwapItem();
+        if (currentHolder.slotType == targetHolder.slotType || targetItemUI.GetItem() == null || currentItemUI.GetItem().itemType == targetItemUI.GetItem().itemType)
+        {
+            SwapItem();
+        }
     }
-}
 
 
     #endregion

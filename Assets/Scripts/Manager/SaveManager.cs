@@ -25,11 +25,11 @@ public class SaveManager : Singleton<SaveManager>
     //切换场景前记得使用save 以便数据不丢失保存下来
     //切换场景后记得使用Load 
     public void SavePlayerData() { 
-        SaveSystem.SaveByJson(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.characterData);
+        SaveSystem.SaveByJson(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.playerData);
     }
     
     public void LoadPlayerData() {
-        SaveSystem.LoadFromJsonOverwrite(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.characterData);       
+        SaveSystem.LoadFromJsonOverwrite(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.playerData);       
     }
 
     public void SaveInventoryData(){
