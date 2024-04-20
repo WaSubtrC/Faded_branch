@@ -6,7 +6,6 @@ using UnityEngine;
 public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private GameObject statsBar;
-    //[SerializeField] private KeyCode keyCode;
     [SerializeField] private GameObject backpack;
     [SerializeField] private GameObject equipment;
     [SerializeField] private GameObject actionContainer;
@@ -30,7 +29,12 @@ public class UIManager : Singleton<UIManager>
         SetUIswitch(backpack, KeyCode.I);
     }
 
-    //UI_Show&Hide
+    // load new scene
+    public void SetUp()
+    {
+        gameObject.GetComponentInChildren<MainMenuWindow>().menu.SetActive(false);
+    }
+
     void SetUIswitch(GameObject go, KeyCode key)
     {
         if (Input.GetKeyUp(key))
@@ -45,4 +49,6 @@ public class UIManager : Singleton<UIManager>
         else 
             return false;
     }
+
+
 }

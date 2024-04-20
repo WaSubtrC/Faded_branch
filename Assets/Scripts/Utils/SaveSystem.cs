@@ -6,7 +6,7 @@ public static class SaveSystem
     public static void SaveByJson(string saveFileName, object data)
     {
         var json = JsonUtility.ToJson(data);
-        var path = Path.Combine(Application.persistentDataPath,  saveFileName); ;
+        var path = Path.Combine(Application.dataPath + "/save",  saveFileName); ;
 
         try
         {
@@ -26,7 +26,7 @@ public static class SaveSystem
 
     public static T LoadFromJson<T>(string saveFileName)
     {
-        var path = Path.Combine(Application.persistentDataPath, saveFileName);
+        var path = Path.Combine(Application.dataPath + "/save", saveFileName);
         try
         {
             var json = File.ReadAllText(path);
@@ -49,7 +49,7 @@ public static class SaveSystem
 
     public static void LoadFromJsonOverwrite<T>(string saveFileName, T savedData)
     {
-        var path = Path.Combine(Application.persistentDataPath,  saveFileName);
+        var path = Path.Combine(Application.dataPath + "/save",  saveFileName);
         try
         {
             var json = File.ReadAllText(path);
@@ -71,7 +71,7 @@ public static class SaveSystem
 
     public static void DeleteSaveFile(string saveFileName)
     {
-        var path = Path.Combine(Application.persistentDataPath,  saveFileName);
+        var path = Path.Combine(Application.dataPath + "/save",  saveFileName);
 
         try
         {

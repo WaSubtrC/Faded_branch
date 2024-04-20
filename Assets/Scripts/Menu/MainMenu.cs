@@ -8,39 +8,31 @@ public class MainMenu : MonoBehaviour
 {
     public void OnNewGame()
     {
-        SceneManager.LoadScene(1);
-        Debug.Log("Start new game");
+        GameManager.Instance.StartNewGame();
     }
 
     public void OnContinue()
     {
-
-        try { 
-            SaveManager.Instance.Load();
-            Debug.Log("load");
-        }
-        catch
-        {
-            Debug.LogError("Fail to load game");
-            return;
-        }
-        SceneManager.LoadScene(1);
+        GameManager.Instance.ContinueGame();
     }
 
     public void OnOptions()
     {
+#if UNITY_EDITOR
         Debug.Log("Options here");
+#endif
     }
 
     public void OnCredit()
     {
+#if UNITY_EDITOR
         Debug.Log("Credit here");
+#endif
     }
 
     public void OnExit()
     {
-        Application.Quit();
-        Debug.Log("Exit game");
+        GameManager.Instance.ExitGame();
     }
 
 

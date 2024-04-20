@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuWindow : MonoBehaviour
 {
-    [SerializeField] private GameObject menu;
+    [SerializeField] public GameObject menu;
 
     private void Start()
     {
@@ -24,19 +24,21 @@ public class MainMenuWindow : MonoBehaviour
 
     public void OnSave()
     {
-        Debug.Log("save game");
-        SaveManager.Instance.Save();
+        DataManager.Instance.Save();
     }
 
     public void OnOptions()
     {
+#if UNITY_EDITOR
         Debug.Log("Options here");
+#endif
     }
 
 
     public void OnReturnToMainMenu()
     {
-        SaveManager.Instance.Save();
+        DataManager.Instance.Save();
+        UIManager.Instance.gameObject.SetActive(false);
         SceneManager.LoadSceneAsync("Menu");
     }
 

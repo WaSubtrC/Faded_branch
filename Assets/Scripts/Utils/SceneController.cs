@@ -11,7 +11,7 @@ public class SceneController : Singleton<SceneController>
     }
     public void TransitionToLoadGame()
     {
-        StartCoroutine(LoadScene(SaveManager.Instance.SceneName));
+        StartCoroutine(LoadScene(DataManager.Instance.SceneName));
     }
 
     public void TransitionToMainMenu()
@@ -23,7 +23,7 @@ public class SceneController : Singleton<SceneController>
     {        
         yield return SceneManager.LoadSceneAsync(sceneName);
 
-        SaveManager.Instance.SavePlayerData();
+        DataManager.Instance.SavePlayerData();
         yield break;
     }
 
