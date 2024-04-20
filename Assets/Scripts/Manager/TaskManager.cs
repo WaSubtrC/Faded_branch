@@ -5,6 +5,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
+using Faded.Town;
+
 public class TaskManager : Singleton<TaskManager>
 {
     public GameObject TaskMenuContent;

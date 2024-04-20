@@ -3,37 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class MainMenu : MonoBehaviour
-{
-    public void OnNewGame()
+namespace Faded{
+    public class MainMenu : MonoBehaviour
     {
-        GameManager.Instance.StartNewGame();
-    }
+        public void OnNewGame()
+        {
+            GameManager.Instance.StartNewGame();
+        }
 
-    public void OnContinue()
-    {
-        GameManager.Instance.ContinueGame();
-    }
+        public void OnContinue()
+        {
+            GameManager.Instance.ContinueGame();
+        }
 
-    public void OnOptions()
-    {
+        public void OnOptions()
+        {
 #if UNITY_EDITOR
-        Debug.Log("Options here");
+            Debug.Log("Options here");
 #endif
-    }
+        }
 
-    public void OnCredit()
-    {
+        public void OnCredit()
+        {
 #if UNITY_EDITOR
-        Debug.Log("Credit here");
+            Debug.Log("Credit here");
 #endif
-    }
+        }
 
-    public void OnExit()
-    {
-        GameManager.Instance.ExitGame();
-    }
+        public void OnExit()
+        {
+            GameManager.Instance.ExitGame();
+        }
 
+
+    }
 
 }

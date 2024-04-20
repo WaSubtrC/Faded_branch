@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
+using FadedTown;
 
 public class VFXManager : Singleton<VFXManager>
 {

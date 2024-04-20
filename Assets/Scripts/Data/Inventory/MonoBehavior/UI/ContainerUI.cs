@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace FadedTown {
 public class ContainerUI : MonoBehaviour
 {
     public SlotHolder[] slotHolders;
@@ -12,4 +13,5 @@ public class ContainerUI : MonoBehaviour
             holder.UpdateItem();
         }
     }
+}
 }

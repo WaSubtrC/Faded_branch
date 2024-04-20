@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 
 
+namespace FadedTown {
 public class ItemTooltip : MonoBehaviour
 {
     public TextMeshProUGUI ItemNameText;
@@ -48,4 +49,5 @@ public class ItemTooltip : MonoBehaviour
             rectTransform.position = mousePos + Vector3.left * width * 0.6f;
        
     }
+}
 }

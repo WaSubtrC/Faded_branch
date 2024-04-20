@@ -1,45 +1,51 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuWindow : MonoBehaviour
+
+namespace Faded
 {
-    [SerializeField] public GameObject menu;
-
-    private void Start()
+    public class MainMenuWindow : MonoBehaviour
     {
-        menu.SetActive(false);
-    }
+        [SerializeField] public GameObject menu;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape)){
-            menu.SetActive(!menu.activeSelf);
+        private void Start()
+        {
+            menu.SetActive(false);
         }
-    }
 
-    public void OnContinue()
-    {
-        menu.SetActive(false);
-    }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                menu.SetActive(!menu.activeSelf);
+            }
+        }
 
-    public void OnSave()
-    {
-        DataManager.Instance.Save();
-    }
+        public void OnContinue()
+        {
+            menu.SetActive(false);
+        }
 
-    public void OnOptions()
-    {
+        public void OnSave()
+        {
+            DataManager.Instance.Save();
+        }
+
+        public void OnOptions()
+        {
 #if UNITY_EDITOR
-        Debug.Log("Options here");
+            Debug.Log("Options here");
 #endif
+        }
+
+
+        public void OnReturnToMainMenu()
+        {
+            DataManager.Instance.Save();
+            UIManager.Instance.gameObject.SetActive(false);
+            SceneManager.LoadSceneAsync(Constants.MENU_SCENE_NAME);
+        }
+
     }
-
-
-    public void OnReturnToMainMenu()
-    {
-        DataManager.Instance.Save();
-        UIManager.Instance.gameObject.SetActive(false);
-        SceneManager.LoadSceneAsync(Constants.MENU_SCENE_NAME);
-    }
-
 }
+

@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomeAvatar : PlaceAvatarBase
+namespace Faded.Atlas
 {
-    protected override void OnEnter()
+    public class HomeAvatar : PlaceAvatarBase
     {
-        base.OnEnter();
-        AtlasManager.Instance.OnTransPlace();
-        GameManager.Instance.OnEnterHome();
+        protected override void OnEnter()
+        {
+            base.OnEnter();
+            AtlasManager.Instance.OnTransPlace();
+            GameManager.Instance.OnEnterHome();
+        }
     }
+
 }

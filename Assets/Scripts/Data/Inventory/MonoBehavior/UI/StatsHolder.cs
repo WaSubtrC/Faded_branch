@@ -8,6 +8,7 @@ enum ValueType
   Hunger,Stamina,coins,
   level, buff 
 }
+namespace FadedTown {
 public class StatsHolder : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI statName;
@@ -73,4 +74,5 @@ public class StatsHolder : MonoBehaviour
         }
         StatValue.text = _valueText;
     }
+}
 }

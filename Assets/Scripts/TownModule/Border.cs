@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Border : MonoBehaviour
-{
-
-    [SerializeField] GameObject Atlas;
-
-    private void OnTriggerEnter(Collider other)
+namespace Faded.Town{
+    public class Border : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+
+        [SerializeField] GameObject Atlas;
+
+        private void OnTriggerEnter(Collider other)
         {
-            Atlas.SetActive(true);
-            AtlasManager.Instance.OnTransAtlas();
+            if (other.CompareTag("Player"))
+            {
+                AtlasManager.Instance.atlas.SetActive(true);
+                AtlasManager.Instance.OnTransAtlas();
+
+            }
 
         }
-
     }
 }
+

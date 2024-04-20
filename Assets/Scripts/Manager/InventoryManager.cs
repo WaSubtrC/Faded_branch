@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
+using FadedTown;
+
 public class InventoryManager : Singleton<InventoryManager>
 {
     public class DragData

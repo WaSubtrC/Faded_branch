@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
 
+using Faded;
+
 public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private GameObject statsBar;

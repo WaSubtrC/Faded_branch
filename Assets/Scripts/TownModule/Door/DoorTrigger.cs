@@ -2,26 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum TriggerType { InDoor, OutDoor }
-
-public class DoorTrigger : MonoBehaviour
+namespace Faded.Town
 {
+    enum TriggerType { InDoor, OutDoor }
 
-    [SerializeField] private Door door;
-    [SerializeField] private TriggerType type;
-
-    private void OnTriggerEnter(Collider other)
+    public class DoorTrigger : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+
+        [SerializeField] private Door door;
+        [SerializeField] private TriggerType type;
+
+        private void OnTriggerEnter(Collider other)
         {
-            if (type == TriggerType.InDoor)
-                door.OnEnter();
-            else
+            if (other.CompareTag("Player"))
             {
-                door.OnExit();
+                if (type == TriggerType.InDoor)
+                    door.OnEnter();
+                else
+                {
+                    door.OnExit();
+                }
+
             }
 
         }
-
     }
 }
+

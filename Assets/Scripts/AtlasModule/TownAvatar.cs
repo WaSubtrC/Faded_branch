@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TownAvatar : PlaceAvatarBase
+namespace Faded.Atlas 
 {
-    protected override void OnEnter()
+    public class TownAvatar : PlaceAvatarBase
     {
-        base.OnEnter();
-        AtlasManager.Instance.OnTransPlace();
-        GameManager.Instance.OnEnterTown();
+        protected override void OnEnter()
+        {
+            base.OnEnter();
+            AtlasManager.Instance.OnTransPlace();
+            GameManager.Instance.OnEnterTown();
+        }
     }
 }

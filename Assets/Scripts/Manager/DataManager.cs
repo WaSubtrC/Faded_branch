@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using FadedTown;
+
 public class DataManager : Singleton<DataManager>
 {
     const string PLAYER_DATA_KEY = "PlayerStatus";

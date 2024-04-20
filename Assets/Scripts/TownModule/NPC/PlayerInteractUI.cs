@@ -3,49 +3,56 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class PlayerInteractUI : MonoBehaviour
+namespace Faded.Town 
 {
-    [SerializeField] private GameObject containerGameObject;
-    [SerializeField] private PlayerInteract playerInteract;
-    [SerializeField] private TextMeshProUGUI interactTextMeshProUGUI;
-
-    private void Update()
+    public class PlayerInteractUI : MonoBehaviour
     {
-        if (playerInteract == null) return;
-        if(playerInteract.GetInteractableObject() != null)
+        [SerializeField] private GameObject containerGameObject;
+        [SerializeField] private PlayerInteract playerInteract;
+        [SerializeField] private TextMeshProUGUI interactTextMeshProUGUI;
+
+        private void Update()
         {
-            Show(playerInteract.GetInteractableObject());
-        }else { 
-            Hide(); 
+            if (playerInteract == null) return;
+            if (playerInteract.GetInteractableObject() != null)
+            {
+                Show(playerInteract.GetInteractableObject());
+            }
+            else
+            {
+                Hide();
+            }
         }
-    }
 
-    private void Show(IInteractable interactable)
-    {
-        containerGameObject.SetActive(true);
-        interactTextMeshProUGUI.text = interactable.GetInteractText(); //互动提示文本==NPC特定互动文本
-    }
-    private void Hide()
-    {
-        containerGameObject.SetActive(false);
-    }
-
-    void OnEnable()
-    {
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (playerInteract == null)
+        private void Show(IInteractable interactable)
         {
-            playerInteract = GameObject.FindWithTag("Player")?.GetComponent<PlayerInteract>();
+            containerGameObject.SetActive(true);
+            interactTextMeshProUGUI.text = interactable.GetInteractText(); //互动提示文本==NPC特定互动文本
+        }
+        private void Hide()
+        {
+            containerGameObject.SetActive(false);
+        }
+
+        void OnEnable()
+        {
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (playerInteract == null)
+            {
+                playerInteract = GameObject.FindWithTag("Player")?.GetComponent<PlayerInteract>();
+            }
         }
     }
 }
+
+

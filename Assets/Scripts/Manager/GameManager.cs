@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using FadedTown;
 
 public class GameManager : Singleton<GameManager>
 {

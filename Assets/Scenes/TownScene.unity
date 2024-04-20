@@ -18428,7 +18428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561341183719349429, guid: 7916a45d430a2b54cb2f161def29aa79, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnTransTown
+      value: OnTransPlace
       objectReference: {fileID: 0}
     - target: {fileID: 2561341183719349429, guid: 7916a45d430a2b54cb2f161def29aa79, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

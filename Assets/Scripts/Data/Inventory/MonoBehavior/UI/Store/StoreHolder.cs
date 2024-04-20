@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace FadedTown {
 public class StoreHolder : MonoBehaviour
 {
     public ItemData_SO itemData;
@@ -33,4 +34,5 @@ public class StoreHolder : MonoBehaviour
             Debug.Log("Buy Item Failed");
         }
     }
+}
 }

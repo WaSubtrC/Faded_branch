@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+namespace FadedTown {
 public class DragPanel : MonoBehaviour, IDragHandler,IPointerDownHandler
 {
     RectTransform rectTransform;
@@ -24,4 +25,5 @@ public class DragPanel : MonoBehaviour, IDragHandler,IPointerDownHandler
     {
         rectTransform.SetSiblingIndex(1); // 括号数字--数字越大 图层在前 * 保证DragPanel在数字最大
     }
+}
 }

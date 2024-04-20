@@ -1,54 +1,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInteract : MonoBehaviour
+
+namespace Faded.Town 
 {
-
-    void Update()
+    public class PlayerInteract : MonoBehaviour
     {
-        
-        if (Input.GetKeyDown(KeyCode.E))
+
+        void Update()
         {
-            IInteractable interactable = GetInteractableObject();
-            if(interactable != null)
-            {
-                interactable.Interact();
-            }
-        }
-    }
 
-    public IInteractable GetInteractableObject()
-    {
-        List<IInteractable> InteractableList = new List<IInteractable>();
-        float interactRange = 4f;
-        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-        foreach (Collider collider in colliderArray)
-        {   //遍历collider 试图获取 挂载npc脚本的collider其中的脚本
-
-            if (collider.TryGetComponent(out IInteractable interactable))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                InteractableList.Add(interactable);
-            }
-        }
-        //用List搜寻最近的NPC脚本transform
-
-        IInteractable closestNPCInteractable = null;
-        foreach(IInteractable interactable in InteractableList)
-        {
-            if(closestNPCInteractable == null)
-            {
-                closestNPCInteractable = interactable;
-            }
-            else
-            {
-                if(Vector3.Distance(transform.position,interactable.GetTransform().position) <
-                    Vector3.Distance(transform.position,closestNPCInteractable.GetTransform().position) )
-                {   //closer
-                    closestNPCInteractable = interactable;
+                IInteractable interactable = GetInteractableObject();
+                if (interactable != null)
+                {
+                    interactable.Interact();
                 }
             }
         }
-        return closestNPCInteractable;
-            
+
+        public IInteractable GetInteractableObject()
+        {
+            List<IInteractable> InteractableList = new List<IInteractable>();
+            float interactRange = 4f;
+            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+            foreach (Collider collider in colliderArray)
+            {   //遍历collider 试图获取 挂载npc脚本的collider其中的脚本
+
+                if (collider.TryGetComponent(out IInteractable interactable))
+                {
+                    InteractableList.Add(interactable);
+                }
+            }
+            //用List搜寻最近的NPC脚本transform
+
+            IInteractable closestNPCInteractable = null;
+            foreach (IInteractable interactable in InteractableList)
+            {
+                if (closestNPCInteractable == null)
+                {
+                    closestNPCInteractable = interactable;
+                }
+                else
+                {
+                    if (Vector3.Distance(transform.position, interactable.GetTransform().position) <
+                        Vector3.Distance(transform.position, closestNPCInteractable.GetTransform().position))
+                    {   //closer
+                        closestNPCInteractable = interactable;
+                    }
+                }
+            }
+            return closestNPCInteractable;
+
+        }
     }
 }
+
+

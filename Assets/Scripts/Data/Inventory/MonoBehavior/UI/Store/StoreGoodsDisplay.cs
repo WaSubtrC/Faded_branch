@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace FadedTown {
 public class StoreGoodsDisplay : MonoBehaviour
 {
     public Image icon = null;
@@ -26,4 +27,5 @@ public class StoreGoodsDisplay : MonoBehaviour
 
 
 
+}
 }

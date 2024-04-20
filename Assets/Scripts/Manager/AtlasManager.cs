@@ -1,10 +1,16 @@
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
-using System.Linq;
+
+
+using Faded.Town;
+using Faded.Atlas;
 
 public class AtlasManager : Singleton<AtlasManager>
 {
@@ -66,7 +72,7 @@ public class AtlasManager : Singleton<AtlasManager>
     public void OnSetupDungeons()
     {
         //Clean up old dungeons
-        foreach(var dungeon in dungeon_spawners)
+        foreach (var dungeon in dungeon_spawners)
         {
             dungeon.SetActive(false);
         }
@@ -74,13 +80,13 @@ public class AtlasManager : Singleton<AtlasManager>
         //Generate new dungeons
         System.Random rng = new System.Random();
         List<int> list1 = new List<int>();
-        for(int i = 0; i < num_of_dungeons_spawners; i++)
+        for (int i = 0; i < num_of_dungeons_spawners; i++)
         {
             list1.Add(i);
         }
 
         List<int> list2 = list1.OrderBy(x => rng.Next()).Take(num_of_dungeons).ToList();
-        foreach(var num in list2)
+        foreach (var num in list2)
         {
             dungeons.Add(dungeon_spawners[num]);
             dungeon_spawners[num].SetActive(true);
@@ -143,4 +149,23 @@ public class AtlasManager : Singleton<AtlasManager>
         time = time.AddHours(Time.deltaTime);
         clockText.text = $"Year:{time.Year} Mouth:{time.Month} Day:{time.Day}  {time.Hour}:{time.Minute}";
     }
+
+    #region Init
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        playerController = GameObject.Find("The Boy").GetComponent<PlayerController>();
+    }
+    #endregion
 }
+

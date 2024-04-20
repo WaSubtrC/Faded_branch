@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
+namespace FadedTown {
 public enum SlotType
 {
     BAG, WEAPON, ACTION,
@@ -100,3 +101,4 @@ public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
 }
 
+}

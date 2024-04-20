@@ -9,6 +9,7 @@ using UnityEngine;
     //    public ItemData_SO item;
     //    public int cost;
     //}
+namespace FadedTown {
 public class Store_ContainerUI : MonoBehaviour
 {
     //[SerializeField] private StoreHolder[] storeHolderArray;
@@ -38,4 +39,5 @@ public class Store_ContainerUI : MonoBehaviour
     //        goodsHolderArray[i].StoreHolder = storeHolderArray[i];
     //    }
     //}
+}
 }
