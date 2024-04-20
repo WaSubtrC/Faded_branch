@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : Singleton<SceneController>
 {
-
+    /*
     public void TransitionToFirstLevel()
     {
         StartCoroutine(LoadScene("Town"));
@@ -26,6 +26,6 @@ public class SceneController : Singleton<SceneController>
         DataManager.Instance.SavePlayerData();
         yield break;
     }
-
+    */
 
 }

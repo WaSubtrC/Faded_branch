@@ -39,7 +39,7 @@ public class MainMenuWindow : MonoBehaviour
     {
         DataManager.Instance.Save();
         UIManager.Instance.gameObject.SetActive(false);
-        SceneManager.LoadSceneAsync("Menu");
+        SceneManager.LoadSceneAsync(Constants.MENU_SCENE_NAME);
     }
 
 }

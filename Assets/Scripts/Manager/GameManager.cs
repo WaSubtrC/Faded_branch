@@ -29,15 +29,61 @@ public class GameManager : Singleton<GameManager>
 
         AppendLog("Start game at" + DateTime.Now.ToString());
     }
-    
+
+    #region Atlas
+    public void OnEnterTown()
+    {
+        SceneManager.LoadScene(Constants.TOWN_SCENE_NAME);
+    }
+
+    public void OnEnterHome()
+    {
+        SceneManager.LoadScene(Constants.HOME_SCENE_NAME);
+    }
+
+
+
+/* TODO:
+ *  1. Save data(player's position in town, playerAvatar's position on atlas)
+ *  2. Load dungeon scene (init by layer¡¢level£¬level decides the basic stats of monster, this can be implemented later)
+ *  3. Inherit data from PlayerStatus to Player
+*/
+    public void OnEnterDungeon()
+    {
+        SceneManager.LoadScene(Constants.DUNGEON_SCENE_NAME);
+    }
+
+    #endregion
+
+    #region Init
     public void RegisterPlayer(PlayerStatus player)
     {
         playerStats = player;
     }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+            playerStats = player.GetComponent<PlayerStatus>();
+    }
+    #endregion
+
+
+    #region Menu
     public void StartNewGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Constants.TOWN_SCENE_NAME);
         UIManager.Instance.gameObject.SetActive(true);
         UIManager.Instance.SetUp();
 #if UNITY_EDITOR
@@ -69,10 +115,10 @@ public class GameManager : Singleton<GameManager>
 #endif
         AppendLog("Start game at" + DateTime.Now.ToString());
     }
+    #endregion
 
 
-
-    #region log
+    #region Log
     public static void AppendLog(string message)
     {
         var logPath = Path.Combine(Application.dataPath, "debug.log");
@@ -85,24 +131,6 @@ public class GameManager : Singleton<GameManager>
 
 
 
-    #region initialization
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        GameObject player = GameObject.FindWithTag("Player");
-        if(player != null)
-            playerStats = player.GetComponent<PlayerStatus>();
-    }
-    #endregion
 
 
 

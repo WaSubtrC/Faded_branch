@@ -6,7 +6,7 @@ public class DataManager : Singleton<DataManager>
     const string PLAYER_DATA_KEY = "PlayerStatus";
     const string PLAYER_DATA_FILE_NAME = "PlayerStatus.sav";
     string sceneName = "level";
-    public string SceneName {  get { return SaveSystem.LoadFromJson<string> (sceneName); } }
+    public string SceneName {  get { return DataSystem.LoadFromJson<string> (sceneName); } }
 
     protected override void Awake()
     {
@@ -23,24 +23,24 @@ public class DataManager : Singleton<DataManager>
     #region Saving Function
 
     public void SavePlayerData() { 
-        SaveSystem.SaveByJson(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.playerData);
+        DataSystem.SaveByJson(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.playerData);
     }
     
     public void LoadPlayerData() {
-        SaveSystem.LoadFromJsonOverwrite(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.playerData);       
+        DataSystem.LoadFromJsonOverwrite(PLAYER_DATA_FILE_NAME, GameManager.Instance.playerStats.playerData);       
     }
 
     public void SaveInventoryData(){
-        SaveSystem.SaveByJson(InventoryManager.Instance.inventoryData.name, InventoryManager.Instance.inventoryData);
+        DataSystem.SaveByJson(InventoryManager.Instance.inventoryData.name, InventoryManager.Instance.inventoryData);
     }
     public void LoadInventoryData() {
-        SaveSystem.LoadFromJsonOverwrite(InventoryManager.Instance.inventoryData.name, InventoryManager.Instance.inventoryData);
+        DataSystem.LoadFromJsonOverwrite(InventoryManager.Instance.inventoryData.name, InventoryManager.Instance.inventoryData);
     }
     public void Save() 
     {
         SavePlayerData();
         SaveInventoryData();
-        SaveSystem.SaveByJson(sceneName, SceneManager.GetActiveScene().name);   //保存当前场景
+        DataSystem.SaveByJson(sceneName, SceneManager.GetActiveScene().name);   //保存当前场景
     }
     public void Load() 
     {
@@ -62,7 +62,7 @@ public class DataManager : Singleton<DataManager>
     [UnityEditor.MenuItem("Developer/Delete Player Data Save File")]//删除 存档文件
     public static void DeletePlayerDataSaveFile()
     {
-        SaveSystem.DeleteSaveFile(PLAYER_DATA_FILE_NAME);
+        DataSystem.DeleteSaveFile(PLAYER_DATA_FILE_NAME);
     }
 #endif
     #endregion

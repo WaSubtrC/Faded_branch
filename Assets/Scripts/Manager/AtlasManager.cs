@@ -12,7 +12,7 @@ public class AtlasManager : Singleton<AtlasManager>
 
     [Header("Transition Animation")]
     [SerializeField] private Image background;
-    [SerializeField] private GameObject atlas;
+    [SerializeField] public GameObject atlas;
 
     [SerializeField] private AnimationCurve curve;
     [SerializeField] private float speed = 1f;
@@ -87,21 +87,11 @@ public class AtlasManager : Singleton<AtlasManager>
         }
     }
 
-    public void OnTransTown()
+    public void OnTransPlace()
     {
         atlas.SetActive(false);
         playerController.enabled = true;
         playerAvatarController.enabled = false;
-    }
-
-    /* TODO:
-     *  1. Save data(player's position in town, playerAvatar's position on atlas)
-     *  2. Load dungeon scene (init by layer¡¢level£¬level decides the basic stats of monster, this can be implemented later)
-     *  3. Inherit data from PlayerStatus to Player
-    */
-    public void OnTransDungeon(PlaceAvatarController dungeonAvatar)
-    {
-
     }
 
     public void OnReviewAtlas()

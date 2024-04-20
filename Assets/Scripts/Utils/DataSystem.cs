@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 
-public static class SaveSystem
+public static class DataSystem
 {
     public static void SaveByJson(string saveFileName, object data)
     {
