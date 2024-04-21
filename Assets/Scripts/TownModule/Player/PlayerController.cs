@@ -76,7 +76,10 @@ namespace Faded.Town{
 
             //Update Position
             Vector3 moveVec = new Vector3(x_offset * speed * Time.deltaTime, 0f, y_offset * speed * Time.deltaTime);
+            
             if (!controller.isGrounded) moveVec += Vector3.down * speed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.LeftShift)) moveVec *= 1.5f;
+
             controller.Move(moveVec);
 
             //Update Animations
@@ -163,6 +166,13 @@ namespace Faded.Town{
                 isFlashlightOn = !isFlashlightOn;
                 VFX.Find("Light").gameObject.SetActive(isFlashlightOn);
             }
+        }
+
+        public void OnMoveToward(Vector3 target)
+        {
+            controller.enabled = false;
+            this.gameObject.transform.position = target; 
+            controller.enabled = true;
         }
 
     }

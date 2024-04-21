@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-using FadedTown;
+using Faded.Town;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -44,11 +44,11 @@ public class GameManager : Singleton<GameManager>
 
 
 
-/* TODO:
- *  1. Save data(player's position in town, playerAvatar's position on atlas)
- *  2. Load dungeon scene (init by layer¡¢level£¬level decides the basic stats of monster, this can be implemented later)
- *  3. Inherit data from PlayerStatus to Player
-*/
+    /* TODO:
+     *  1. Save data(player's position in town, playerAvatar's position on atlas)
+     *  2. Load dungeon scene (init by layer¡¢level£¬level decides the basic stats of monster, this can be implemented later)
+     *  3. Inherit data from PlayerStatus to Player
+    */
     public void OnEnterDungeon()
     {
         SceneManager.LoadScene(Constants.DUNGEON_SCENE_NAME);
@@ -74,7 +74,7 @@ public class GameManager : Singleton<GameManager>
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GameObject player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         if (player != null)
             playerStats = player.GetComponent<PlayerStatus>();
     }
@@ -85,11 +85,20 @@ public class GameManager : Singleton<GameManager>
     public void StartNewGame()
     {
         SceneManager.LoadScene(Constants.TOWN_SCENE_NAME);
-        UIManager.Instance.gameObject.SetActive(true);
-        UIManager.Instance.SetUp();
+        StartCoroutine(OnStartNewGame());
+
 #if UNITY_EDITOR
         Debug.Log("Start new game");
 #endif
+    }
+
+    IEnumerator OnStartNewGame()
+    {
+        yield return new WaitForSeconds(0.2f);
+        UIManager.Instance.gameObject.SetActive(true);
+        UIManager.Instance.SetUp();
+        Instance.player.GetComponentInChildren<MainCamera>().OnStartNewGame();
+        Instance.player.GetComponent<PlayerController>().OnMoveToward(new Vector3(-39f, 22.5f, 86f));
     }
 
     public void ContinueGame()

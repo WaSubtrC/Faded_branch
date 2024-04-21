@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour
+public class PlayerStatus : Singleton<PlayerStatus>
 {
    [Header("Weapon")]
    public Transform weaponSlot;
@@ -8,35 +8,6 @@ public class PlayerStatus : MonoBehaviour
    [Header("Stats SO")]
    [SerializeField] public PlayerStatus_SO playerData;
    [SerializeField] public PlayerStatus_SO playerDataTemplate;
-
-    #region Read form Data_SO
-
-
-    //public float MaxHealth
-    //{
-    //    get { if(playerData != null)   return playerData.maxHealth;     else return 0;}
-    //    set { playerData.maxHealth = value;}
-    //}
-
-    //public uint coins{
-    //  get { if (playerData != null) return playerData.coins; else return 0; } 
-    //  set {  playerData.coins = value; } 
-    //}
-
-    //public float CurrentHealth { 
-    //    get { if (playerData != null) { return playerData.currHealth; } else return 0; }
-    //    set { playerData.currHealth = value; }
-    //}
-
-    #endregion
-
-    #region EquipWeapon
-
-    private void Awake()
-    {
-
-        
-    }
 
     private void Start()
     {
@@ -60,6 +31,28 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    #region Read form Data_SO
+
+
+    //public float MaxHealth
+    //{
+    //    get { if(playerData != null)   return playerData.maxHealth;     else return 0;}
+    //    set { playerData.maxHealth = value;}
+    //}
+
+    //public uint coins{
+    //  get { if (playerData != null) return playerData.coins; else return 0; } 
+    //  set {  playerData.coins = value; } 
+    //}
+
+    //public float CurrentHealth { 
+    //    get { if (playerData != null) { return playerData.currHealth; } else return 0; }
+    //    set { playerData.currHealth = value; }
+    //}
+
+    #endregion
+
+    #region EquipWeapon
     public void ChangeWeapon(ItemData_SO weapon)
     {
         UnEquipWeapon();

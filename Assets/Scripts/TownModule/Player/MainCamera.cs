@@ -24,12 +24,16 @@ namespace Faded.Town
             {
                 instance = this;
             }
-        }
-
-        void Start()
-        {
             transform.position = outsidePos.position;
         }
+
+        public void OnStartNewGame()
+        {
+            isInside = true;
+            transform.position = insidePos.position;
+        } 
+
+        
 
         void Update()
         {

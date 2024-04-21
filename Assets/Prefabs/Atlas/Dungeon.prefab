@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7368927046484637860}
   - component: {fileID: 1217372800118717285}
   - component: {fileID: 7310683460919193293}
-  - component: {fileID: 8568758988231971341}
   - component: {fileID: 5199918802614927959}
+  - component: {fileID: 8508726468384581932}
   m_Layer: 5
   m_Name: Dungeon
   m_TagString: Untagged
@@ -77,21 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8568758988231971341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6733171234748282192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54019130e929bce438ef8fa9cf6123ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  layer: 1
-  suggestLevel: 1
 --- !u!58 &5199918802614927959
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -127,3 +112,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 60
+--- !u!114 &8508726468384581932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6733171234748282192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c204801fd790d8f439d624b4fe60b1e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  hints: {fileID: 0}
+  layer: 1
+  level: 1

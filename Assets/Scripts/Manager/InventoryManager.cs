@@ -13,7 +13,7 @@ public class InventoryManager : Singleton<InventoryManager>
 
     [Header("Inventory Data")]
     [Header("Inventory DataTemplate")]
-    public InventoryData_SO inventoryTemplate;//保存 特定容器数据 的模板 
+    public InventoryData_SO inventoryTemplate;
     public InventoryData_SO equipmentTemplate;
     public InventoryData_SO actionTemplate;
 

@@ -8,14 +8,19 @@ namespace Faded.Town{
 
         private bool isNear = false;
 
-        private float angle;
-        public bool isClosed = true;
+        private float angle = 0f;
+        public bool isClosed;
 
         private Transform doorTrans;
 
         void Start()
         {
             doorTrans = transform.Find("Door").transform;
+            if (!isClosed)
+            {
+                angle = 75f;
+                doorTrans.Rotate(Vector3.down * 75f);
+            }
         }
 
         void Update()
