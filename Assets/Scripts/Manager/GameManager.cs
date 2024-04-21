@@ -35,11 +35,16 @@ public class GameManager : Singleton<GameManager>
     public void OnEnterTown()
     {
         SceneManager.LoadScene(Constants.TOWN_SCENE_NAME);
+        player.GetComponent<PlayerController>().OnMoveToward(new Vector3(-78f, 9.5f, 34f));
+        player.GetComponentInChildren<MainCamera>().OnTowardOutside();
+
     }
 
     public void OnEnterHome()
     {
         SceneManager.LoadScene(Constants.HOME_SCENE_NAME);
+        player.GetComponent<PlayerController>().OnMoveToward(new Vector3(-1f, 1.5f, -2f));
+        player.GetComponentInChildren<MainCamera>().OnTowardInside();
     }
 
 
@@ -74,8 +79,9 @@ public class GameManager : Singleton<GameManager>
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        player = GameObject.FindWithTag("Player");
-        if (player != null)
+        if(player == null)
+            player = GameObject.FindWithTag("Player");
+        if (playerStats == null && player != null)
             playerStats = player.GetComponent<PlayerStatus>();
     }
     #endregion

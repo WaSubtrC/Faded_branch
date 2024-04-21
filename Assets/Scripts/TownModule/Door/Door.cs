@@ -44,14 +44,14 @@ namespace Faded.Town{
 
         public void OnEnter()
         {
-            if (!MainCamera.instance.isInside) MainCamera.instance.OnSwitchView();
-            MainCamera.instance.isInside = true;
+            if (!MainCamera.Instance.isInside) MainCamera.Instance.OnSwitchView();
+            MainCamera.Instance.isInside = true;
         }
 
         public void OnExit()
         {
-            if (MainCamera.instance.isInside) MainCamera.instance.OnSwitchView();
-            MainCamera.instance.isInside = false;
+            if (MainCamera.Instance.isInside) MainCamera.Instance.OnSwitchView();
+            MainCamera.Instance.isInside = false;
         }
 
         IEnumerator Open()

@@ -5,26 +5,22 @@ using UnityEngine;
 
 namespace Faded.Town
 {
-    public class MainCamera : MonoBehaviour
+    public class MainCamera : Singleton<MainCamera>
     {
-        public static MainCamera instance;
 
         public bool isInside = false;
         [SerializeField] private Transform insidePos;
         [SerializeField] private Transform outsidePos;
         [SerializeField] private float speed = 0.06f;
 
-        private void Awake()
+        protected override void Awake()
         {
-            if (instance != null)
-            {
-                Destroy(gameObject);
-            }
+            base.Awake(); 
+
+            if (isInside)
+                transform.position = insidePos.position;
             else
-            {
-                instance = this;
-            }
-            transform.position = outsidePos.position;
+                transform.position = outsidePos.position;
         }
 
         public void OnStartNewGame()
@@ -33,7 +29,6 @@ namespace Faded.Town
             transform.position = insidePos.position;
         } 
 
-        
 
         void Update()
         {
@@ -47,6 +42,17 @@ namespace Faded.Town
                 StartCoroutine(towardInside());
             else
                 StartCoroutine(towardOutside());
+        }
+        public void OnTowardInside()
+        {
+            StartCoroutine(towardInside());
+            isInside = true;
+        }
+        
+        public void OnTowardOutside()
+        {
+            StartCoroutine(towardOutside());
+            isInside = false;
         }
 
         IEnumerator towardInside()
@@ -64,11 +70,6 @@ namespace Faded.Town
             yield return null;
             if (transform.position != outsidePos.position)
                 StartCoroutine(towardOutside());
-        }
-
-        private void OnApplicationQuit()
-        {
-            Destroy(instance);
         }
 
     }

@@ -24,6 +24,9 @@ public class AtlasManager : Singleton<AtlasManager>
     [SerializeField] private float speed = 1f;
     [SerializeField] private float duration = 1f;
 
+    [Header("Cross Button")]
+    [SerializeField] private GameObject crossButton;
+
     [Header("Player")]
     [SerializeField] private RectTransform playerAvatar;
     [SerializeField] private PlayerController playerController;
@@ -95,7 +98,8 @@ public class AtlasManager : Singleton<AtlasManager>
 
     public void OnTransPlace()
     {
-        atlas.SetActive(false);
+        StartCoroutine(OnTransition(false));
+        crossButton.SetActive(false);
         playerController.enabled = true;
         playerAvatarController.enabled = false;
     }
@@ -105,10 +109,12 @@ public class AtlasManager : Singleton<AtlasManager>
         if (Input.GetKeyDown(KeyCode.M) && !atlas.activeSelf)
         {
             StartCoroutine(OnTransition());
+            crossButton.SetActive(true);
             playerController.enabled = false;
             playerAvatarController.enabled = false;
         }
     }
+
 
     public void OnTransAtlas()
     {
@@ -119,7 +125,7 @@ public class AtlasManager : Singleton<AtlasManager>
 
 
 
-    IEnumerator OnTransition()
+    IEnumerator OnTransition(bool isAtlasActive = true)
     {
         float timer = 0;
         while (timer <= duration)
@@ -129,12 +135,14 @@ public class AtlasManager : Singleton<AtlasManager>
 
             if (timer > 0.5f && atlas != null)
             {
-                atlas.SetActive(true);
+                atlas.SetActive(isAtlasActive);
             }
 
             yield return null;
         }
     }
+
+
 
     private void OnUpdateWalkTime()
     {

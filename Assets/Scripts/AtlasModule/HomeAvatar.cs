@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Faded.Town;
+
 namespace Faded.Atlas
 {
     public class HomeAvatar : PlaceAvatarBase

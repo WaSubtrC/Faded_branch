@@ -16,7 +16,7 @@ namespace Faded.Atlas
         protected virtual void OnEnter()
         {
     #if UNITY_EDITOR
-            Debug.Log("enter " + this.GetType().ToString());
+            Debug.Log("Enter " + this.GetType().ToString());
     #endif
         }
 

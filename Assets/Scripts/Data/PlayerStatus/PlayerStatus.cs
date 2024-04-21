@@ -9,6 +9,12 @@ public class PlayerStatus : Singleton<PlayerStatus>
    [SerializeField] public PlayerStatus_SO playerData;
    [SerializeField] public PlayerStatus_SO playerDataTemplate;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Start()
     {
         if (playerData == null)
