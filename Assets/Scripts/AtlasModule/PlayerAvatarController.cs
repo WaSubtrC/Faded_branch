@@ -27,7 +27,7 @@ namespace Faded.Atlas
             float x_offset = Input.GetAxisRaw("Horizontal");
             float y_offset = Input.GetAxisRaw("Vertical");
 
-            transform.position += new Vector3(x_offset * speed, y_offset * speed, 0);
+            transform.position += new Vector3(x_offset * speed * Time.deltaTime, y_offset * speed * Time.deltaTime, 0);
 
             if (Input.GetKeyDown(KeyCode.W))
             {

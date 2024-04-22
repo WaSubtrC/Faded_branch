@@ -30,7 +30,7 @@ namespace Faded.Town
             return transform;
         }
 
-        public void Interact()
+        public void OnInteract()
         {
             if (!_storeUI.activeInHierarchy)
             {

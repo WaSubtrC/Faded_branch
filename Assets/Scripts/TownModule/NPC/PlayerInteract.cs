@@ -15,7 +15,7 @@ namespace Faded.Town
                 IInteractable interactable = GetInteractableObject();
                 if (interactable != null)
                 {
-                    interactable.Interact();
+                    interactable.OnInteract();
                 }
             }
         }

@@ -17,7 +17,7 @@ namespace Faded.Town {
         {
             return transform;
         }
-        public void Interact()
+        public void OnInteract()
         {
    
             InventoryManager.Instance.inventoryData.AddItem(itemData, itemData.itemAmount);

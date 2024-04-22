@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace Faded.Town
 {
-    public class the_purple : MonoBehaviour
+    public class ThePurpleController : MonoBehaviour
     {
         private NavMeshAgent navMeshAgent;
         private Animator anim;
@@ -124,11 +124,8 @@ namespace Faded.Town
 
         bool CheckAnimationExists(string animationName)
         {
-            // 获取动画层的索引，通常是0
             int layerIndex = 0;
-            // 获取动画状态名称的哈希值
             int stateHash = Animator.StringToHash(animationName);
-            // 检测动画状态是否存在
             bool hasState = anim.HasState(layerIndex, stateHash);
             return hasState;
         }
