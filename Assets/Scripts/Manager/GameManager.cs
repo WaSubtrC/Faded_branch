@@ -103,6 +103,7 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(0.2f);
         UIManager.Instance.gameObject.SetActive(true);
         UIManager.Instance.SetUp();
+        AtlasManager.Instance.OnTransPlace();
         Instance.player.GetComponentInChildren<MainCamera>().OnStartNewGame();
         Instance.player.GetComponent<PlayerController>().OnMoveToward(new Vector3(-39f, 22.5f, 86f));
     }

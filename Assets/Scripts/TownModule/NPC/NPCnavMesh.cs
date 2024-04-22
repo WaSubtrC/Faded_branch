@@ -17,12 +17,13 @@ namespace Faded.Town{
 
         private void Update()
         {
-
+            /*
             if (Input.GetMouseButtonDown(0))
             {
                 navMeshAgent.SetDestination(MouseFollow());
                 //navMeshAgent.SetDestination(new Vector3(13,0.2f,14));
             }
+            */
 
         }
         /// <summary>

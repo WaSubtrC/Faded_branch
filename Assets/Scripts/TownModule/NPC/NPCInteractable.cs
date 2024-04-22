@@ -43,7 +43,10 @@ namespace Faded.Town
             {
                 flowchart.ExecuteBlock(chatName_01);
             }
-            else { Debug.LogWarning(chatName_01 + "can not found;"); }
+            else 
+            { 
+                Debug.LogWarning(chatName_01 + "can not found;"); 
+            }
 
         }
         private IEnumerator StartTask()

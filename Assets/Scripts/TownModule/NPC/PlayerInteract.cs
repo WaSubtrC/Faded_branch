@@ -33,8 +33,8 @@ namespace Faded.Town
                     InteractableList.Add(interactable);
                 }
             }
-            //用List搜寻最近的NPC脚本transform
 
+            //搜寻最近的NPC脚本transform
             IInteractable closestNPCInteractable = null;
             foreach (IInteractable interactable in InteractableList)
             {
