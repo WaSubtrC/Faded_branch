@@ -29,7 +29,7 @@ namespace Faded.Town{
         //[SerializeField] private ParticleSystem splash;
 
         [Header("Undersea")]
-        [SerializeField] private Transform freshpoint;
+        [SerializeField] private Vector3 freshpoint = new Vector3(6.5f, 3f, 16f);
         [SerializeField] private float bottomline = -4f;
 
 
@@ -42,6 +42,7 @@ namespace Faded.Town{
 
         void Start()
         {
+
             //StartCoroutine(CheckOnGround());
         }
 
@@ -155,7 +156,7 @@ namespace Faded.Town{
 
             //Teleport to refresh point if falling into sea
             if (transform.position.y < bottomline)
-                transform.position = freshpoint.position;
+                transform.position = freshpoint;
 
         }
 

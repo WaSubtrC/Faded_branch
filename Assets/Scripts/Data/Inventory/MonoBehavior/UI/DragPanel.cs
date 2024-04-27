@@ -10,9 +10,9 @@ public class DragPanel : MonoBehaviour, IDragHandler,IPointerDownHandler
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        //Debug.Log(InventoryManager.Instance);
+
         //游戏启动默认不 setActive(true) 层级面板中 挂载DragPanel 的物体--否则会报错
-        canvas = InventoryManager.Instance.GetComponent<Canvas>();
+        canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
     }
 
     public void OnDrag(PointerEventData eventData)

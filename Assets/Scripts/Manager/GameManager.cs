@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using Fungus;
+
 using Faded.Town;
 
 public class GameManager : Singleton<GameManager>
@@ -35,16 +37,22 @@ public class GameManager : Singleton<GameManager>
     public void OnEnterTown()
     {
         SceneManager.LoadScene(Constants.TOWN_SCENE_NAME);
+
         player.GetComponent<PlayerController>().OnMoveToward(new Vector3(-78f, 9.5f, 34f));
         player.GetComponentInChildren<MainCamera>().OnTowardOutside();
+
+        AudioManager.Instance.Switch("Town");
 
     }
 
     public void OnEnterHome()
     {
         SceneManager.LoadScene(Constants.HOME_SCENE_NAME);
+
         player.GetComponent<PlayerController>().OnMoveToward(new Vector3(-1f, 1.5f, -2f));
         player.GetComponentInChildren<MainCamera>().OnTowardInside();
+
+        AudioManager.Instance.Switch("Home");
     }
 
 
@@ -57,6 +65,7 @@ public class GameManager : Singleton<GameManager>
     public void OnEnterDungeon()
     {
         SceneManager.LoadScene(Constants.DUNGEON_SCENE_NAME);
+        AudioManager.Instance.Switch("Dungeon");
     }
 
     #endregion
@@ -79,11 +88,43 @@ public class GameManager : Singleton<GameManager>
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(player == null)
-            player = GameObject.FindWithTag("Player");
-        if (playerStats == null && player != null)
-            playerStats = player.GetComponent<PlayerStatus>();
+
+        if (playerStats != null)
+            StartCoroutine(SaveBeforeLoad());
+
+        string sceneName = scene.name;
+        if (sceneName == Constants.MENU_SCENE_NAME)
+        {
+
+        }
+        else if (sceneName == Constants.TOWN_SCENE_NAME)
+        {
+            if (player == null)
+                player = GameObject.FindWithTag("Player");
+            if (playerStats == null && player != null)
+                playerStats = player.GetComponent<PlayerStatus>();
+        }
+        else if (sceneName == Constants.HOME_SCENE_NAME)
+        {
+
+        } else if (sceneName == Constants.DUNGEON_SCENE_NAME)
+        {
+
+        }
+
     }
+
+    public void setOrder(int newOrder){
+        playerStats.playerData.plotOrder = newOrder;
+        Debug.Log("save order");    
+    }
+
+    IEnumerator SaveBeforeLoad()
+    {
+        yield return new WaitForSeconds(0.5f);
+        DataManager.Instance.Save();
+    }
+
     #endregion
 
 
@@ -101,11 +142,20 @@ public class GameManager : Singleton<GameManager>
     IEnumerator OnStartNewGame()
     {
         yield return new WaitForSeconds(0.2f);
-        UIManager.Instance.gameObject.SetActive(true);
-        UIManager.Instance.SetUp();
-        AtlasManager.Instance.OnTransPlace();
+
+        //init player pos
+
+
         Instance.player.GetComponentInChildren<MainCamera>().OnStartNewGame();
         Instance.player.GetComponent<PlayerController>().OnMoveToward(new Vector3(-39f, 22.5f, 86f));
+
+        UIManager.Instance.gameObject.SetActive(true);
+        UIManager.Instance.SetUp();
+
+        AtlasManager.Instance.OnTransPlace();
+
+        AudioManager.Instance.Switch("Town");
+
     }
 
     public void ContinueGame()
@@ -119,9 +169,14 @@ public class GameManager : Singleton<GameManager>
             AppendLog("fail to load data");
             return;
         }
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Constants.TOWN_SCENE_NAME);
+
         UIManager.Instance.gameObject.SetActive(true);
         UIManager.Instance.SetUp();
+
+        AtlasManager.Instance.OnTransPlace();
+
+        AudioManager.Instance.Switch("Town");
     }
 
     public void ExitGame()

@@ -29,6 +29,10 @@ namespace Faded.Town
         {
             return transform;
         }
+        public KeyCode GetKeyCode()
+        {
+            return KeyCode.E;
+        }
 
         public void OnInteract()
         {
@@ -55,6 +59,8 @@ namespace Faded.Town
             if (_storeUI == null) return;
             _storeUI.SetActive(false);
         }
+
+   
         //private void Show(IInteractable interactable)
         //{
         //    self.SetActive(true);

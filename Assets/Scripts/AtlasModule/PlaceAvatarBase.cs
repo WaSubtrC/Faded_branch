@@ -5,8 +5,8 @@ using TMPro;
 
 namespace Faded.Atlas
 {
-        abstract public class PlaceAvatarBase : MonoBehaviour
-        {
+    public class PlaceAvatarBase : MonoBehaviour
+    {
 
         [SerializeField] private PlaceAvatarType type = PlaceAvatarType.DUNGEON;
 
@@ -16,7 +16,7 @@ namespace Faded.Atlas
         protected virtual void OnEnter()
         {
     #if UNITY_EDITOR
-            Debug.Log("Enter " + this.GetType().ToString());
+            Debug.Log("Enter " + type.ToString());
     #endif
         }
 

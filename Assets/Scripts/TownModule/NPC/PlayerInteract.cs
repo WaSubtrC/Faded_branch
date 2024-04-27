@@ -10,12 +10,15 @@ namespace Faded.Town
         void Update()
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
+            IInteractable interactable = GetInteractableObject();
+            if (interactable != null)
             {
-                IInteractable interactable = GetInteractableObject();
-                if (interactable != null)
+                if (Input.GetKeyDown(interactable.GetKeyCode()))
                 {
-                    interactable.OnInteract();
+                    if (interactable != null)
+                    {
+                        interactable.OnInteract();
+                    }
                 }
             }
         }

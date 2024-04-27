@@ -10,7 +10,13 @@ namespace Faded.Town
         [SerializeField] private GameObject containerGameObject;
         [SerializeField] private PlayerInteract playerInteract;
         [SerializeField] private TextMeshProUGUI interactTextMeshProUGUI;
+        [SerializeField] private TMP_Text pressKeyText;
 
+
+        private void Start()
+        {
+            pressKeyText = GameObject.Find("InteractKey").GetComponent<TMP_Text>();
+        }
         private void Update()
         {
             if (playerInteract == null) return;
@@ -28,6 +34,7 @@ namespace Faded.Town
         {
             containerGameObject.SetActive(true);
             interactTextMeshProUGUI.text = interactable.GetInteractText(); //互动提示文本==NPC特定互动文本
+            pressKeyText.SetText(interactable.GetKeyCode().ToString()); //互动按键文本==NPC特定互动按键
         }
         private void Hide()
         {

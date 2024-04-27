@@ -46,9 +46,10 @@ public class PlayerStatus : Singleton<PlayerStatus>
     //    set { playerData.maxHealth = value;}
     //}
 
-    //public uint coins{
-    //  get { if (playerData != null) return playerData.coins; else return 0; } 
-    //  set {  playerData.coins = value; } 
+    //public int coins
+    //{
+    //    get { if (playerData != null) return playerData.coins; else return 0; }
+    //    set { playerData.coins = value; }
     //}
 
     //public float CurrentHealth { 

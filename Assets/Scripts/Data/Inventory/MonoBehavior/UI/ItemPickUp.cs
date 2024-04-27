@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace Faded.Town {
-    public class ItemPickUp : MonoBehaviour,IInteractable 
+    public class ItemPickUp : MonoBehaviour, IInteractable 
     {
         public ItemData_SO itemData;
         [SerializeField]private string interactText="Pick up the Item";
@@ -11,6 +11,11 @@ namespace Faded.Town {
         public string GetInteractText()
         {
             return interactText;
+        }
+
+        public KeyCode GetKeyCode()
+        {
+            return KeyCode.E;
         }
 
         public Transform GetTransform()

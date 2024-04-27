@@ -13,6 +13,7 @@ public enum ItemType
 [CreateAssetMenu(fileName = "New Item",menuName ="Inventory/Item Data")]
 public class ItemData_SO : ScriptableObject
 {
+    [Header("General Info")]
     public string itemName ;
     public ItemType itemType;
     public Sprite itemIcon;
@@ -21,6 +22,10 @@ public class ItemData_SO : ScriptableObject
     public int id; 
     [TextArea] 
     public string description;
+
+    [Header("Property Info")]
+    public bool CanBeSold;
+    public int soldPrice;
 
     [Header("Weapon Info")]
     public GameObject weaponPrefab;

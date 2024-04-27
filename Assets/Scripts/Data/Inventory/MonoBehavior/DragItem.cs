@@ -65,6 +65,9 @@ namespace FadedTown
                             case SlotType.BAG:
                                 SwapController();
                                 break;
+                            case SlotType.CHEST:
+                                SwapController();
+                                break;
                             case SlotType.WEAPON:
                                 SwapController(ItemType.Weapon);
                                 break;
@@ -85,6 +88,9 @@ namespace FadedTown
                                 break;
                             case SlotType.AROMR_Feet:
                                 SwapController(ItemType.Armor_Feet);
+                                break;
+                            case SlotType.SOLD:
+                                SwapController();
                                 break;
                         }
                     currentHolder.UpdateItem();

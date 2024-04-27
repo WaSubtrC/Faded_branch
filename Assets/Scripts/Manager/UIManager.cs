@@ -45,11 +45,22 @@ public class UIManager : Singleton<UIManager>
 
     private bool InteractWithUI()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()){
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
             return true;
         }
-        else 
+        else
             return false;
+    }
+
+    public void ShowBackpack()
+    {
+        backpack.SetActive(true);
+    }
+
+    public void HideBackpack()
+    {
+        backpack.SetActive(false);
     }
 
 

@@ -19,4 +19,6 @@ MonoBehaviour:
   stackable: 0
   id: 0
   description: 666
+  CanBeSold: 1
+  soldPrice: 0
   weaponPrefab: {fileID: 7385239500768500340, guid: fa8804ffc1f0ab84aa62e92bc6fc041e, type: 3}

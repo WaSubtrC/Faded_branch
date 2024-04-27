@@ -7,7 +7,7 @@ public class InventoryData_SO : ScriptableObject
 {
     public List<InventoryItem> items = new List<InventoryItem>();
 
-    public void AddItem(ItemData_SO newItemData, int amount)
+    public void AddItem(ItemData_SO newItemData, int plusNum)
     {
         bool found =false;
         //物品有无？ 有->是相同物品？->*可堆叠?->amount++ *-->不可堆叠->下一栏位创建 /无 ->指定位置创建
@@ -17,7 +17,7 @@ public class InventoryData_SO : ScriptableObject
             {
                 if(item.itemData == newItemData)
                 {
-                    item.amount += amount;
+                    item.amount += plusNum;
                     found = true;
                     break;
                 }
@@ -29,7 +29,24 @@ public class InventoryData_SO : ScriptableObject
             if(items[i].itemData == null && !found)
             {
                 items[i].itemData = newItemData;
-                items[i].amount =amount;
+                items[i].amount =plusNum;
+                break;
+            }
+        }
+    }
+
+    public void RemoveItem(ItemData_SO itemData, int minusNum)
+    {
+        foreach (var item in items)
+        {
+            if (item.itemData == itemData)
+            {
+                item.amount -= minusNum;
+                if (item.amount <= 0)
+                {
+                    item.itemData = null;
+                    item.amount = 0;
+                }
                 break;
             }
         }

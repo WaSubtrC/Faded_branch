@@ -9,12 +9,12 @@ namespace Faded.Town
     {
         private NavMeshAgent navMeshAgent;
         private Animator anim;
-        private Direction currDir;
+        private Direction currDir = Direction.Forward;
 
         enum Direction
         {
             Forward,
-            back,
+            Back,
             Left,
             Right
         }
@@ -31,6 +31,7 @@ namespace Faded.Town
         {
             AnimController();
         }
+
         void AnimController()
         {
             var right = navMeshAgent.velocity.x;
@@ -58,8 +59,8 @@ namespace Faded.Town
                 }
                 else if (right == 0 && forward < 0)
                 {
-                    currDir = Direction.back;
-                    return Direction.back;
+                    currDir = Direction.Back;
+                    return Direction.Back;
                 }
                 else if (right < 0 && forward == 0)
                 {
@@ -95,8 +96,8 @@ namespace Faded.Town
                         }
                         else
                         {
-                            currDir = Direction.back;
-                            return Direction.back;
+                            currDir = Direction.Back;
+                            return Direction.Back;
                         }
                     }
                 }
@@ -109,7 +110,7 @@ namespace Faded.Town
                     {
                         case Direction.Forward:
                             return "forward_run";
-                        case Direction.back:
+                        case Direction.Back:
                             return "back_run";
                         case Direction.Left:
                             return "left_run";

@@ -9,6 +9,7 @@ namespace Faded.Town{
 
         Transform GetTransform();
 
+        KeyCode GetKeyCode();
     }
 }
 
