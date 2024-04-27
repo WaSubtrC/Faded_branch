@@ -7,16 +7,29 @@ namespace Faded.Town
 {
     public class ChestInteractable : MonoBehaviour, IInteractable
     {
+
+        private PlayerInteract playerInteract;
+
+        [Header("UI")]
+        private GameObject chestUI;
         [SerializeField] private string interactText;
         [SerializeField] private GameObject ChestPrefabUI;
+
+        [Header("Data")]
         [SerializeField] private InventoryData_SO chestData;
-        private GameObject chestUI;
-        private PlayerInteract playerInteract;
+
+        [Header("Animation")]
+        private SpriteRenderer spriteRenderer;
+        [SerializeField] private Sprite closeSprite;
+        [SerializeField] private Sprite openSprite;
 
         private void Start()
         {
-            playerInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>();
+            playerInteract = GameManager.Instance.player.GetComponent<PlayerInteract>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = closeSprite;
         }
+
         private void Update()
         {
             if (playerInteract.GetInteractableObject() == null)
@@ -38,18 +51,23 @@ namespace Faded.Town
 
         public void OnInteract()
         {
-            if(chestUI == null)
+            if (chestUI == null)
             {
                 chestUI =  Instantiate(ChestPrefabUI,GameObject.Find("InventoryCanvas").transform);
-                UIManager.Instance.ShowBackpack();
                 chestUI.GetComponent<RectTransform>().SetSiblingIndex(1);
-                InventoryManager.Instance.SetChestData(chestData);
+
+                InventoryManager.Instance.SetChestData(chestData); 
+                   
+                UIManager.Instance.ShowBackpack();
+                spriteRenderer.sprite = openSprite;
 
             }
             else
             {
                 Destroy(chestUI);
+                
                 UIManager.Instance.HideBackpack();
+                spriteRenderer.sprite = closeSprite;
             }
 
         }
