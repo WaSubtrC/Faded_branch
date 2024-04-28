@@ -8,7 +8,7 @@ using Fungus;
 public class AirwallsController : MonoBehaviour
 {
     [SerializeField] protected GameObject airwall;
-    [SerializeField] protected int border;
+    [SerializeField] protected int plot;
 
     void OnEnable()
     {
@@ -21,18 +21,27 @@ public class AirwallsController : MonoBehaviour
     }
 
 
-    IEnumerator SetUpAirwall()
+    IEnumerator OnUpdateAirwall()
     {
         yield return new WaitForSeconds(0.5f);
-        if (GameManager.Instance.playerStats.playerData.plotOrder >= border)
+        if (GameManager.Instance.playerStats.playerData.plotOrder >= plot)
             airwall.SetActive(false);
         else
             airwall.SetActive(true);
         
     }
 
+    public void UpdateAirwall()
+    {
+        StartCoroutine(OnUpdateAirwall());
+    }
+
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        StartCoroutine(SetUpAirwall());
+        UpdateAirwall();
     }
+
+
+
 }

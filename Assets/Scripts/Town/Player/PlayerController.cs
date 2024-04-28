@@ -143,6 +143,11 @@ namespace Faded.Town{
                 VFX.eulerAngles = new Vector3(transform.eulerAngles.x, newAngle, transform.eulerAngles.z);
             }
 
+            if(transform.position.y < -2)
+            {
+                AudioManager.Instance.OnSplash();
+            }
+
             /*
             if (isOnWater && isMoving)
             {
@@ -156,7 +161,9 @@ namespace Faded.Town{
 
             //Teleport to refresh point if falling into sea
             if (transform.position.y < bottomline)
+            {
                 transform.position = freshpoint;
+            }
 
         }
 
@@ -176,6 +183,24 @@ namespace Faded.Town{
             controller.enabled = true;
         }
 
+        private void OnDisable()
+        {
+            switch (currDir)
+            {
+                case Direction.BACK:
+                    animator.Play("back_idle");
+                    break;
+                case Direction.FORWARD:
+                    animator.Play("forward_idle");
+                    break;
+                case Direction.LEFT:
+                    animator.Play("left_idle");
+                    break;
+                case Direction.RIGHT:
+                    animator.Play("right_idle");
+                    break;
+            }
+        }
     }
 
 }

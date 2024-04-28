@@ -3615,7 +3615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176277521898147616, guid: 19bb18014b6fa10448b7af6774f8a540, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3176277521898147616, guid: 19bb18014b6fa10448b7af6774f8a540, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3653,6 +3653,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4880765284130137667, guid: 19bb18014b6fa10448b7af6774f8a540, type: 3}
+      propertyPath: chestData
+      value: 
+      objectReference: {fileID: 11400000, guid: 44d88ff0dd8fe154bb7a27dd36272935, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

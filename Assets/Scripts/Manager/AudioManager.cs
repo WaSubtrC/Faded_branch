@@ -7,7 +7,7 @@ using UnityEngine;
 public class AudioManager : Singleton<AudioManager>
 {
     private AudioSource globalSource;
-    
+    [SerializeField] private AudioSource splashSource;
     [SerializeField] private List<AudioClip> totalClips;
     private int totalNums;
 
@@ -37,21 +37,28 @@ public class AudioManager : Singleton<AudioManager>
         }
     }
 
-    public void Play(string name)
+    public int getClipByName(string name)
     {
-        foreach(var clip in totalClips)
+        for(int i = 0; i < totalNums; i++)
         {
-            if (clip.name == name)
+            if (totalClips[i].name == name)
             {
-                globalSource.clip = clip;
-                globalSource.Play();
-                return;
+                return i;
             }
         }
 #if UNITY_EDITOR
-            Debug.Log("Audioclip not found");
+        Debug.Log("Audioclip not found");
 #endif
+        return totalNums;
+    }
 
+    public void Play(string name)
+    {
+        int index = getClipByName(name);
+        if (index == totalNums)
+            return;
+        globalSource.clip = totalClips[index];
+        globalSource.Play();
     }
 
     public void Stop()
@@ -110,4 +117,17 @@ public class AudioManager : Singleton<AudioManager>
         }
 
     }
+
+    public void OnSplash()
+    {
+        if (splashSource.isPlaying) return;
+        int index = getClipByName("Splash");
+        if (index == totalNums)
+            return;
+
+        splashSource.clip = totalClips[index];
+        splashSource.Play();
+    }
+
+
 }

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c26fc3f29115e43b43a3c351bfdc6d, type: 3}
+  m_Name: chest_givenByMaster
+  m_EditorClassIdentifier: 
+  items:
+  - itemData: {fileID: 11400000, guid: 5479e9b8f377bf342bddbce33fc3dddc, type: 2}
+    amount: 1
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 11400000, guid: 737963598d0cc304a8c467b8ff9faebe, type: 2}
+    amount: 1
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 11400000, guid: 962a346d37cf88a44943ee72981eb865, type: 2}
+    amount: 25
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 11400000, guid: 88b87a28896c616438b9ff9be14ed564, type: 2}
+    amount: 100
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 11400000, guid: 737963598d0cc304a8c467b8ff9faebe, type: 2}
+    amount: 1
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 11400000, guid: 5479e9b8f377bf342bddbce33fc3dddc, type: 2}
+    amount: 1
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
