@@ -116,7 +116,7 @@ public class GameManager : Singleton<GameManager>
 
     public void setOrder(int newOrder){
         playerStats.playerData.plotOrder = newOrder;
-        Debug.Log("save order");    
+        //Debug.Log("save order");    
     }
 
     IEnumerator SaveBeforeLoad()

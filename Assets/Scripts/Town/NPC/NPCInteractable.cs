@@ -8,21 +8,12 @@ namespace Faded.Town
     public class NPCInteractable : MonoBehaviour, IInteractable
     {
         [SerializeField] private string interactText;
-        //private Animator animator; //NPC动画
-        //[SerializeField]private string talkText="Oh!You are here.";
         [SerializeField] private string chatName_01;
         protected Flowchart flowchart;
 
-        //挂到NPC上 互动的组件
         public virtual void OnInteract()
         {
             Say();
-            StartCoroutine(StartTask());
-            //ChatBubble.Create(transform.transform, new Vector3(-3,0,0), ChatBubble.IconType.Happy,talkText);
-            //额外可加代码
-            //animator设置交谈状态
-            //npc面朝玩家 目前不用
-
         }
 
 
@@ -53,17 +44,6 @@ namespace Faded.Town
             }
 
         }
-        private IEnumerator StartTask()
-        {
-            while (!flowchart.GetBooleanVariable("endTalk"))
-            {
-                yield return null; // 等待一帧
-            }
-
-            TaskManager.Instance.TalkWith(this);
-            yield break;
-        }
-
     }
 
 }

@@ -123,7 +123,10 @@ public class AtlasManager : Singleton<AtlasManager>
         playerAvatarController.enabled = true;
     }
 
-
+    public void OnTransitionAnim()
+    {
+        StartCoroutine(OnTransition(false));
+    }
 
     IEnumerator OnTransition(bool isAtlasActive = true)
     {
