@@ -9,6 +9,7 @@ namespace Faded.Town
     {
         [SerializeField] private string interactText;
         [SerializeField] private string chatName_01;
+
         protected Flowchart flowchart;
 
         public virtual void OnInteract()

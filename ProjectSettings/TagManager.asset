@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InventorySlot
   - Water
+  - Secret
   layers:
   - Default
   - TransparentFX

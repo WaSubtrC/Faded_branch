@@ -39,7 +39,8 @@ namespace Faded.Town
         public void OnInteract()
         {
             AtlasManager.Instance.OnTransitionAnim();
-
+            float maxH = GameManager.Instance.playerStats.playerData.maxHealth;
+            GameManager.Instance.playerStats.playerData.currHealth = maxH;
         }
 
         public KeyCode GetKeyCode()
