@@ -10,10 +10,10 @@ public class WaterFeature : ScriptableRendererFeature
     class CustomRenderPass : ScriptableRenderPass
     {
         // This method is called before executing the render pass.
-        // It can be used to configure render targets and their clear state. Also to create temporary render target textures.
-        // When empty this render pass will render to the active camera render target.
+        // It can be used to configure render targets and their clear state. Also to create temporary render _target textures.
+        // When empty this render pass will render to the active camera render _target.
         // You should never call CommandBuffer.SetRenderTarget. Instead call <c>ConfigureTarget</c> and <c>ConfigureClear</c>.
-        // The render pipeline will ensure target setup and clearing happens in a performant manner.
+        // The render pipeline will ensure _target setup and clearing happens in a performant manner.
         public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
         {
         }

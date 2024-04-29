@@ -16,6 +16,7 @@ namespace Faded.Town
             }
         }
 
+        /*
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Secret"))
@@ -23,7 +24,7 @@ namespace Faded.Town
                 other.GetComponent<SecretContainer>()?.OnHide();
             }
         }
-
+        */
     }
 }
 
