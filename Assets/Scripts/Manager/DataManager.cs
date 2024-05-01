@@ -37,6 +37,7 @@ public class DataManager : Singleton<DataManager>
     {
         base.Awake();
         DontDestroyOnLoad(this);
+
     }
 
     void Update()
@@ -95,13 +96,14 @@ public class DataManager : Singleton<DataManager>
         SavePlayerData();
         SaveInventoryData();
         SaveChestData();
-        DataSystem.SaveByJson(sceneName, SceneManager.GetActiveScene().name);   //保存当前场景
+
     }
     public void Load() 
     {
         LoadPlayerData();
         LoadInventoryData();
         LoadChestData();
+
     }
     #endregion
 

@@ -18771,7 +18771,17 @@ MonoBehaviour:
     value: {fileID: 11400000, guid: 60c7a72c34bbb96478e6d87970d597bd, type: 2}
   - key: chest_home_normal_0
     value: {fileID: 11400000, guid: 17141c59c41e0c44a8d8b709673bfd3d, type: 2}
-  chests: []
+  chests:
+  - key: chest_town_secret_0
+    value: {fileID: 0}
+  - key: chest_town_secret_1
+    value: {fileID: 0}
+  - key: chest_town_secret_2
+    value: {fileID: 0}
+  - key: chest_town_normal_0
+    value: {fileID: 0}
+  - key: chest_home_normal_0
+    value: {fileID: 0}
 --- !u!1 &423749331
 GameObject:
   m_ObjectHideFlags: 0

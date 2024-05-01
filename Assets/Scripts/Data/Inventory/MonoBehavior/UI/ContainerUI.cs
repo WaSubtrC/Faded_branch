@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FadedTown {
+namespace Faded.Town {
 public class ContainerUI : MonoBehaviour
 {
     public SlotHolder[] slotHolders;

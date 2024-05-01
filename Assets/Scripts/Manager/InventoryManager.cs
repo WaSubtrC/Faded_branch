@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-using FadedTown;
+using Faded.Town;
+
 
 public class InventoryManager : Singleton<InventoryManager>
 {
@@ -52,12 +53,18 @@ public class InventoryManager : Singleton<InventoryManager>
         DontDestroyOnLoad(this);
 
         AssignFromTemplete(inventoryTemplate, ref inventoryData);
+        Debug.Log("assign");
         AssignFromTemplete(equipmentTemplate, ref equipmentData);
         AssignFromTemplete(actionTemplate, ref actionData);
     }
 
 
     void Start()
+    {
+        RefreshUI();
+    }
+
+    public void RefreshUI()
     {
         inventoryUI.RefreshUI();
         equipmentUI.RefreshUI();

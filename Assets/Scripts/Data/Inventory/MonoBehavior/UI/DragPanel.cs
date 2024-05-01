@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace FadedTown {
+namespace Faded.Town {
 public class DragPanel : MonoBehaviour, IDragHandler,IPointerDownHandler
 {
     RectTransform rectTransform;

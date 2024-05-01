@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-namespace FadedTown {
+namespace Faded.Town {
 public enum SlotType
 {
     BAG, WEAPON, ACTION,

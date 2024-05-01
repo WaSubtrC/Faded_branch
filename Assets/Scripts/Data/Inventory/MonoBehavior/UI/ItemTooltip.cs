@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 
 
-namespace FadedTown {
+namespace Faded.Town {
 public class ItemTooltip : MonoBehaviour
 {
     public TextMeshProUGUI ItemNameText;

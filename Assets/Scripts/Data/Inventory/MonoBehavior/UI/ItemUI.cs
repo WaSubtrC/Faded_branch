@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FadedTown {
+namespace Faded.Town {
 public class ItemUI : MonoBehaviour
 {
     public Image icon =null;

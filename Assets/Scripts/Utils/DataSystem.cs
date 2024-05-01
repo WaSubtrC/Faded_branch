@@ -1,6 +1,7 @@
 using System.IO;
 using UnityEngine;
 
+
 public static class DataSystem
 {
     public static string dataDirectory = "/save";
@@ -57,13 +58,13 @@ public static class DataSystem
             var json = File.ReadAllText(path);
             JsonUtility.FromJsonOverwrite(json, savedData);
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
             Debug.Log($"数据成功读取在: {path}");
 #endif
         }
         catch (System.Exception exception)
         {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
             Debug.LogError($"数据未能读取: {path}\n{exception}");
 #endif
             GameManager.AppendLog($"数据未能读取: {path}\n{exception}");

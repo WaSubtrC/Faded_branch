@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FadedTown {
+namespace Faded.Town {
 public class StoreHolder : MonoBehaviour
 {
     public ItemData_SO itemData;

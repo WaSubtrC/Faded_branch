@@ -32,6 +32,11 @@ public class GameManager : Singleton<GameManager>
         AppendLog("Start game at " + DateTime.Now.ToString());
     }
 
+    private void Update()
+    {
+
+    }
+
     #region Atlas
     public void OnEnterTown()
     {
@@ -128,6 +133,7 @@ public class GameManager : Singleton<GameManager>
         try
         {
             DataManager.Instance.Load();
+            InventoryManager.Instance.RefreshUI();
         }
         catch
         {
