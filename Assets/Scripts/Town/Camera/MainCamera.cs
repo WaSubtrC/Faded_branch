@@ -31,7 +31,13 @@ namespace Faded.Town
         {
             isInside = true;
             transform.position = insidePos.position;
-        } 
+        }
+
+        public void OnContinueGame()
+        {
+            isInside = false;
+            transform.position = outsidePos.position;
+        }
 
 
         void Update()

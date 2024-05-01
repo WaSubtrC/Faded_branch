@@ -43,7 +43,7 @@ namespace Faded
         {
             DataManager.Instance.Save();
             UIManager.Instance.gameObject.SetActive(false);
-            SceneManager.LoadSceneAsync(Constants.MENU_SCENE_NAME);
+            GameManager.Instance.MyLoadScene(Constants.MENU_SCENE_NAME);
         }
 
     }

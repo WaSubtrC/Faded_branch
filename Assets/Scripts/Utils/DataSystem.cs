@@ -3,10 +3,12 @@ using UnityEngine;
 
 public static class DataSystem
 {
+    public static string dataDirectory = "/save";
+
     public static void SaveByJson(string saveFileName, object data)
     {
         var json = JsonUtility.ToJson(data);
-        var path = Path.Combine(Application.dataPath + "/save",  saveFileName); ;
+        var path = Path.Combine(Application.dataPath + dataDirectory,  saveFileName); ;
 
         try
         {
@@ -26,7 +28,7 @@ public static class DataSystem
 
     public static T LoadFromJson<T>(string saveFileName)
     {
-        var path = Path.Combine(Application.dataPath + "/save", saveFileName);
+        var path = Path.Combine(Application.dataPath + dataDirectory, saveFileName);
         try
         {
             var json = File.ReadAllText(path);
@@ -37,19 +39,19 @@ public static class DataSystem
 #endif
             return data;
         }
-        catch (System.Exception excaption)
+        catch (System.Exception exception)
         {
 #if UNITY_EDITOR
-            Debug.LogError($"数据未能读取: {path}\n{excaption}");
+            Debug.LogError($"数据未能读取: {path}\n{exception}");
 #endif
-
+            GameManager.AppendLog($"数据未能读取: {path}\n{exception}");
             return default;
         }
     }
 
     public static void LoadFromJsonOverwrite<T>(string saveFileName, T savedData)
     {
-        var path = Path.Combine(Application.dataPath + "/save",  saveFileName);
+        var path = Path.Combine(Application.dataPath + dataDirectory,  saveFileName);
         try
         {
             var json = File.ReadAllText(path);
@@ -57,13 +59,14 @@ public static class DataSystem
 
     #if UNITY_EDITOR
             Debug.Log($"数据成功读取在: {path}");
-    #endif
+#endif
         }
         catch (System.Exception exception)
         {
     #if UNITY_EDITOR
             Debug.LogError($"数据未能读取: {path}\n{exception}");
-    #endif
+#endif
+            GameManager.AppendLog($"数据未能读取: {path}\n{exception}");
         }
     }
 
@@ -71,7 +74,7 @@ public static class DataSystem
 
     public static void DeleteSaveFile(string saveFileName)
     {
-        var path = Path.Combine(Application.dataPath + "/save",  saveFileName);
+        var path = Path.Combine(Application.dataPath + dataDirectory,  saveFileName);
 
         try
         {
@@ -85,6 +88,7 @@ public static class DataSystem
 #if UNITY_EDITOR
             Debug.LogError($"数据未能删除: {path}.\n{excaption}");
 #endif
+            GameManager.AppendLog($"数据未能删除: {path}.\n{excaption}");
         }
     }
 

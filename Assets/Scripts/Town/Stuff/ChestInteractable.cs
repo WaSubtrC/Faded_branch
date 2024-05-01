@@ -16,6 +16,7 @@ namespace Faded.Town
         [SerializeField] private GameObject ChestPrefabUI;
 
         [Header("Data")]
+        [SerializeField] private string key; //use to identify json file
         [SerializeField] private InventoryData_SO chestData;
 
         [Header("Animation")]
@@ -23,11 +24,16 @@ namespace Faded.Town
         [SerializeField] private Sprite closeSprite;
         [SerializeField] private Sprite openSprite;
 
+        private void Awake()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = closeSprite;
+        }
+
         private void Start()
         {
             playerInteract = GameManager.Instance.player.GetComponent<PlayerInteract>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = closeSprite;
+            chestData = DataManager.Instance.getChestData(key);
         }
 
         private void Update()
