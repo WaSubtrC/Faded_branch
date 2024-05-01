@@ -80,10 +80,6 @@ public class GameManager : Singleton<GameManager>
     {
         MyLoadScene(Constants.TOWN_SCENE_NAME);
         StartCoroutine(OnStartNewGame());
-
-#if UNITY_EDITOR
-        Debug.Log("Start new game");
-#endif
     }
 
     IEnumerator OnStartNewGame()
@@ -106,14 +102,11 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.LoadChestTemplateData();
     }
 
+    //TODO:save the current scene and pos of player
     public void ContinueGame()
     {
-
         MyLoadScene(Constants.TOWN_SCENE_NAME);
         StartCoroutine(OnContinueGame());
-#if UNITY_EDITOR
-        Debug.Log("Continue game");
-#endif
     }
 
     IEnumerator OnContinueGame()
@@ -144,9 +137,6 @@ public class GameManager : Singleton<GameManager>
     public void ExitGame()
     {
         Application.Quit();
-#if UNITY_EDITOR
-        Debug.Log("Exit game");
-#endif
         AppendLog("Quit game at " + DateTime.Now.ToString());
     }
     #endregion
@@ -183,25 +173,35 @@ public class GameManager : Singleton<GameManager>
     //After load scene
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+
+        if (player == null)
+        {
+            Debug.Log("find player");
+            player = GameObject.FindWithTag("Player");
+        }
+        if (playerStats == null && player != null)
+            playerStats = player.GetComponent<PlayerStatus>();
+
         string sceneName = scene.name;
         if (sceneName == Constants.MENU_SCENE_NAME)
         {
-
+            if(player != null)
+               player.GetComponent<PlayerController>().enabled = false;
         }
         else if (sceneName == Constants.TOWN_SCENE_NAME)
         {
-            if (player == null)
-                player = GameObject.FindWithTag("Player");
-            if (playerStats == null && player != null)
-                playerStats = player.GetComponent<PlayerStatus>();
+            if (player != null)
+                player.GetComponent<PlayerController>().enabled = true;
         }
         else if (sceneName == Constants.HOME_SCENE_NAME)
         {
-
+            if (player != null)
+                player.GetComponent<PlayerController>().enabled = true;
         }
         else if (sceneName == Constants.DUNGEON_SCENE_NAME)
         {
-
+            if (player != null)
+                player.GetComponent<PlayerController>().enabled = false;
         }
 
     }

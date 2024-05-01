@@ -53,7 +53,6 @@ public class InventoryManager : Singleton<InventoryManager>
         DontDestroyOnLoad(this);
 
         AssignFromTemplete(inventoryTemplate, ref inventoryData);
-        Debug.Log("assign");
         AssignFromTemplete(equipmentTemplate, ref equipmentData);
         AssignFromTemplete(actionTemplate, ref actionData);
     }

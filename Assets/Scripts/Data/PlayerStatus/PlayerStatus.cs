@@ -22,18 +22,18 @@ public class PlayerStatus : Singleton<PlayerStatus>
             if (GameManager.Instance.playerStats.playerData != null)
             {
                 AssignFromTemplete(GameManager.Instance.playerStats.playerData, ref playerData);
-                Debug.Log("Init by hard disk");
+                //Debug.Log("Init by hard disk");
             }
             else
             {
                 AssignFromTemplete(playerDataTemplate, ref playerData);
-                Debug.Log("Init by dafault data");
+                //Debug.Log("Init by dafault data");
             }
 
         }
         else
         {
-            Debug.Log("Nothing to init");
+            //Debug.Log("Nothing to init");
         }
     }
 
