@@ -2,7 +2,10 @@ using UnityEngine;
 
 public enum ItemType 
 {
-    Usable,Weapon,SpecialItem,stuff,
+    Usable,
+    Weapon,
+    SpecialItem,
+    stuff,
     Armor_Head,
     Armor_Eye,
     Armor_Tabard,

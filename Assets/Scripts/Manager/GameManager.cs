@@ -176,7 +176,7 @@ public class GameManager : Singleton<GameManager>
 
         if (player == null)
         {
-            Debug.Log("find player");
+            //Debug.Log("find player");
             player = GameObject.FindWithTag("Player");
         }
         if (playerStats == null && player != null)

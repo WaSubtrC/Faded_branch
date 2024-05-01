@@ -465,3 +465,100 @@ Start game at 2024/5/1 20:36:54
 Start game at 2024/5/1 20:37:40
 Start game at 2024/5/1 20:42:32
 Start game at 2024/5/1 20:45:31
+Start game at 2024/5/1 21:15:03
+Start game at 2024/5/1 21:23:36
+Start game at 2024/5/1 21:30:31
+Start game at 2024/5/1 21:33:46
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_1
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_2
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_normal_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_home_normal_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+Start game at 2024/5/1 21:34:41
+Start game at 2024/5/1 21:37:24
+Start game at 2024/5/1 21:38:06
+Start game at 2024/5/1 21:40:00
+Start game at 2024/5/1 21:41:28
+Start game at 2024/5/1 21:42:29
+Start game at 2024/5/1 21:44:15
+Start game at 2024/5/1 21:45:05
+Start game at 2024/5/1 23:42:37
+Start game at 2024/5/1 23:47:14
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_1
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_2
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_normal_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_home_normal_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+Start game at 2024/5/1 23:49:48
+Start game at 2024/5/2 0:14:31
+Start game at 2024/5/2 0:36:50
+Start game at 2024/5/2 0:41:07
+Start game at 2024/5/2 0:45:04
+Start game at 2024/5/2 0:58:31
+Start game at 2024/5/2 1:07:46
+Start game at 2024/5/2 1:10:11
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_1
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_secret_2
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_town_normal_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+数据未能读取: D:/unity_projects/Faded_branch/Assets/save\chest_home_normal_0
+System.ArgumentNullException: Value cannot be null.
+Parameter name: objectToOverwrite
+  at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
+  at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 

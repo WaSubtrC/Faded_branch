@@ -1,1 +1,1 @@
-{"coins":500,"position":{"x":0.0,"y":0.0,"z":0.0},"level":1,"maxMana":100.0,"currMana":100.0,"maxHealth":200.0,"currHealth":200.0,"speed":2.0,"baseDamage":20.0,"baseDefend":0.0,"plotOrder":1.0}
+{"coins":500,"position":{"x":0.0,"y":0.0,"z":0.0},"level":1,"maxMana":100.0,"currMana":100.0,"maxHealth":200.0,"currHealth":200.0,"speed":2.0,"baseDamage":20.0,"baseDefend":0.0,"plotOrder":4}

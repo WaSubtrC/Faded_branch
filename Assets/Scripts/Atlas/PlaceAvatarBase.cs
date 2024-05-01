@@ -7,36 +7,60 @@ namespace Faded.Atlas
 {
     public class PlaceAvatarBase : MonoBehaviour
     {
-
-        [SerializeField] private PlaceAvatarType type = PlaceAvatarType.DUNGEON;
+        public bool isAround = false;
+        private bool isEntering = false;
+        [SerializeField] private PlaceAvatarType type;
 
         [Header("Details for Avatar")]
         [SerializeField] protected TextMeshProUGUI hints;
 
+        private void OnEnable()
+        {
+            isAround = false;
+            isEntering = false;
+        }
+
+        private void OnDisable()
+        {
+            isAround = false;
+            isEntering = false;
+        }
+
+        private void Update()
+        {
+            if(isAround && !isEntering && Input.GetKeyDown(KeyCode.Return))
+            {
+                OnEnter();
+                isEntering = true;
+            }
+
+        }
+
         protected virtual void OnEnter()
         {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
             Debug.Log("Enter " + type.ToString());
     #endif
         }
 
 
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-        
+            if(collision.CompareTag("Player"))
+                isAround = true;
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-        
+            if (collision.CompareTag("Player"))
+                isAround = false;
         }
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (Input.GetKey(KeyCode.Return))
-            {
-                OnEnter();
-            }
+            if (collision.CompareTag("Player"))
+                isAround = true;
         }
 
     }

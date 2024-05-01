@@ -18,7 +18,7 @@ public class PlayerStatus_SO : ScriptableObject
     public float baseDamage;
     public float baseDefend;
 
-    public float plotOrder;
+    public int plotOrder;
     public PlayerStatus_SO()
     {
         // 在这里进行初始化操作，或者留空

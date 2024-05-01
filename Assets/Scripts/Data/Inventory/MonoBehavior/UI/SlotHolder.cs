@@ -96,9 +96,14 @@ public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             if (itemUI.GetItem().itemType == ItemType.Usable && itemUI.bag.items[itemUI.Index].amount > 0) //物品可使用 数量>0 
             {
                 //拿到物品数据 然后执行 对应的使用的方法
-                //GameManager.Instance.playerStats.
+                //GameManager.Instance.playerStats
+
             }
-            else { Debug.Log("The item cannot be used"); return; }
+            else 
+            { 
+                Debug.Log("The item cannot be used"); 
+                return; 
+            }
             UpdateItem();
     }
 

@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _APPLYNORMALMAPPING_ON
   - _CAUSTICS_ON
   - _CLIPSURFACE_ON
   - _FOAM3DLIGHTING_ON
@@ -96,7 +97,7 @@ Material:
     m_Floats:
     - _Albedo: 0
     - _ApplyFlowToNormals: 0
-    - _ApplyNormalMapping: 0
+    - _ApplyNormalMapping: 1
     - _BumpAmt: 0.514
     - _Caustics: 1
     - _CausticsBase: 0.07
@@ -134,7 +135,7 @@ Material:
     - _LightIntensityMultiplier: 4
     - _MipBias: 0
     - _Moving: 0.17
-    - _NormalsScale: 40
+    - _NormalsScale: 20
     - _NormalsStrength: 0.36
     - _NormalsStrengthOverall: 1
     - _Offset: 0.00008
@@ -192,9 +193,9 @@ Material:
     - _WaveFoamStrength: 1
     m_Colors:
     - _DepthFogDensity: {r: 0.9, g: 0.3, b: 0.35, a: 1}
-    - _Diffuse: {r: 0.12732875, g: 0.3482077, b: 0.46540874, a: 1}
+    - _Diffuse: {r: 0.18897583, g: 0.42551166, b: 0.57232696, a: 1}
     - _DiffuseGrazing: {r: 0.25720885, g: 0.3809064, b: 0.5345911, a: 1}
-    - _DiffuseShadow: {r: 0, g: 0.0013477041, b: 0.084905684, a: 1}
+    - _DiffuseShadow: {r: 0.14708667, g: 0.14708667, b: 0.42138356, a: 1}
     - _FoamBubbleColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamWhiteColor: {r: 1, g: 0.99634784, b: 0.97199994, a: 0.6862745}
     - _SkyAwayFromSun: {r: 0.15419213, g: 0.22129796, b: 0.5372549, a: 1}
@@ -203,6 +204,6 @@ Material:
     - _SubSurface: {r: 0, g: 0.48, b: 0.36, a: 1}
     - _SubSurfaceColour: {r: 0.09019602, g: 0.43140045, b: 0.49803913, a: 1}
     - _SubSurfaceShallowCol: {r: 0, g: 0.003921569, b: 0.24705884, a: 1}
-    - _SubSurfaceShallowColShadow: {r: 0.09884887, g: 0.21383637, b: 0.19193399, a: 1}
+    - _SubSurfaceShallowColShadow: {r: 0.06049994, g: 0.14465404, b: 0.12782322, a: 1}
     - _SubSurfaceShallowColour: {r: 0.41999996, g: 0.75, b: 0.69, a: 1}
   m_BuildTextureStacks: []

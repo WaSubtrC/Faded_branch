@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+using Fungus;
+
 namespace Faded.Town
 {
     public class Task1 : MonoBehaviour
@@ -39,7 +41,11 @@ namespace Faded.Town
         private void MoveToPos()
         {
             if (index == waypoints.Length)
+            {
+                GameObject.Find("Flowchart").GetComponent<Flowchart>().SetBooleanVariable("endNavigation", true);
                 return;
+            }
+
 
             var target = waypoints[index];
             var dir = (target.position - ThePurpleTransform.position).normalized;
