@@ -2,15 +2,15 @@ using UnityEngine;
 
 public enum ItemType 
 {
-    Usable,
-    Weapon,
-    SpecialItem,
-    stuff,
-    Armor_Head,
-    Armor_Eye,
-    Armor_Tabard,
-    Armor_Leg,
-    Armor_Feet,
+    USABLE,
+    WEAPON,
+    SPECIAL,
+    STUFF,
+    ARMOR_HEAD,
+    ARMOR_EYE,
+    ARMOR_BODY,
+    ARMOR_LEG,
+    ARMOR_FEET,
 };   
 
 [CreateAssetMenu(fileName = "New Item",menuName ="Inventory/Item Data")]

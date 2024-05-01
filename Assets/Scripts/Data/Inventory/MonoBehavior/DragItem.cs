@@ -69,25 +69,25 @@ namespace Faded.Town
                                 SwapController();
                                 break;
                             case SlotType.WEAPON:
-                                SwapController(ItemType.Weapon);
+                                SwapController(ItemType.WEAPON);
                                 break;
                             case SlotType.ACTION:
                                 SwapController();
                                 break;
                             case SlotType.ARMOR_Head:
-                                SwapController(ItemType.Armor_Head);
+                                SwapController(ItemType.ARMOR_HEAD);
                                 break;
                             case SlotType.ARMOR_Eye:
-                                SwapController(ItemType.Armor_Eye);
+                                SwapController(ItemType.ARMOR_EYE);
                                 break;
                             case SlotType.AROMR_Tabard:
-                                SwapController(ItemType.Armor_Tabard);
+                                SwapController(ItemType.ARMOR_BODY);
                                 break;
                             case SlotType.ARMOR_Leg:
-                                SwapController(ItemType.Armor_Leg);
+                                SwapController(ItemType.ARMOR_LEG);
                                 break;
                             case SlotType.AROMR_Feet:
-                                SwapController(ItemType.Armor_Feet);
+                                SwapController(ItemType.ARMOR_FEET);
                                 break;
                             case SlotType.SOLD:
                                 SwapController();

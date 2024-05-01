@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: chest_home_normal_0
   m_EditorClassIdentifier: 
   items:
-  - itemData: {fileID: 0}
-    amount: 0
-  - itemData: {fileID: 0}
-    amount: 0
+  - itemData: {fileID: 11400000, guid: 962a346d37cf88a44943ee72981eb865, type: 2}
+    amount: 5
+  - itemData: {fileID: 11400000, guid: 244c395722fb7eb45824bf6dcfa76e53, type: 2}
+    amount: 20
   - itemData: {fileID: 0}
     amount: 0
   - itemData: {fileID: 0}
