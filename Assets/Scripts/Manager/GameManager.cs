@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using Faded;
 using Faded.Town;
 
 
@@ -87,6 +88,10 @@ public class GameManager : Singleton<GameManager>
         //wait for at least 0.5s
         yield return new WaitForSeconds(0.5f);
 
+
+        //start prologue
+        Prologue.Instance.OnStart();
+
         //init player pos
         Instance.player.GetComponentInChildren<MainCamera>().OnStartNewGame();
         Instance.player.GetComponent<PlayerController>().OnMoveToward(Constants.POINT_TOWN_BORN);
@@ -100,6 +105,7 @@ public class GameManager : Singleton<GameManager>
 
         //init data
         DataManager.Instance.LoadChestTemplateData();
+
     }
 
     //TODO:save the current scene and pos of player

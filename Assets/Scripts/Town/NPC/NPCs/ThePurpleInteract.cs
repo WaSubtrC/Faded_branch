@@ -26,7 +26,7 @@ namespace Faded.Town
         {
             base.OnInteract();
 
-            if (flowchart.GetIntegerVariable("Order") == 0){
+            if (flowchart.GetIntegerVariable("Order") == 1) { 
                 emoji.SetActive(true);
                 emoji.GetComponent<Animator>().Play("play");
                 animator.Play("left_idle");

@@ -31,7 +31,7 @@ namespace Faded.Town {
         public void OnReveal()
         {
             StartCoroutine(OnRevealAnim());
-            //wDebug.Log("reveal");
+            //Debug.Log("reveal");
         }
 
         IEnumerator OnRevealAnim()

@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0cc212dfb4de64a8cd8859c41924f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 1
   hints: {fileID: 0}
 --- !u!58 &155546690
@@ -848,6 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c204801fd790d8f439d624b4fe60b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 0
   hints: {fileID: 0}
   layer: 1
@@ -975,6 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c204801fd790d8f439d624b4fe60b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 0
   hints: {fileID: 0}
   layer: 1
@@ -1291,6 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c204801fd790d8f439d624b4fe60b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 0
   hints: {fileID: 0}
   layer: 1
@@ -2060,6 +2064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c204801fd790d8f439d624b4fe60b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 0
   hints: {fileID: 0}
   layer: 1
@@ -2086,6 +2091,7 @@ GameObject:
   - component: {fileID: 920896569}
   - component: {fileID: 920896573}
   - component: {fileID: 920896574}
+  - component: {fileID: 920896575}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2119,7 +2125,8 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 920896563}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 920896565}
   variables:
   - {fileID: 920896568}
   description: 
@@ -2229,6 +2236,7 @@ MonoBehaviour:
   - {fileID: 920896567}
   - {fileID: 920896566}
   - {fileID: 920896574}
+  - {fileID: 920896575}
   - {fileID: 920896573}
   - {fileID: 920896565}
   - {fileID: 920896571}
@@ -2260,7 +2268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 4
   indentLevel: 1
-  storyText: "\u8FD9\u5C06\u662F\u4F60\u5728\u8FD9\u4E2A\u4E16\u754C\u7684\u7B2C\u4E00\u4E2A\u4F4F\u6240\uFF0C\u53BB\u56DB\u5904\u8D70\u8D70\u5427\uFF01"
+  storyText: "\u603B\u4E4B\uFF0C\u8FD9\u5C06\u662F\u4F60\u5728\u8FD9\u4E2A\u4E16\u754C\u7684\u7B2C\u4E00\u4E2A\u4F4F\u6240\uFF0C\u53BB\u56DB\u5904\u8D70\u8D70\u5427\uFF01"
   description: 
   character: {fileID: 1817919767}
   portrait: {fileID: 0}
@@ -2349,7 +2357,7 @@ MonoBehaviour:
           gameObjectVal: {fileID: 0}
         integerData:
           integerRef: {fileID: 0}
-          integerVal: 3
+          integerVal: 5
         materialData:
           materialRef: {fileID: 0}
           materialVal: {fileID: 0}
@@ -2649,7 +2657,7 @@ MonoBehaviour:
         gameObjectVal: {fileID: 0}
       integerData:
         integerRef: {fileID: 0}
-        integerVal: 4
+        integerVal: 6
       materialData:
         materialRef: {fileID: 0}
         materialVal: {fileID: 0}
@@ -2796,7 +2804,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 12
   indentLevel: 1
-  storyText: "\u5F53\u4F60\u63A2\u9669\u5F52\u6765\u5E76\u6DF1\u53D7\u91CD\u4F24\u65F6\uFF0C\u53EF\u4EE5\u76F4\u63A5\u901A\u8FC7\u7761\u7720\u83B7\u5F97\u5B8C\u5168\u6062\u590D\uFF01"
+  storyText: "\u5F53\u4F60\u63A2\u9669\u5F52\u6765\u5E76\u6DF1\u53D7\u91CD\u4F24\u65F6\uFF0C\u53EF\u4EE5\u901A\u8FC7\u7761\u7720\u6062\u590D\u81F3\u5DC5\u5CF0\u72B6\u6001\uFF01"
+  description: 
+  character: {fileID: 1817919767}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &920896575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920896557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 13
+  indentLevel: 1
+  storyText: "\u6240\u4EE5\uFF0C\u4E0D\u8981\u518D\u50BB\u4E4E\u4E4E\u5730\u6D6A\u8D39\u836F\u6C34\u4E86\u3002"
   description: 
   character: {fileID: 1817919767}
   portrait: {fileID: 0}
@@ -2929,6 +2964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acecab09ffb8fd249a73c726ec81ff84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 2
   hints: {fileID: 0}
 --- !u!58 &964353951
@@ -2978,6 +3014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54019130e929bce438ef8fa9cf6123ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 0
   hints: {fileID: 0}
 --- !u!114 &964353953
@@ -3882,6 +3919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c204801fd790d8f439d624b4fe60b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 0
   hints: {fileID: 0}
   layer: 1
@@ -4223,6 +4261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c204801fd790d8f439d624b4fe60b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAround: 0
   type: 0
   hints: {fileID: 0}
   layer: 1

@@ -7,9 +7,10 @@ using Faded;
 
 public class UIManager : Singleton<UIManager>
 {
-    [SerializeField] private GameObject backpack;
-    [SerializeField] private GameObject equipment;
-    [SerializeField] private GameObject actionContainer;
+    [SerializeField] private GameObject background;
+    [SerializeField] private GameObject backpackBar;
+    [SerializeField] private GameObject equipmentBar;
+    [SerializeField] private GameObject actionBar;
 
     protected override void Awake()
     {
@@ -19,26 +20,52 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        actionContainer.SetActive(true);
-        //StartCoroutine(ActivateActionBarAfterDelay());
+        actionBar.SetActive(true);
     }
 
     private void Update()
     {
-        SetUIswitch(equipment, KeyCode.I);
-        SetUIswitch(backpack, KeyCode.I);
+        if(Input.GetKeyDown(KeyCode.B))
+            OnBag();
     }
 
-    // load new scene
     public void SetUp()
     {
         gameObject.GetComponentInChildren<MainMenuWindow>().menu.SetActive(false);
     }
 
-    void SetUIswitch(GameObject go, KeyCode key)
+    public void OnBag()
     {
-        if (Input.GetKeyUp(key))
-            go.SetActive(!go.activeSelf);
+        if (equipmentBar.activeSelf)
+            HideBag();
+        else
+            ShowBag();
+    }
+
+    public void ShowBag()
+    {
+        background.SetActive(true);
+        backpackBar.SetActive(true);
+        equipmentBar.SetActive(true);
+    }
+
+    public void HideBag()
+    {
+        background.SetActive(false);
+        backpackBar.SetActive(false);
+        equipmentBar.SetActive(false);
+    }
+
+    public void ShowBackpack()
+    {
+        background.SetActive(true);
+        backpackBar.SetActive(true);
+    }
+
+    public void HideBackpack()
+    {
+        background.SetActive(false);
+        backpackBar.SetActive(false);
     }
 
     private bool InteractWithUI()
@@ -49,16 +76,6 @@ public class UIManager : Singleton<UIManager>
         }
         else
             return false;
-    }
-
-    public void ShowBackpack()
-    {
-        backpack.SetActive(true);
-    }
-
-    public void HideBackpack()
-    {
-        backpack.SetActive(false);
     }
 
 

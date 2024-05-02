@@ -4,35 +4,35 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Faded.Town {
-public class StoreHolder : MonoBehaviour
-{
-    public ItemData_SO itemData;
-    public int cost;
-    private PlayerStatus CharacterStats;
-    // private GoodsDisplay goodsDisplay;
-    private void Start()
+    public class StoreHolder : MonoBehaviour
     {
-        CharacterStats = 
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
-        //goodsDisplay = GetComponentInChildren<GoodsDisplay>();
-        //goodsDisplay.syncIcon();
-    }
+        public ItemData_SO itemData;
+        public int cost;
+        private PlayerStatus CharacterStats;
+        // private GoodsDisplay goodsDisplay;
+        private void Start()
+        {
+            CharacterStats = 
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
+            //goodsDisplay = GetComponentInChildren<GoodsDisplay>();
+            //goodsDisplay.syncIcon();
+        }
 
-    public void BuyItem()
-    { 
-        //bool isBackpackFull = false;
+        public void BuyItem()
+        { 
+            //bool isBackpackFull = false;
         
-        //Debug.Log(isBackpackFull);
-        if (CharacterStats.playerData.coins >= cost  )
-        {
-            CharacterStats.playerData.coins -=cost;
-        InventoryManager.Instance.inventoryData.AddItem(itemData, 1); //itemData.itemAmount
-        InventoryManager.Instance.inventoryUI.RefreshUI();
-        }
-        else 
-        {
-            Debug.Log("Buy Item Failed");
+            //Debug.Log(isBackpackFull);
+            if (CharacterStats.playerData.coins >= cost  )
+            {
+                CharacterStats.playerData.coins -=cost;
+                InventoryManager.Instance.inventoryData.AddItem(itemData, 1); //itemData.itemAmount
+                InventoryManager.Instance.inventoryUI.RefreshUI();
+            }
+            else 
+            {
+                Debug.Log("Buy Item Failed");
+            }
         }
     }
-}
 }
