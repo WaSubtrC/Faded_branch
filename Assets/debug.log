@@ -562,3 +562,6 @@ System.ArgumentNullException: Value cannot be null.
 Parameter name: objectToOverwrite
   at UnityEngine.JsonUtility.FromJsonOverwrite (System.String json, System.Object objectToOverwrite) [0x00015] in <6b565ce484d3436b93921a8472968747>:0 
   at DataSystem.LoadFromJsonOverwrite[T] (System.String saveFileName, T savedData) [0x0001c] in D:\unity_projects\Faded_branch\Assets\Scripts\Utils\DataSystem.cs:59 
+Start game at 2024/5/2 12:57:36
+Start game at 2024/5/2 13:02:57
+Start game at 2024/5/2 13:05:39

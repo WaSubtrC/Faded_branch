@@ -25,11 +25,14 @@ namespace Faded.Town
         public override void OnInteract()
         {
             base.OnInteract();
-            
-            emoji.SetActive(true);
-            emoji.GetComponent<Animator>().Play("play");
-            animator.Play("left_idle");
-            StartCoroutine(StartTask());
+
+            if (flowchart.GetIntegerVariable("Order") == 0){
+                emoji.SetActive(true);
+                emoji.GetComponent<Animator>().Play("play");
+                animator.Play("left_idle");
+                StartCoroutine(StartTask());
+            }
+
         }
 
         private IEnumerator StartTask()

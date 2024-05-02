@@ -17,12 +17,13 @@ namespace Faded.Town
             flowchart = GameObject.Find("Flowchart").GetComponent<Flowchart>();
             if (flowchart.HasBlock(chatName))
             {
-                Debug.Log("tip");
                 flowchart.ExecuteBlock(chatName);
             }
             else
             {
+#if UNITY_EDITOR
                 Debug.LogWarning(chatName + " can not found;");
+#endif
             }
         }
 
