@@ -17,8 +17,9 @@ MonoBehaviour:
   level: 1
   maxMana: 100
   currMana: 100
-  maxHealth: 200
-  currHealth: 200
+  maxHealth: 250
+  currHealth: 250
   speed: 2
   baseDamage: 20
-  baseDefend: 0
+  baseDefense: 0
+  plotOrder: 0

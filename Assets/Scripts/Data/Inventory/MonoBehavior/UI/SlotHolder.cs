@@ -15,7 +15,7 @@ public enum SlotType
     AROMR_FEET,
     SOLD, 
     CHEST,
-    } //单元格类型: 背包的， 武器，护甲，下方快捷栏
+    } 
 
 public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -95,10 +95,16 @@ public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
 
     public void UseItem() {
-            if (itemUI.GetItem().itemType == ItemType.USABLE && itemUI.bag.items[itemUI.Index].amount > 0) //物品可使用 数量>0 
+            if (itemUI.bag.items[itemUI.Index].amount > 0) //物品可使用 数量>0 
             {
-                //拿到物品数据 然后执行 对应的使用的方法
-                //GameManager.Instance.playerStats
+                if(itemUI.GetItem().itemType == ItemType.POTION)
+                {
+
+                }else if(itemUI.GetItem().itemType == ItemType.ARTIFACT)
+                {
+
+                }
+
 
             }
             else 
