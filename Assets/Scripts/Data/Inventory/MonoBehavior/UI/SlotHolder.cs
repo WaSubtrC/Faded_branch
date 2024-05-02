@@ -5,12 +5,14 @@ using UnityEngine.EventSystems;
 namespace Faded.Town {
 public enum SlotType
 {
-    BAG, WEAPON, ACTION,
-    ARMOR_Head,
-    ARMOR_Eye,
-    AROMR_Tabard,
-    ARMOR_Leg,
-    AROMR_Feet,
+    BAG, 
+    WEAPON,
+    ACTION,
+    ARMOR_HEAD,
+    ARMOR_EYE,
+    AROMR_BODY,
+    ARMOR_LEG,
+    AROMR_FEET,
     SOLD, 
     CHEST,
     } //单元格类型: 背包的， 武器，护甲，下方快捷栏
@@ -38,19 +40,19 @@ public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 itemUI.bag = InventoryManager.Instance.chestData;
                 break;
             //
-            case SlotType.ARMOR_Head:
+            case SlotType.ARMOR_HEAD:
                 itemUI.bag = InventoryManager.Instance.equipmentData;
                 break;
-            case SlotType.ARMOR_Eye:
+            case SlotType.ARMOR_EYE:
                 itemUI.bag = InventoryManager.Instance.equipmentData;
                 break;
-            case SlotType.AROMR_Tabard:
+            case SlotType.AROMR_BODY:
                 itemUI.bag = InventoryManager.Instance.equipmentData;
                 break;
-            case SlotType.ARMOR_Leg:
+            case SlotType.ARMOR_LEG:
                 itemUI.bag = InventoryManager.Instance.equipmentData;
                 break;
-            case SlotType.AROMR_Feet:
+            case SlotType.AROMR_FEET:
                 itemUI.bag = InventoryManager.Instance.equipmentData;
                 break;
                 //

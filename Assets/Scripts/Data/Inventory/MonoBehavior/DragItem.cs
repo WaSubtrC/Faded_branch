@@ -74,19 +74,19 @@ namespace Faded.Town
                             case SlotType.ACTION:
                                 SwapController();
                                 break;
-                            case SlotType.ARMOR_Head:
+                            case SlotType.ARMOR_HEAD:
                                 SwapController(ItemType.ARMOR_HEAD);
                                 break;
-                            case SlotType.ARMOR_Eye:
+                            case SlotType.ARMOR_EYE:
                                 SwapController(ItemType.ARMOR_EYE);
                                 break;
-                            case SlotType.AROMR_Tabard:
+                            case SlotType.AROMR_BODY:
                                 SwapController(ItemType.ARMOR_BODY);
                                 break;
-                            case SlotType.ARMOR_Leg:
+                            case SlotType.ARMOR_LEG:
                                 SwapController(ItemType.ARMOR_LEG);
                                 break;
-                            case SlotType.AROMR_Feet:
+                            case SlotType.AROMR_FEET:
                                 SwapController(ItemType.ARMOR_FEET);
                                 break;
                             case SlotType.SOLD:

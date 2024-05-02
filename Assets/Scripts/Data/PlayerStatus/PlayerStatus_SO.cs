@@ -16,7 +16,7 @@ public class PlayerStatus_SO : ScriptableObject
  
     public float speed;
     public float baseDamage;
-    public float baseDefend;
+    public float baseDefense;
 
     public int plotOrder;
     public PlayerStatus_SO()

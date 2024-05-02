@@ -7,7 +7,6 @@ using Faded;
 
 public class UIManager : Singleton<UIManager>
 {
-    [SerializeField] private GameObject statsBar;
     [SerializeField] private GameObject backpack;
     [SerializeField] private GameObject equipment;
     [SerializeField] private GameObject actionContainer;
@@ -26,7 +25,6 @@ public class UIManager : Singleton<UIManager>
 
     private void Update()
     {
-        SetUIswitch(statsBar, KeyCode.I);
         SetUIswitch(equipment, KeyCode.I);
         SetUIswitch(backpack, KeyCode.I);
     }

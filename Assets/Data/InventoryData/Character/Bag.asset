@@ -10,9 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06c26fc3f29115e43b43a3c351bfdc6d, type: 3}
-  m_Name: Action
+  m_Name: Bag
   m_EditorClassIdentifier: 
   items:
+  - itemData: {fileID: 11400000, guid: 199b6073949bca142beb10eb43e9bb1c, type: 2}
+    amount: 1
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 1
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 1
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
+  - itemData: {fileID: 0}
+    amount: 0
   - itemData: {fileID: 0}
     amount: 0
   - itemData: {fileID: 0}
