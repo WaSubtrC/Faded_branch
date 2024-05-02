@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0cd0824c92e3b40b28651ddb656aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 5479e9b8f377bf342bddbce33fc3dddc, type: 2}
-  price: 20
+  itemData: {fileID: 11400000, guid: 962a346d37cf88a44943ee72981eb865, type: 2}
+  cost: 0
 --- !u!1 &7977622209691084856
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 4749193059628861256}
-  PriceText: {fileID: 5433785267452961560}
+  costText: {fileID: 0}
+  itemName: {fileID: 0}
 --- !u!1 &8773794333737790918
 GameObject:
   m_ObjectHideFlags: 0
