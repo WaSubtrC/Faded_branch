@@ -22,3 +22,7 @@ MonoBehaviour:
   CanBeSold: 1
   soldPrice: 100
   weaponPrefab: {fileID: 0}
+  speed: 0
+  damage: 0
+  defense: 0
+  cd: 0

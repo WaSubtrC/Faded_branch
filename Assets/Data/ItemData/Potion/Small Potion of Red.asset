@@ -18,7 +18,11 @@ MonoBehaviour:
   itemAmount: 1
   stackable: 1
   id: 0
-  description: "\u5728\u4E00\u5B9A\u65F6\u95F4\u5185\u5C0F\u5E45\u5EA6\u63D0\u9AD8\u5404\u9879\u5C5E\u6027\u503C\u3002"
+  description: "\u5C0F\u5E45\u5EA6\u6062\u590D\u751F\u547D\u503C\u3002"
   CanBeSold: 1
   soldPrice: 2
   weaponPrefab: {fileID: 0}
+  speed: 0
+  damage: 0
+  defense: 0
+  cd: 0
