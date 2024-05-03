@@ -15,10 +15,16 @@ public class TaskManager : Singleton<TaskManager>
     public TaskItem taskItemPrefab;
     public List<TaskItemData_SO> initialDatas;
 
+    private Animator animator;
+    private bool hasNewTask = false;
+    [SerializeField] private GameObject exclamation;
+
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(this);
+        animator = exclamation.GetComponent<Animator>();
+        exclamation.SetActive(false);
     }
 
     public void OpenTaskMenu()
@@ -47,6 +53,8 @@ public class TaskManager : Singleton<TaskManager>
     public void CloseTaskMenu()
     {
         TaskMenu.SetActive(false);
+        hasNewTask = false;
+        exclamation.SetActive(false);
     }
 
     public void RemoveTask(TaskItem item)
@@ -66,6 +74,8 @@ public class TaskManager : Singleton<TaskManager>
         var obj = Instantiate<TaskItem>(taskItemPrefab,TaskMenuContent.transform);
         taskItems.Add(obj);
         obj.SetData(item);
+        hasNewTask = true;
+        exclamation.SetActive(true);
     }
 
     public void PickUpItem(ItemPickUp pickUp)
