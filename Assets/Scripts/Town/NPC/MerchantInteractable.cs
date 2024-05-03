@@ -14,7 +14,6 @@ namespace Faded.Town
 
         private void Start()
         {
-            _storeUI = GameObject.Find("UI/InventoryCanvas/ShopWindow");
             if (_storeUI == null) Debug.Log("Shopwindow not found");
             playerInteract = GameManager.Instance.player.GetComponentInChildren<PlayerInteract>();
         }
