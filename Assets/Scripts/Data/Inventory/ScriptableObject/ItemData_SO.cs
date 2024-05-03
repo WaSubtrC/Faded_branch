@@ -12,6 +12,7 @@ public enum ItemType
     FOOD,
     STUFF,
     BOOK,
+    ATLAS,
     ARTIFACT,
 
 };   

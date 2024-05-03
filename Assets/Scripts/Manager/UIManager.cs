@@ -77,6 +77,17 @@ public class UIManager : Singleton<UIManager>
         backpackBar.SetActive(false);
         removeChildUI(chestBar);
     }
+
+    public void ShowActionBar()
+    {
+        actionBar.SetActive(true);
+    }
+
+    public void HideActionBar()
+    {
+        actionBar.SetActive(false);
+    }
+
     #endregion
 
     #region util

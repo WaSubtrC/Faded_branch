@@ -101,8 +101,6 @@ public class GameManager : Singleton<GameManager>
 
         AtlasManager.Instance.OnTransPlace();
 
-        AudioManager.Instance.Switch("Town");
-
         //init data
         DataManager.Instance.LoadChestTemplateData();
 

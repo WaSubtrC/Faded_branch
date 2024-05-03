@@ -23,20 +23,6 @@ public class AudioManager : Singleton<AudioManager>
         totalNums = totalClips.Count;
     }
 
-    public void Play(int index)
-    {
-        if (index < totalNums)
-        {
-
-        }
-        else
-        {
-#if UNITY_EDITOR
-            Debug.Log("Clip index out of range");
-#endif
-        }
-    }
-
     public int getClipByName(string name)
     {
         for(int i = 0; i < totalNums; i++)
@@ -129,5 +115,13 @@ public class AudioManager : Singleton<AudioManager>
         splashSource.Play();
     }
 
+    public void OnClock()
+    {
+        int index = getClipByName("Clock");
+        if (index == totalNums)
+            return;
+        splashSource.clip = totalClips[index];
+        splashSource.Play();
+    }
 
 }

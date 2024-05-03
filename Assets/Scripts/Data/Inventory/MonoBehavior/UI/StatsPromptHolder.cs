@@ -2,24 +2,11 @@ using TMPro;
 
 using UnityEngine;
 
-enum ValueType { 
-    maxMana,
-    currMana,
-    maxExp,
-    currExp,
-    maxHealth,
-    currHealth,
-    damage,
-    defense,
-    speed,
-    coins,
-    level 
-}
 
-namespace Faded.Town {
-    public class StatsHolder : MonoBehaviour
+namespace Faded.Town
+{
+    public class StatsPromptHolder : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI statName;
         [SerializeField] private TextMeshProUGUI StatValue;
         [SerializeField] private ValueType valueType;
         private bool refreshed = false;
@@ -28,22 +15,15 @@ namespace Faded.Town {
         {
             RefreshStatsBar();
         }
+
         void Update()
         {
-            var isRefresh = false;
-            if (!this.gameObject.activeSelf)
-            {
-                isRefresh = false;
-            }else if (!isRefresh)
-            {
-                if(GameManager.Instance.playerStats != null)
-                    RefreshStatsBar();
-                isRefresh = true;
-            }
+            RefreshStatsBar();
         }
 
         private void RefreshStatsBar()
         {
+            if (GameManager.Instance.playerStats.playerData == null) return;
             switch (valueType)
             {
                 case ValueType.maxMana:
@@ -51,14 +31,8 @@ namespace Faded.Town {
                     break;
                 case ValueType.currMana:
                     AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.currMana.ToString());
-                    break ;
-                case ValueType.maxExp:
-                    AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.maxExp.ToString());
                     break;
-                case ValueType.currExp:
-                    AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.currExp.ToString());
-                    break;
-                case ValueType.maxHealth: 
+                case ValueType.maxHealth:
                     AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.maxHealth.ToString());
                     break;
                 case ValueType.currHealth:
@@ -80,17 +54,16 @@ namespace Faded.Town {
                     AssignText(valueType.ToString(), GameManager.Instance.playerStats.playerData.level.ToString());
                     break;
                 default:
-                    AssignText("Error statName","Error value");
+                    AssignText("Error statName", "Error value");
                     break;
 
             }
         }
 
-        private void AssignText(string _statName,string _valueText)
+        private void AssignText(string _statName, string _valueText)
         {
-            if(!refreshed) 
+            if (!refreshed)
             {
-                statName.text = _statName;
                 refreshed = true;
             }
             StatValue.text = _valueText;

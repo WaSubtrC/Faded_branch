@@ -68,7 +68,6 @@ public class AtlasManager : Singleton<AtlasManager>
 
     void Update()
     {
-        OnReviewAtlas();
         OnUpdateWalkTime();
     }
 
@@ -106,7 +105,7 @@ public class AtlasManager : Singleton<AtlasManager>
 
     public void OnReviewAtlas()
     {
-        if (Input.GetKeyDown(KeyCode.M) && !atlas.activeSelf)
+        if (!atlas.activeSelf)
         {
             StartCoroutine(OnTransition());
             crossButton.SetActive(true);
@@ -146,7 +145,7 @@ public class AtlasManager : Singleton<AtlasManager>
     }
 
 
-
+    #region Time
     private void OnUpdateWalkTime()
     {
         if (atlas.activeSelf) return;
@@ -160,6 +159,8 @@ public class AtlasManager : Singleton<AtlasManager>
         time = time.AddHours(Time.deltaTime);
         clockText.text = $"Year:{time.Year} Mouth:{time.Month} Day:{time.Day}  {time.Hour}:{time.Minute}";
     }
+    #endregion
+
 
     #region Init
 

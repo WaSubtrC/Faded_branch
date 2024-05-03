@@ -103,6 +103,9 @@ public class SlotHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 }else if(itemUI.GetItem().itemType == ItemType.ARTIFACT)
                 {
 
+                }else if(itemUI.GetItem().itemType == ItemType.ATLAS)
+                {
+                    AtlasManager.Instance.OnReviewAtlas();
                 }
 
 

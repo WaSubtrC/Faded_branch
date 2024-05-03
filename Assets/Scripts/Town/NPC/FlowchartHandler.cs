@@ -51,4 +51,35 @@ public class FlowchartHandler : MonoBehaviour
     {
         GameManager.Instance.player.GetComponent<PlayerController>().enabled = false;
     }
+
+
+    #region Audio
+    public void OnAudioPlayClock()
+    {
+        AudioManager.Instance.OnClock();
+    }
+
+    public void OnAudioPlay(string clip)
+    {
+        AudioManager.Instance.Switch(clip);
+    } 
+
+    public void OnAudioStop()
+    {
+        AudioManager.Instance.Stop();
+    }
+
+    #endregion
+
+    #region UI
+    public void ShowActionBar()
+    {
+        UIManager.Instance.ShowActionBar();
+    }
+
+    public void HideActionBar()
+    {
+        UIManager.Instance.HideActionBar();
+    }
+    #endregion
 }
