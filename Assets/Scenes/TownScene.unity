@@ -14159,7 +14159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &259238872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28354,7 +28354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &922160657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30974,7 +30974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1058494447
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34287,7 +34287,7 @@ PrefabInstance:
       objectReference: {fileID: 1213378181}
     - target: {fileID: 3959589887987973850, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: valueType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4247949316217319503, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -35379,7 +35379,7 @@ PrefabInstance:
       objectReference: {fileID: 1261513547}
     - target: {fileID: 3959589887987973850, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: valueType
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4247949316217319503, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -35511,7 +35511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontSize
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontAsset
@@ -35523,7 +35523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_sharedMaterial
@@ -35881,7 +35881,7 @@ PrefabInstance:
       objectReference: {fileID: 1282195170}
     - target: {fileID: 3959589887987973850, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: valueType
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4247949316217319503, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -39152,7 +39152,7 @@ PrefabInstance:
       objectReference: {fileID: 1385000323}
     - target: {fileID: 3959589887987973850, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: valueType
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4247949316217319503, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -39284,7 +39284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontSize
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontAsset
@@ -39296,7 +39296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_sharedMaterial
@@ -41358,7 +41358,7 @@ PrefabInstance:
       objectReference: {fileID: 1470766619}
     - target: {fileID: 3959589887987973850, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: valueType
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4247949316217319503, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -41486,7 +41486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontSize
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontAsset
@@ -41498,7 +41498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_sharedMaterial
@@ -50726,7 +50726,7 @@ PrefabInstance:
       objectReference: {fileID: 1966351243}
     - target: {fileID: 3959589887987973850, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: valueType
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4247949316217319503, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -50860,7 +50860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontSize
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontAsset
@@ -50872,7 +50872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8774765013492695157, guid: 4bf3124dc066234449f7f80489ae3d1f, type: 3}
       propertyPath: m_sharedMaterial
@@ -52464,7 +52464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2036983542
 RectTransform:
   m_ObjectHideFlags: 0
