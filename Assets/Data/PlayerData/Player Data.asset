@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55b58315dbd5404095f8277769184d3, type: 3}
   m_Name: Player Data
   m_EditorClassIdentifier: 
-  coins: 450
+  coins: 950
   position: {x: 0, y: 0, z: 0}
   level: 1
+  maxExp: 200
+  currExp: 10
   maxMana: 100
   currMana: 100
   maxHealth: 200
   currHealth: 200
   speed: 2
   baseDamage: 20
-  baseDefend: 0
+  baseDefense: 0
+  plotOrder: 0

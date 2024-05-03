@@ -10,8 +10,6 @@ namespace Faded.Town
         [SerializeField] private GameObject SoldUI_Prefab;
         [SerializeField] private InventoryData_SO SoldData;
 
-        [SerializeField] private Transform inventoryTrans;
-
         private GameObject _soldUI;
         private PlayerInteract playerInteract;
 
@@ -34,7 +32,7 @@ namespace Faded.Town
         {
             if (_soldUI == null)
             {
-                _soldUI = Instantiate(SoldUI_Prefab, inventoryTrans);
+                _soldUI = Instantiate(SoldUI_Prefab, GameObject.Find("InventoryCanvas/ChestBar").transform);
                 _soldUI.GetComponent<Transform>().SetSiblingIndex(1);
                 UIManager.Instance.ShowBackpack();
 

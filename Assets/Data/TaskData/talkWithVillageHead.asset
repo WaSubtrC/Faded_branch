@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: talkWithVillageHead
   m_EditorClassIdentifier: 
   taskId: 2
-  text: "\u8BF7\u524D\u5F80the bluish master\u7684\u4F4F\u6240\uFF0C\u5E76\u5411\u5176\u5BFB\u6C42\u5E2E\u52A9 "
+  text: "\u8DDF\u968F\u5C0F\u7D2B\u524D\u5F80\u5927\u796D\u53F8\u6240\u5728\u7684\u6559\u5802\uFF0C\u5E76\u5411\u5176\u5BFB\u6C42\u5E2E\u52A9"
   nextTasks:
   - {fileID: 11400000, guid: ff7fe4fab75107343810fa1dde176af7, type: 2}
   taskType: 1

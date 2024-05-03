@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: talkWIthThePurple
   m_EditorClassIdentifier: 
   taskId: 1
-  text: "\u4E0E\u539F\u4F4F\u6C11\uFF1F\uFF1F\uFF1F\uFF08\u672A\u77E5\uFF09\u5BF9\u8BDD"
+  text: "\u4E0E\u5C0F\u7D2B\u5BF9\u8BDD"
   nextTasks:
   - {fileID: 11400000, guid: d12c94829a9294046bfb2ace5946dcb5, type: 2}
   taskType: 1

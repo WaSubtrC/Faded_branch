@@ -2124,9 +2124,8 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 920896563}
-  selectedCommands:
-  - {fileID: 920896565}
+  - {fileID: 920896560}
+  selectedCommands: []
   variables:
   - {fileID: 920896568}
   description: 
@@ -2819,7 +2818,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &920896575
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2910,7 +2909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c9a951e221fa34ca13f5922b828b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Check the Paper
+  interactText: "\u67E5\u770B\u5730\u4E0A\u7684\u4FE1\u5C01"
   chatName_01: CheckPaper
 --- !u!1 &964353948
 GameObject:
@@ -3292,7 +3291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a272ce9b78f9ae4a9cd38cc8cd84c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Sleep
+  interactText: "\u7761\u89C9"
   bedPrefabUI: {fileID: 0}
 --- !u!1 &1435980863
 GameObject:

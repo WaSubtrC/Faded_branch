@@ -59,7 +59,7 @@ namespace Faded.Town
         {
             if (chestUI == null)
             {
-                chestUI =  Instantiate(ChestPrefabUI,GameObject.Find("InventoryCanvas").transform);
+                chestUI =  Instantiate(ChestPrefabUI,GameObject.Find("InventoryCanvas/ChestBar").transform);
                 chestUI.GetComponent<RectTransform>().SetSiblingIndex(1);
 
                 InventoryManager.Instance.SetChestData(chestData); 

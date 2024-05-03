@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55b58315dbd5404095f8277769184d3, type: 3}
   m_Name: Player Default Data
   m_EditorClassIdentifier: 
-  coins: 500
+  coins: 1000
   position: {x: 0, y: 0, z: 0}
   level: 1
+  maxExp: 200
+  currExp: 10
   maxMana: 100
   currMana: 100
   maxHealth: 250

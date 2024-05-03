@@ -9,8 +9,12 @@ public class PlayerStatus_SO : ScriptableObject
     public Vector3 position;
 
     public int level;
+    public float maxExp;
+    public float currExp;
+
     public float maxMana;
     public float currMana;
+    
     public float maxHealth;
     public float currHealth;
  

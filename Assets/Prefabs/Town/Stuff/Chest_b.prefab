@@ -67,8 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa7d8f0eaf8d8e4d9f8a2eed0fcb509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactText: Open treasure chest
+  interactText: "\u6253\u5F00\u7BB1\u5B50"
   ChestPrefabUI: {fileID: 3212010856026607441, guid: 1dd75e3b0d238744683373efc2a016c3, type: 3}
+  key: 
   chestData: {fileID: 11400000, guid: 60c7a72c34bbb96478e6d87970d597bd, type: 2}
   closeSprite: {fileID: -1650561222, guid: 4e3d6c0052fc13443905596eed4a15fa, type: 3}
   openSprite: {fileID: -1723049227, guid: 4e3d6c0052fc13443905596eed4a15fa, type: 3}
