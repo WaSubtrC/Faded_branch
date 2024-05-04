@@ -7,23 +7,30 @@ TagManager:
   - InventorySlot
   - Water
   - Secret
+  - Wall
+  - Door
+  - Obstacle
+  - Monster
+  - Bullet
+  - platform
+  - enemys
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - Item
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Room
+  - Door
+  - Bullet
+  - Monster
+  - Player
+  - Pickup
+  - Obstacle
+  - Flying Monster
   - 
   - 
   - 
@@ -49,4 +56,25 @@ TagManager:
     locked: 0
   - name: Sprite
     uniqueID: 2358460965
+    locked: 0
+  - name: Wall
+    uniqueID: 2664837413
+    locked: 0
+  - name: Room
+    uniqueID: 1545969237
+    locked: 0
+  - name: Door
+    uniqueID: 3448196855
+    locked: 0
+  - name: Shadow
+    uniqueID: 1404112693
+    locked: 0
+  - name: OnGround
+    uniqueID: 3618694953
+    locked: 0
+  - name: Entity
+    uniqueID: 3967016923
+    locked: 0
+  - name: Light
+    uniqueID: 1703234393
     locked: 0
